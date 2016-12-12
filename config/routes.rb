@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
  
+
+  resource :cart, only: [:show]
   resources :booking_activities
   resources :bookings
   resources :destinations
   resources :accommodations
   resources :activities
   resources :activity_categories
-  resources :basket_items
-  resources :products
+  resources :basket_items, only: [:create, :update, :destroy]
+  resources :store, only: [:index]
   resources :products
   resources :product_categories
   resources :orders

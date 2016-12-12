@@ -27,6 +27,15 @@
     <%= f.label :price %><br>
     <%= f.text_field :price %>
   </div>
+  <div class="field">
+    <%= f.label(:product_category_id, "Category") %>
+    <br>
+    <%= f.select(:product_category_id, @product_categories.map {|c| [c.name, c.id]}) %>
+  </div>
+  <div class="field">
+    <%= f.label :active %>
+    <%= f.check_box :active %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

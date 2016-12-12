@@ -1,0 +1,18 @@
+<% if !@basket_item.nil? && @basket_item.errors.any? %>
+  <div class="alert alert-danger">
+    <ul>
+    <% @basket_item.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+<% if @basket_items.size == 0 %>
+  <p class="text-center">
+    There are no items in your shopping cart.  Please <%= link_to "go back", controller: "store" %> and add some items to your cart.
+  </p>
+<% else %>
+  <% @basket_items.each do |basket_item| %>
+    <%= render 'carts/cart_row', product: basket_item.product, basket_item: basket_item, show_total: true %>
+  <% end %>
+<% end %>

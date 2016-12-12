@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161129222406) do
+ActiveRecord::Schema.define(version: 20161211164234) do
 
   create_table "accommodations", force: :cascade do |t|
     t.string   "name",        limit: 100,                  null: false
@@ -47,12 +47,14 @@ ActiveRecord::Schema.define(version: 20161129222406) do
   add_index "activity_categories", ["name"], name: "index_activity_categories_on_name", using: :btree
 
   create_table "basket_items", force: :cascade do |t|
-    t.integer  "product_id", limit: 4
-    t.integer  "order_id",   limit: 4
-    t.integer  "quantity",   limit: 2
-    t.string   "status",     limit: 50
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.integer  "product_id",  limit: 4
+    t.integer  "order_id",    limit: 4
+    t.integer  "quantity",    limit: 2
+    t.string   "status",      limit: 50
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
+    t.decimal  "unit_price",             precision: 7, scale: 2
+    t.decimal  "total_price",            precision: 7, scale: 2
   end
 
   create_table "booking_activities", force: :cascade do |t|
@@ -91,12 +93,25 @@ ActiveRecord::Schema.define(version: 20161129222406) do
 
   add_index "destinations", ["name"], name: "index_destinations_on_name", using: :btree
 
-  create_table "orders", force: :cascade do |t|
-    t.integer  "user_id",    limit: 4
-    t.string   "status",     limit: 50
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+  create_table "order_statuses", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer  "user_id",         limit: 4
+    t.string   "status",          limit: 50
+    t.datetime "created_at",                                         null: false
+    t.datetime "updated_at",                                         null: false
+    t.integer  "order_status_id", limit: 4
+    t.decimal  "subtotal",                   precision: 7, scale: 2
+    t.decimal  "vat",                        precision: 7, scale: 2
+    t.decimal  "shipping",                   precision: 7, scale: 2
+    t.decimal  "total",                      precision: 7, scale: 2
+  end
+
+  add_index "orders", ["order_status_id"], name: "index_orders_on_order_status_id", using: :btree
 
   create_table "product_categories", force: :cascade do |t|
     t.string   "name",        limit: 25,    null: false
@@ -109,12 +124,13 @@ ActiveRecord::Schema.define(version: 20161129222406) do
 
   create_table "products", force: :cascade do |t|
     t.integer  "product_category_id", limit: 4
-    t.string   "name",                limit: 100,                  null: false
+    t.string   "name",                limit: 100,                           null: false
     t.text     "description",         limit: 65535
     t.string   "picture",             limit: 250
-    t.decimal  "price",                             precision: 10
-    t.datetime "created_at",                                       null: false
-    t.datetime "updated_at",                                       null: false
+    t.decimal  "price",                             precision: 7, scale: 2
+    t.datetime "created_at",                                                null: false
+    t.datetime "updated_at",                                                null: false
+    t.boolean  "active"
   end
 
   add_index "products", ["name"], name: "index_products_on_name", using: :btree
@@ -134,4 +150,5 @@ ActiveRecord::Schema.define(version: 20161129222406) do
 
   add_index "users", ["username"], name: "index_users_on_username", using: :btree
 
+  add_foreign_key "orders", "order_statuses"
 end

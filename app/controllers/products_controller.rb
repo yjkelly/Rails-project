@@ -15,10 +15,12 @@ class ProductsController < ApplicationController
   # GET /products/new
   def new
     @product = Product.new
+    @product_categories = ProductCategory.order('name ASC')
   end
 
   # GET /products/1/edit
   def edit
+    @product_categories = ProductCategory.order('name ASC')
   end
 
   # POST /products
@@ -31,6 +33,7 @@ class ProductsController < ApplicationController
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
         format.json { render :show, status: :created, location: @product }
       else
+        @product_categories = ProductCategory.order('name ASC')
         format.html { render :new }
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
@@ -45,6 +48,7 @@ class ProductsController < ApplicationController
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
         format.json { render :show, status: :ok, location: @product }
       else
+        @product_categories = ProductCategory.order('name ASC')
         format.html { render :edit }
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
