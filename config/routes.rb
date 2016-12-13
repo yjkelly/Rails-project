@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
  
+  # This route was necessary for empty basket to work
+  post 'basket_items/destroy_all'
 
   resource :cart, only: [:show]
   resources :booking_activities

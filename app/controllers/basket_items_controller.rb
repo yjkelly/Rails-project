@@ -22,6 +22,7 @@ class BasketItemsController < ApplicationController
     @basket_item = @order.basket_items.find(params[:id])
     @basket_item.update_attributes(basket_item_params)
     @basket_items = @order.basket_items
+    redirect_to "/store"
   end
 
 
@@ -30,6 +31,16 @@ class BasketItemsController < ApplicationController
     @basket_item = @order.basket_items.find(params[:id])
     @basket_item.destroy
     @basket_items = @order.basket_items
+    redirect_to "/store"
+  end
+
+
+  # this method is for emptying the basket
+  def destroy_all
+    @order = current_order
+    @basket_items = @order.basket_items
+    @basket_items.clear
+    redirect_to "/store"
   end
 
   private
