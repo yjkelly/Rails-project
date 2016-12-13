@@ -5,50 +5,24 @@
   
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-  <% if request.ssl? %>
-    <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %>
-    <%= javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' %>
-  <% else %> 
-    <%= stylesheet_link_tag 'http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %>
-    <%= javascript_include_tag 'http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' %>
-  <% end %>
 
   <%= csrf_meta_tags %>
 </head>
-<body>
-
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-6">
-        <h1><%= link_to "My Store", root_path %></h1>
-      </div>
-      <div class="col-xs-6 text-right">
-        <h1 class="cart-text"><%= render 'layouts/cart_text' %></h1>
-      </div>
-    </div>
-    <hr>
-  </div>
-
-<div id="main-container">
-<%= yield %>
-</div>
 
   <body>
-         
-        
-
-    	<div id='navbar'>
+    <div id='navbar'>
 		<div class='logoleft'><%= image_tag("new_horizons_logo.png", :alt => "new horizons logo") %></div>
 		<div class='topbar'>
 		     <% if logged_in? %>
 		     Welcome back <%= current_user.username %>!
 		     <% end %>
+         <%= render 'layouts/cart_text' %>
 		</div>
 		<div class='linksbar'>
 			<div class='link1' onclick='location.href="/"'>Home</div>
 			<div class='link1' onclick='showabout()'>About</div>
 			<div class='link1' onclick='location.href="/contact"'>Contact</div>
-			<div class='link1' onclick='location.href="/store"'>Shop</div>
+			<div class='link1' onclick='location.href="/store"'>Store</div>
 			   <% if logged_in? %>
 			   <div class='link1' onclick='location.href="<%= user_path(current_user) %>"'>Profile</div>
                 <div class='link1 link2'><%= link_to "Log out", logout_path, method: "delete" %></div>
