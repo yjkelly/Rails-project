@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   # Try a null_session protection
   #protect_from_forgery with: :null_session
   protect_from_forgery with: :exception
+  include SessionsHelper
 
   helper_method :current_order
 

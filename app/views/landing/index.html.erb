@@ -1,0 +1,120 @@
+
+<div id='first'>
+<div id='cover'></div>
+<div class='welcome centered' id="click">
+New Horizons
+<div id='faded'>Live each day under a different sun<br>
+</div>
+<div id='faded2'>
+<span id="imagechange"><img src='/assets/downarrow.png' height="40px"></span>
+<img id="sun" src='/assets/sunny.png' height="40px">
+</div>
+</div>
+
+</div>
+
+<div id='second'>
+<div class='breakblue'>
+</div>
+<div id='newcontainer'><br>
+	<img id="mapmono" width="0" height="0" src="/assets/worldmap2.jpg" alt="World Map">
+        <div id='searchbar'>
+                <form class="searcher" name="maplocator" autocomplete="off">
+                        Search a City or Country<br>
+                        <input id='mapper' type="text" name = "place" size="65" onkeydown="handle(event)">
+                </form>
+        <div id='scon'>
+        <div id='searchpop'></div>
+        </div>
+	</div>
+<br><br>
+        <div id='leftside'>
+                <br/><br/>
+                <div id='pname'>Choose a city</div><br><br>
+                <div id='pimage'><img src='/assets/default0.jpg' width=75%></div><br><br>
+                <div id='pdesc'>Hover over any red dot on the map, or type the name of a city in the search bar. The world is your oyster. </div><br><br>
+<% if logged_in? %>
+<%= render 'form', booking: @booking %>
+<% else %>
+<div id='messagelogin'>Only Logged In Users Can Use This</div>
+<!--                <div id='plink'><div id='my-background'>Next</div></div> -->
+<% end %>
+        </div>
+        <div id='can'>
+                <canvas id="myCanvas" width="1000" height="600"></canvas>
+        </div>
+
+        <div id='clear'>
+        </div>
+
+     </div>
+<br><center>
+<img class='clickable' onclick='scrollfurther()' src='/assets/downarrowdarker.png' height="40px">
+<br>
+</div>
+</div>
+<div class='breakorange'>
+</div>
+<div id='third'>
+<br>
+<center>
+<img class='clickable' onclick='scrollback()' src='/assets/uparrowdarker.png' height="40px">
+</center>
+<br><br>
+<span class='guidehead'>Travel Guides</span>
+
+<div class='line'></div>
+
+  <% @destinations.each do |destination| %>
+  <img id="<%= destination.name.downcase[0,3] %>" width="0" height="0" src="<%= destination.picture.split('|')[1] %>">
+  <% end %>
+
+<div class='slidercontainer'>
+<div onclick='slideover()' class='leftarrow'><br><img class="clickable" src='/assets/arrowleft.jpg' width="40px"></div>
+<canvas id="mySlider" width="750" height="300">
+</canvas>
+<div onclick='slideback()' class='rightarrow'><br><img class="clickable" src='/assets/arrowright.jpg' width="40px"></div>
+</div>
+<br>
+<div class='line'></div>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<div id='sliderpop' onclick='hideslider()'></div>
+<div id='sliderdarken' onclick='hideslider()'></div>
+        <div id='footer'>
+        </div>
+<div id='aboutdarken' onclick='hideabout()'>
+</div>
+<div id='about' onclick='hideabout()'>
+<div class='aboutleftpic'><img src='/assets/flowerleft.jpg' width="160px"></div>
+<div class='abouthead'>About Us</div>
+<div class='aboutrightpic'><img src='/assets/flowerright.jpg' width="160px"></div>
+<div class='abouttext'>
+<br>
+Welcome to New Horizons! Founded in 2016, we're a young company, dedicated to offering a place where adventurous souls can find just what they need for their trip away.
+Whether you're scuba diving in the great barrier reef, making the climb at Croagh Patrick, or camping in Yosemite, we have just what you need at our store.<br><br>
+If you're unsure what you want to do when away, check our local accommodaton and activity pages to get you started on your next big adventure. Some locations will require vaccinations before you travel. We'll set you on the right path.
+We're keen to provide a friendly and professional service, and we hope you enjoy the time you spend at our site!
+</div><br><br>
+<center>
+<img src='/assets/campsite.jpg' width='500px'>
+<br>
+</div>
+<!--<script>alert("<%= current_dest %>");</script>-->
+<%= javascript_include_tag "landing" %>
+<p id="notice"><%= notice %></p>
+
+<div id='experiment'>
+
+    <% @destinations.each do |destination| %>
+    <% fixedname=destination.name.gsub!(/\s/,'_') %>
+        <div class='hidden' id='<%= destination.name %>'><%= fixedname %></div>
+        <div class='hidden' id='<%= destination.name %>d'><%= destination.description.html_safe %></div>
+        <div class='hidden' id='<%= destination.name %>i'><%= destination.picture %></div>
+
+    <% end %>
+
+</div>
+
