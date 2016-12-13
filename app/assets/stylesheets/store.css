@@ -149,6 +149,7 @@ padding: 0.3em 1em;
 text-align: center;
 border-radius: 4px;
 border: 0px solid #a00;
+cursor: pointer;
 }
 #shopping-cart {
 margin: 1.5em 0;
@@ -299,6 +300,7 @@ padding: 0.3em 0.5em;
 text-align: center;
 border-radius: 4px;
 border: 0px solid #a00;
+cursor: pointer;
 }
 .basket_btn_delete{
 display: inline-block;
@@ -308,7 +310,31 @@ padding: 0.3em 0.5em;
 text-align: center;
 border-radius: 4px;
 border: 0px solid #a00;
+cursor: pointer;
 }
 .basket_total{
 float: right;
+}
+
+/* Products CRUD */
+
+#listproductsbox
+{
+width:1000px;
+margin:0 auto;
+background-color:#555;
+color:white;
+padding:15px;
+border:8px solid #420;
+}
+#listproductsbox a{
+color: aqua;
+}
+.itemphotolist
+{
+height: 100px;
+width: auto;
+}
+#products_table a{
+color: aqua;
 }
