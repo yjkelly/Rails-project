@@ -1,14 +1,41 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>New Horizons</title>
-  <%= stylesheet_link_tag    'default', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'default', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>Dest</title>
+    <%= csrf_meta_tags %>
 
-<%= yield %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
 
-</body>
+  <body>
+         
+        
+
+    	<div id='navbar'>
+		<div class='logoleft'><%= image_tag("new_horizons_logo.png", :alt => "new horizons logo") %></div>
+		<div class='topbar'>
+		     <% if logged_in? %>
+		     Welcome back <%= current_user.username %>!
+		     <% end %>
+		</div>
+		<div class='linksbar'>
+			<div class='link1' onclick='location.href="/"'>Home</div>
+			<div class='link1' onclick='showabout()'>About</div>
+			<div class='link1' onclick='location.href="/contact"'>Contact</div>
+			<div class='link1' onclick='location.href="/store"'>Shop</div>
+			   <% if logged_in? %>
+			   <div class='link1' onclick='location.href="<%= user_path(current_user) %>"'>Profile</div>
+                <div class='link1 link2'><%= link_to "Log out", logout_path, method: "delete" %></div>
+                <% else %>
+                <div class='link1' onclick='location.href="<%= signup_path %>"'>Register</div>
+                <div class='link1' onclick='location.href="<%= login_path %>"'>Login</div>
+                <% end %>
+		</div>
+	</div>
+	  <% flash.each do |message_type, message| %>
+	  <div class="alert alert-<%= message_type %>"><%= message %></div>
+	        <% end %>
+    <%= yield %>
+  </body>
 </html>

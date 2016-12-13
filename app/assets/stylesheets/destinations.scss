@@ -1,3 +1,1404 @@
 // Place all the styles related to the destinations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body
+{
+margin:0;
+}
+a {
+text-decoration: none;
+}
+
+/*css for the top part of the page*/
+
+.logoleft
+{
+text-align:center;
+font-size:24px;
+font-weight:bold;
+font-family:Arial;
+color:black;
+float:left;
+width:20%;
+background-color:white;
+height:40px;
+padding-top:25px;
+padding-bottom:25px;
+border-bottom:1px solid black;
+}
+#navbar
+{
+width:100%;
+}
+.topbar
+{
+float:left;
+width:80%;
+height:30px;
+background-color:#000;
+text-align:right;
+color:white;
+font-size:16px;
+}
+.linksbar
+{
+float:left;
+width:80%;
+background-color:white;
+min-height:60px;
+border-bottom:1px solid black;
+}
+.link1
+{
+text-align:center;
+padding:20px;
+font-size:20px;
+float:left;
+width:150px;
+height:20px;
+border-left:1px solid black;
+border-right:1px solid black;
+background-color:white;
+color:black;
+font-family:Arial;
+}
+.link2 a, .link2 a:visited
+{
+  
+  color:white;
+}
+.link2 a:hover
+{
+background-color:#30ac97;
+}
+
+.link1:hover, .link2:hover, .link3:hover, .link4:hover
+{
+cursor:pointer;
+background-color:orange;
+color:white;
+}
+
+/*css for the about pop-up :) */
+#aboutdarken
+{
+display:none;
+opacity:0.4;
+background-color:black;
+position:fixed;
+width:100%;
+height:100%;
+top:0px;
+left:0px;
+}
+#about
+{
+display:none;
+border:10px solid #420;
+background-color:white;
+position:fixed;
+width:680px;
+height:680px;
+top:50%;
+left:50%;
+margin-left:-340px;
+margin-top:-340px;
+color:black;
+font-size:20px;
+}
+.abouthead
+{
+padding-top:20px;
+float:left;
+width:360px;
+text-align:center;
+font-size:30px;
+}
+.aboutleftpic, .aboutrightpic
+{
+float:left;
+width:160px;
+}
+.abouttext
+{
+padding:50px;
+}
+.aboutsig
+{
+float:left;
+width:200px;
+height:50px;
+}
+.aboutgap
+{
+float:left;
+width:100px;
+height:50px;
+}
+
+
+
+
+
+#footer
+        {
+	background-color:#111111;
+	height:60px;
+	clear:both;        
+	color:#999;
+	font-size:14px;
+	text-align:right;
+}
+
+#clear
+        {
+	clear:both;
+        }
+        /*fixing nav bar to work with slider*/
+
+.logoleft{
+  float:none;
+  display:inline-block;
+  background-color: #3e3b3b;
+
+}
+.topbar{
+  float:right;
+  background-color: #717070;
+
+}
+.linksbar{
+  float:right;
+  position:absolute;
+  top:30px;
+  right:0px;
+  background-color: #3e3b3b;
+
+
+}
+.link1{
+  background-color: #3e3b3b;
+  color: white;
+}
+#navbar{
+  display:inline;
+
+}
+.link1:hover{
+  background-color: rgb(48,172,151);
+}
+
+
+body{
+  margin:0px;
+}
+
+/* ===== SLIDER ======*/
+#slider{
+  height:500px;
+  margin-top:18px;
+
+}
+
+#container{
+  width:100%;
+
+  height:500px;
+  overflow:hidden;
+  background-image:url(../img/activities/mounteverest.jpg);
+  background-size:cover;
+}
+
+.container-overlay{
+  padding-top:90px;
+  width:700px;
+  height:500px;
+  background-color:rgba(247, 107, 106,0.9);
+  position:relative;
+  top:-20px;
+}
+
+.slider-img{
+  width:inherit;
+  height:inherit;
+
+}
+
+.slide-div{
+  margin: 0 auto;
+  width: 1000px;
+  height: 300px;
+  text-align: left;
+  position: relative;
+  top: -400px;
+  color:white;
+}
+
+.container-overlay h2{
+    margin:0;
+    margin-left:90%;
+    font-size:140px;
+    color:white;
+    text-align:center;
+    text-shadow: 0px 0px 5px #000;
+    font-family: 'Droid Sans', sans-serif;
+    opacity:1;
+}
+
+.slide-div p{
+  margin:0;
+  margin-top:40px;
+  margin-left:50px;
+  font-size:60px;
+  text-shadow: 0px 0px 5px #000;
+  font-family: 'Pacifico', cursive;
+}
+
+#greentext{
+  color:#50c5b3;
+}
+#orangetext{
+  color:#E34941;
+}
+
+
+#item-1 p{
+  margin-left:190px;
+}
+#item-2{
+  position:relative;
+  top:-700px;
+  left:150%;
+}
+
+#item-2 p{
+  font-size:40px;
+  background-color: rgba(233, 233, 233, 0.4);
+  padding: 20px;
+  margin-left:20px;
+}
+
+.left-side{
+  float:left;
+}
+
+#slider-controls ol{
+  list-style-type: none;
+  margin:0;
+}
+
+#slider-controls ol li{
+  cursor:pointer;
+  color:white;
+}
+
+#slider-controls{
+  width:80px;
+  margin:0 auto;
+  position:relative;
+  top:-20px;
+}
+
+
+/* ============*/
+
+#heading-content{
+  padding:15px;
+}
+
+#main-text{
+  padding-top:35px;
+  color:#fff;
+  font-size:85px;
+  font-weight:600;
+}
+
+#main-1{
+  font-weight:100;
+}
+
+.icons{
+  float:right;
+  color:#fff;
+}
+
+nav {
+    background-color: #333;
+    margin: 0;
+    overflow: hidden;
+    padding-left:20%;
+}
+
+nav ul{
+    margin: 0;
+}
+.navitem {
+    display: inline-block;
+    padding-left: 15px;
+    padding-right:15px;
+    text-align:center;
+
+}
+
+.navlink{
+    color: #aaa;
+    display: block;
+    line-height: 2em;
+    padding: 0.5em 0.5em;
+    text-decoration: none;
+}
+
+.navlink:hover {
+    color: #fff;
+    background-color:#f8a53a;
+}
+
+.navitem:hover{
+  background-color:#f8a53a;
+  color: #fff;
+  -webkit-box-shadow: 10px 13px 30px -5px rgba(112,112,112,1);
+  -moz-box-shadow: 10px 13px 30px -5px rgba(112,112,112,1);
+  box-shadow: 10px 13px 30px -5px rgba(112,112,112,1);
+}
+
+footer{
+  height:30px;
+  background-color:#333;
+  bottom:0;
+
+  color:#aaa;
+  padding:10px;
+}
+
+#main-body{
+  background-color:#fff;
+  box-shadow:0px 1px 0px #dde0e7;
+
+}
+
+#grey-box-form{
+  background-color:#f5f6f8;
+  padding:90px;
+  box-shadow:0px 1px 0px #dde0e7;
+}
+#form-box{
+  margin:0 auto;    /*center horizontally*/
+  width:730px;
+  background-color:#50c5b3;
+  padding-top:20px;
+  padding-left:20px;
+  padding-right:20px;
+  -webkit-box-shadow: 0px 5px 3px -2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 5px 3px -2px rgba(0,0,0,0.75);
+  box-shadow: 0px 5px 3px -2px rgba(0,0,0,0.75);
+}
+#form-button{
+  margin:0 auto;
+  width:200px; /* Center aligning anything needs a set width, because its fullscreen by default and therefore cannot be centered */
+
+
+}
+
+#search-button{
+  width: 180px;
+  border: 1px solid #fff;
+  background-color:#50c5b3;
+  padding: 10px;
+  margin: 10px;
+  margin-right: 20px;
+  color:white;
+  font-weight:bolder;
+  outline:0;
+  cursor: pointer;
+
+}
+.form-item{
+  padding-left:5px;
+  display:inline-block;
+
+
+}
+.form-item label{
+  display:block;
+}
+
+.form-item select{
+  height:20px;
+}
+
+.form-item input{
+  height:20px;
+
+}
+
+.date-box-size{
+  width:165px;
+}
+#number-of-guests-box-size{
+  width:50px;
+  height:15px;
+}
+.activity-individual-box{
+  vertical-align:top; /* Stop divs from pushing each other when applying hover effect*/
+  width:250px;
+  height:250px;
+  display: inline-block;/*put div side by side*/
+  margin-left: 30px;
+  margin-top:20px;
+  margin-bottom:20px;
+
+  /*Make the mouse pointer into the hand icon, so this looks clickable */
+  cursor: pointer;
+
+}
+.activity-thumbnail{
+  width:inherit;
+  height:inherit;/* gets the width of the parent element .activity-category and inherits*/
+}
+
+.activity-title-bar{
+  position:relative;
+  width:100%;
+  top:-40px;
+  color:white;
+  text-align:center;
+  background-color: #3E6BB3;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  opacity:.95;
+
+}
+
+.double-wide-individual-box{
+  width:540px;
+}
+
+#activity-heading{
+    padding-bottom: 15px;
+    text-align: center;
+    background-color: #FF9147;
+    padding-top: 15px;
+    box-shadow:0px 1px 0px #dde0e7;
+
+}
+
+#activity-heading h2{
+  margin:0;
+}
+
+#activity-container{
+    padding: 20px;
+    width: 900px;
+    margin-left: 25px;
+    display: inline-block;
+    border: 3px solid #e0e3ec;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
+
+/* Title bar colours for categories */
+
+#snowsports{
+  background-color:#FF7068;
+
+}
+#hiking{
+  background-color: #50C5B1;
+
+}
+#offroading{
+  background-color: #FFA568;
+
+}
+#watersports{
+  background-color: #5F80CB;
+}
+#biking{
+  background-color:#97EC60;
+}
+
+.activity-text{
+    position: relative;
+}
+/*refernce jagged edge border: http://www.w3schools.com/cssref/css3_pr_border-image.asp*/
+.jaggededges {
+    border: 20px solid transparent;
+    padding: 10px;
+    -webkit-border-image: url(../img/activities/jagged.png) 30 round; /* Safari 3.1-5 */
+    -o-border-image: url(../img/activities/jagged.png) 30 round; /* Opera 11-12.1 */
+    border-image: url(../img/activities/jagged.png) 30 round;
+    border-left:none;
+    border-right:none;
+    border-image-outset: 0.5;
+}
+#receipt{
+  height: 300px;
+  width:280px;
+  background-color:white;
+}
+
+#reciept-border{
+  padding:18px;
+  display: inline-block;
+  position: relative;
+  vertical-align:top;
+  margin-top:20px;
+  right:-60px;
+  background-color:#e0e3ec;
+  font-family: "Lucida Sans Typewriter", "Lucida Console", monaco, "Bitstream Vera Sans Mono", monospace; /* refernce font:http://www.cssfontstack.com/Lucida-Sans-Typewriter*/
+}
+
+
+/*reciept header*/
+#receipt h2,h3{
+  margin:0;
+  text-align:center;
+  border-bottom:3px dotted;
+
+}
+
+#receipt table{
+  line-height: 30px;
+    text-align: left;
+    margin-top: 30px;
+    width:100%;
+    border-collapse:collapse;
+}
+tr.table-colour2{
+  background-color: #e0e3ec;
+}
+#border-price{
+  border-top:3px dotted;
+  margin-top:15px;
+
+}
+
+input#checkout-button {
+    margin-top: 15px;
+    width: 100%;
+    padding: 15px;
+    border: 1px solid white;
+    cursor:pointer;
+    font-weight:bolder;
+    background-color: #50c5b3;
+    color:white;
+}
+
+input#checkout-button:hover {
+    background-color:rgb(48,172,151);
+}
+
+#activity-refine{
+  margin-left:792px;
+  margin-top:10px;
+}
+/*second part of activity page*/
+
+.sub-activity-box {
+    height: 400px;
+    width: 250px;
+
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 35px;
+    -webkit-box-shadow: 0px 0px 9px 1px rgba(67,79,77,1);
+  -moz-box-shadow: 0px 0px 9px 1px rgba(67,79,77,1);
+  box-shadow: 0px 0px 9px 1px rgba(67,79,77,1);
+}
+.sub-activity-img{
+  height:200px;
+  width:250px;
+}
+
+.sub-activity-title{
+height:40px;
+position:relative;
+top:-4px;
+text-align:center;
+padding-top:20px;
+font-size:20px;
+
+}
+.activity-text{
+  position:relative;
+  color:white;
+
+}
+.sub-activity-description{
+  padding-left:5px;
+  height: 80px;
+}
+.sub-activity-price-book{
+  margin-left:20px;
+  font-size:25px;
+  margin-bottom:5px;
+}
+.book-activity{
+margin-left:55px;
+width:100px;
+height:30px;
+background-color:#00AEF3;
+border:none;
+color:white;
+cursor:pointer;
+}
+
+
+.hidden{
+  display:none;
+}
+
+
+#receipt tr:hover{
+  background-color:#aaa;
+}
+
+/* ===== Breadcrumbs =========*/
+#breadcrumb-list{
+  margin:0;
+  list-style-type: none;
+  background-color:#f5f6f8;
+
+}
+
+#breadcrumb-list .breadcrumb{
+  display:inline;
+  padding:5px;
+  font-size: 25px;
+}
+#breadcrumb-container{
+  height:10px;
+
+}
+.breadcrumb-link{
+  font-size: 25px;
+  color:black;
+}
+.breadcrumb span{
+  padding-left: 5px;
+}
+.current{
+  text-decoration: underline;
+}
+/*=========================*/
+/* responsive navbar*/
+.res-list{
+    list-style-type: none;
+    margin: 0 auto;
+    width: 100%;
+    background-color: #3e3b3b;
+    padding:0;
+}
+
+a.res-link {
+    color: white;
+    font-size: 30px;
+    padding-left:50px;
+}
+
+li.res-item {
+    border: 1px solid white;
+}
+
+
+
+
+
+#skip-button{
+    width: 300px;
+    margin: 0 auto;
+    position: relative;
+    left: 340px;
+    bottom:10px;
+    margin-top: 20px;
+}
+
+#skip-button input{
+    width:100%;
+    padding:15px;
+    border:0;
+    cursor:pointer;
+    background-color:#FF9147;
+    color:white;
+    font-size: 15px;
+}
+
+
+#back-button {
+    width: 300px;
+    position: relative;
+    bottom: 60px;
+    margin-left: 25px;
+}
+
+#back-button input{
+    width:100%;
+    padding:15px;
+    border:0;
+    cursor:pointer;
+    background-color:/*rgb(247, 107, 106)*/rgb(48,172,151);
+    color:white;
+    font-size: 15px;
+}
+
+
+
+/* Media queries */
+@media screen and (max-device-width: 768px){
+    #slider{
+        display:none; /*Dont show the slider for small screens*/
+    }
+
+    /*Show icons on the reciepts */
+    .hidden{
+        display:inline;
+        color:red;
+    }
+
+    /*reposition the skip button*/
+    #skip-button{
+        display:inline-block;
+        left:250px;
+        top:100px;
+        margin:0;
+    }
+
+
+    #back-button{
+        display:inline-block;
+        margin-left:0;
+        top: 150px;
+        left: -53px;
+    }
+
+}
+body
+{
+margin:0;
+color:white;
+background:black;
+font-family:Arial;
+}
+a
+{
+color:white;
+}
+
+#header
+        {
+        position:fixed;
+        background-color:#f11111;
+        text-align:center;
+        width:100%;
+        height:50px;
+	}
+#first
+{
+width:100%;
+height:1000px;
+background-image:url('/assets/newbackground.jpg');
+background-repeat:no-repeat;
+//background-attachment:fixed;
+//background-size:100%;
+background-size: cover;
+}
+.breakblue
+{
+text-align:center;
+width:100%;
+height:200px;
+background-color:#5e97ab;
+}
+.breakorange
+{
+text-align:center;
+width:100%;
+height:200px;
+background-color:orange;
+}
+
+.centered {
+position:absolute;
+  top: 45%;
+  left: 45%;
+  margin-top: -50px;
+  margin-left: -230px;
+}
+.welcome
+{
+cursor:pointer;
+width:600px;
+text-align:center;
+height:100px;
+font-size:30px;
+font-family:Tamoha;
+color:#fff;
+   -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: #bbb;
+
+}
+#faded, #faded2
+{
+font-size:26px;
+display:none;
+}
+
+input[type=text], input[type=password], input[type=email] {height: 25px; width:500px;}
+
+#can
+{
+background:#68c0e6;
+width:1000px;
+float:left;
+padding:0px;	
+}
+#leftside
+        {
+        background-color:#5e97ab;
+        text-align:center;
+        width:350px;
+        height:604px;
+        float:left;
+        }
+#second
+{
+width:100%;
+height:1000px;
+background:#ccc;
+background-image:url('/assets/tiled.jpg');
+}
+#third
+{
+text-align:center;
+background-color:#fff;
+width:100%;
+height:600px;
+color:black;
+}
+#fourth
+{
+width:100%;
+height:1000px;
+background:#000;
+}
+#newcontainer
+{
+margin: 0 auto;
+width:1400px;
+}
+.slidercontainer
+{
+margin: 0 auto;
+width:900px;
+height:300px;
+}
+#pname
+{
+color:white;
+font-size:24px;
+}
+#pimage
+{height:150px;}
+#pdesc
+{
+margin: 0 auto;
+width:300px;
+color:white;
+height:200px;
+}
+#plink
+{
+background-color:#378;
+opacity:1.0;
+border-radius:10px;
+width:170px;
+height:20px;
+margin:0 auto;
+color:white;
+padding:20px;
+}
+#flightcontainer
+{
+padding:20px;
+border-radius:30px;
+width:75%;
+background:#222;
+opacity:0.9;
+overflow:auto;
+min-height:600px;
+margin:0 auto;
+}
+#flighthead
+{
+color:white;
+border-top-right-radius:30px;
+border-top-left-radius:30px;
+border-bottom:10px solid #000;
+padding-top:20px;
+font-size:30px;
+height:50px;
+text-align:center;
+}
+#flightleft
+{
+margin:0 auto;
+min-width:500px;
+padding-left:2%;
+width:53%;
+height:500px;
+float:left;
+color:white;
+}
+#flightright
+{
+margin:0 auto;
+min-width:500px;
+border-bottom-right-radius:30px;
+width:45%;
+height:500px;
+float:left;
+}
+.flyingtext
+{
+float:left;
+width:100px;
+}
+#ones, #outwardj, #returnj, #flightdatesoneway, #flightdatesreturn
+{
+display:none;
+}
+#flightrightcontent
+{
+text-align:center;
+font-size:20px;
+height:450px;
+}
+#flightrightskip
+{
+text-align:right;
+height:50px;
+}
+.skip
+{
+background-color:#fff;
+padding:6px;
+font-weight:bold;
+border:3px solid black;
+}
+.skip:hover
+{
+cursor:pointer;
+background-color:#ff0;
+padding:6px;
+font-weight:bold;
+border:3px solid black;
+}
+.spacing
+{
+float:left;
+margin-right:15px;
+}
+#cheap
+{
+background-color:#cfc;
+padding:6px;
+font-weight:bold;
+border:3px solid black;
+margin-left:20px;
+margin-right:20px;
+}
+#fancy
+{
+background-color:#ffc;
+padding:6px;
+font-weight:bold;
+border:3px solid black;
+margin-left:20px;
+margin-right:20px;
+}
+#flightdetails, #flightdetails2, #flightdetails3, #flightdetails4
+{
+background-color:white;
+height:92px;
+border-top:3px solid black;
+border-bottom:3px solid black;
+margin:2px;
+margin-bottom:5px;
+}
+.airline
+{
+text-align:center;
+position:relative;
+top:27px;
+float:left;
+color:#020;
+width:15%;
+}
+.airlinelogo
+{
+position:relative;
+top:18px;
+float:left;
+color:#020;
+width:15%;
+}
+.routereturn
+{
+font-weight:bold;
+position:relative;
+top:7px;
+float:left;
+font-size:14px;
+color:#002;
+text-align:center;
+width:40%;
+}
+.routeoneway
+{
+font-weight:bold;
+position:relative;
+top:32px;
+float:left;
+font-size:14px;
+color:#002;
+text-align:center;
+width:40%;
+}
+.price
+{
+position:relative;
+top:37px;
+color:black;
+float:left;
+width:20%;
+font-weight:bold
+}
+.rad
+{
+position:relative;
+top:37px;
+color:black;
+float:left;
+width:10%;
+font-weight:bold
+}
+.searcher
+{
+color:black;
+}
+#aboutdarken
+{
+display:none;
+opacity:0.4;
+background-color:black;
+position:fixed;
+width:100%;
+height:100%;
+top:0px;
+left:0px;
+}
+#about
+{
+display:none;
+border:10px solid #420;
+background-color:white;
+position:fixed;
+width:680px;
+height:680px;
+top:50%;
+left:50%;
+margin-left:-340px;
+margin-top:-340px;
+color:black;
+font-size:20px;
+}
+.abouthead
+{
+padding-top:20px;
+float:left;
+width:360px;
+text-align:center;
+font-size:30px;
+}
+.aboutleftpic, .aboutrightpic
+{
+float:left;
+width:160px;
+}
+.abouttext
+{
+padding:50px;
+}
+.aboutsig
+{
+float:left;
+width:200px;
+height:50px;
+}
+.aboutgap
+{
+float:left;
+width:100px;
+height:50px;
+}
+.threethingscontain
+{
+margin:0 auto;
+width:70%;
+}
+.threethings
+{
+background-color:#fff;
+float:left;
+border:10px solid white;
+width:30%;
+min-width:300px;
+margin:5px;
+height:400px;
+}
+.threethings:hover
+{
+border:10px solid orange;
+width:30%;
+min-width:300px;
+margin:5px;
+height:400px;
+}
+#sun{
+  width:40px;
+  height:40px;
+  position:absolute;
+  top:1000px;
+  left:280px;
+}
+.storeitem
+{
+margin-top:15%;
+width:70%;
+}
+.storeitem:hover
+{
+margin-top:10%;
+width:80%;
+
+}
+.threethingscontain
+{
+font-size:30px;
+text-align:center;
+}
+#cover
+{
+z-index:-1000;
+opacity:0.0;
+position:absolute;
+top:0px;
+background:white;
+width:100%;
+height:1000px;
+}
+.guidehead
+{
+font-size:40px;
+font-family:Tamoha;
+}
+.line
+{
+margin:0 auto;
+background-color:black;
+height:2px;
+width:60%;
+}
+#searchbar
+        {
+        width:500px;
+        margin: 0 auto;
+        text-align:left;
+        overflow:hidden;
+        }
+#scon
+        {
+        width:500px;
+        margin: 0 auto;
+        }
+#searchpop
+        {
+        position:absolute;
+        z-index:1000;
+        display:none;
+        width:500px;
+        margin: 0 auto;
+        background-color:#fff;
+        text-align:left;
+        color:blue;
+        }
+.highlight
+{
+background-color:#ddd;
+color:black;
+width:100%;
+}
+.normal
+{
+background-color:#fff;
+color:black;
+width:100%;
+}
+
+.leftarrow
+{
+float:left;
+width:75px;
+height:300px;
+line-height:110px;
+}
+.rightarrow
+{
+float:left;
+width:75px;
+height:300px;
+line-height:110px;
+}
+#mySlider
+{
+float:left;
+}
+.clickable
+{
+cursor:pointer;
+}
+#sliderdarken
+{
+z-index:-999;
+display:none;
+opacity:0.6;
+background-color:black;
+position:fixed;
+width:100%;
+height:100%;
+top:0px;
+left:0px;
+}
+#sliderpop
+{
+z-index:-998;
+display:none;
+border:10px solid #420;
+background-color:white;
+position:fixed;
+width:980px;
+height:780px;
+top:50%;
+left:50%;
+margin-left:-490px;
+margin-top:-390px;
+color:black;
+font-size:20px;
+text-align:left;
+}
+.logoleft{
+padding-top:20px;
+padding-bottom:30px;
+}
+
+.guidecontent
+{
+padding:20px;
+}
+
+#experiment
+{
+  #background-color:white;
+  #min-height:300px;
+  #min-width:400px;
+}
+.new_booking .field
+{
+display:none;
+}
+#error_explanation
+{
+  color:black;
+
+}
+input[type=submit] 
+{
+background-color:#378;
+opacity:1.0;
+border-radius:10px;
+width:170px;
+height:20px;
+margin:0 auto;
+color:white;
+
+text-align:center;
+}
+
+#formcontainer
+{
+width:800px;
+margin:0 auto;
+background-color:#555;
+color:white;
+padding:15px;
+border:8px solid #420;
+}
+#formcontainer a:visited
+{
+color:white;
+}
+
+.gocenter
+{
+text-align:center;
+}
+
+@media (max-width: 800px) {
+.link1, .topbar, .linksbar
+{
+width:100%;
+height:30px;
+padding:4px;
+font-size:20px;
+border-bottom:1px solid black;
+}
+.logoleft
+{
+height:60px;
+width:100%;
+float:left;
+padding-bottom:20px;
+}
+.linksbar
+{
+position:static;
+}
+.topbar
+{
+display:none;
+}
+#can
+{
+clear:both;
+}
+#second
+{
+height:100%;
+}
+.leftarrow,.rightarrow{
+width:30px;
+}
+#sliderpop
+{
+width:650px;
+height:1200px;
+top:10px;
+left:10px;
+margin-left:0px;
+margin-top:0px;
+font-size:16px;
+}
+}

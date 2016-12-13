@@ -13,12 +13,20 @@ Rails.application.routes.draw do
   resources :orders
   resources :users
   resources :products
+  get "landing", to: "landing#index"
+  get  '/signup',  to: 'users#new'
+  post '/signup',  to: 'users#create'
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
+
+  root 'landing#index'
 
   # useful temp catch-all route that will process requests based on url structure /controller/action/id/format
   match ':controller(/:action(/:id(.:format)))', :via => :get
 
   # define root controller and action 
-  root "home#index"
+  #root "home#index"
 
 
   # The priority is based upon order of creation: first created -> highest priority.

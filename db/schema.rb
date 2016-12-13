@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161129222406) do
+ActiveRecord::Schema.define(version: 20161212174604) do
 
   create_table "accommodations", force: :cascade do |t|
     t.string   "name",        limit: 100,                  null: false
@@ -124,12 +124,13 @@ ActiveRecord::Schema.define(version: 20161129222406) do
     t.string   "firstname",       limit: 50
     t.string   "surname",         limit: 50
     t.string   "email",           limit: 50,                  null: false
-    t.string   "hashed_password", limit: 50
+    t.string   "password",        limit: 50
     t.string   "avatar",          limit: 250
     t.string   "country",         limit: 50
     t.boolean  "is_admin",                    default: false, null: false
     t.datetime "created_at",                                  null: false
     t.datetime "updated_at",                                  null: false
+    t.string   "password_digest", limit: 255
   end
 
   add_index "users", ["username"], name: "index_users_on_username", using: :btree

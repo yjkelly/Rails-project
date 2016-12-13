@@ -13,7 +13,7 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: new_horizons_development
+  username: new_horizons
   password: LYH5WRkYv3
   host: localhost
 
