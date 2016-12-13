@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @basket_item.quantity %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @basket_item.status %>
+</p>
+
+<%= link_to 'Edit', edit_basket_item_path(@basket_item) %> |
+<%= link_to 'Back', basket_items_path %>
