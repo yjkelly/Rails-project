@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :destinations
   resources :accommodations
   resources :activities
-  resources :activity_categories
+  resources :activity_categories, only: [:list]
   resources :basket_items, only: [:create, :update, :destroy]
   resources :store, only: [:index]
   resources :products
@@ -24,9 +24,11 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
 
+
   root 'landing#index'
 
   # useful temp catch-all route that will process requests based on url structure /controller/action/id/format
+  match 'activity_categories/list' => 'activity_categories/list', :via => :get
   match ':controller(/:action(/:id(.:format)))', :via => :get
 
   # define root controller and action 

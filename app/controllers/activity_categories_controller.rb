@@ -61,6 +61,12 @@ class ActivityCategoriesController < ApplicationController
     end
   end
 
+  # GET /activity_categories/list/
+  def list
+    @booking = current_booking
+    @activity_categories = ActivityCategory.all
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_activity_category

@@ -1,6 +1,5 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
-
   # GET /bookings
   # GET /bookings.json
   def index
@@ -24,15 +23,18 @@ class BookingsController < ApplicationController
   # POST /bookings
   # POST /bookings.json
   def create
+
     @booking = Booking.new(booking_params)
 
     respond_to do |format|
       @destinations=Destination.all
-      session[:destination] = @destinations[@booking.destination_id].name;
+      session[:destination] = @destinations[@booking.destination_id].name
       if @booking.save
-        format.html { redirect_to @booking, notice: 'Booking was successfully created.' }
+        session[:booking_id] = @booking.id
+        format.html { redirect_to url_for(:controller => 'activity_categories', :action => :list) }
         format.json { render :show, status: :created, location: @booking }
       else
+        session[:booking_id] = @booking.id
         format.html { render :new }
         format.json { render json: @booking.errors, status: :unprocessable_entity }
       end
@@ -42,15 +44,38 @@ class BookingsController < ApplicationController
   # PATCH/PUT /bookings/1
   # PATCH/PUT /bookings/1.json
   def update
-    respond_to do |format|
-      if @booking.update(booking_params)
-        format.html { redirect_to @booking, notice: 'Booking was successfully updated.' }
-        format.json { render :show, status: :ok, location: @booking }
-      else
-        format.html { render :edit }
-        format.json { render json: @booking.errors, status: :unprocessable_entity }
-      end
+    @booking = current_booking
+    @booking.update(booking_params)
+    #check for other parameters from form
+    start_date_str = params[:booking][:start_date]
+    #check is the date like 12/12/2016 or 12-12-2016
+    if start_date_str.include? '-'
+      start_date = Date.parse(start_date_str)
+    else
+      start_date = Date.strptime(start_date_str,'%m/%d/%Y')
     end
+
+    end_date_str = params[:booking][:end_date]
+    if end_date_str.include? '-'
+      end_date = Date.parse(end_date_str)
+    else
+      end_date = Date.strptime(end_date_str,'%m/%d/%Y')
+    end
+    @booking.update({:start_date=> start_date,
+                     :end_date => end_date,
+                     :number_guests => params[:booking][:number_guests].to_i,
+                     :price => @booking.price
+                    })
+    session[:booking_id] = @booking.id
+    #respond_to do |format|
+    #  if @booking.update(booking_params)
+    #    format.html { redirect_to @booking, notice: 'Booking was successfully updated.' }
+    #    format.json { render :show, status: :ok, location: @booking }
+    #  else
+    #    format.html { render :edit }
+     #   format.json { render json: @booking.errors, status: :unprocessable_entity }
+    #  end
+    #end
   end
 
   # DELETE /bookings/1
@@ -63,14 +88,33 @@ class BookingsController < ApplicationController
     end
   end
 
+  # Renders partial view for the form box visible on activities and accommodation pages
+  def greybox
+    @booking = current_booking
+    respond_to do |format|
+      format.html do
+        render :partial => "bookings/greybox"
+      end
+    end
+  end
+
+
+  def receipt
+    @booking = current_booking
+    @booked_activities = BookingActivity.where(:booking_id => @booking.id).map{ |ba|  ba.activity_id }
+    @activities = Activity.find(@booked_activities)
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_booking
       @booking = Booking.find(params[:id])
+
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def booking_params
-      params.require(:booking).permit(:status, :destination_id,:price, :number_guests, :start_date, :end_date)
+      params.require(:booking).permit(:status, :destination_id,:price, :number_guests, :start_date, :end_date, :accommodation_id)
     end
 end

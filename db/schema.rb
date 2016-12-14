@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161213152907) do
+ActiveRecord::Schema.define(version: 20161212174604) do
 
   create_table "accommodations", force: :cascade do |t|
     t.string   "name",        limit: 100,                  null: false
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20161213152907) do
   create_table "activity_categories", force: :cascade do |t|
     t.string   "name",        limit: 25,    null: false
     t.text     "description", limit: 65535
+    t.string   "picture",     limit: 250
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
   end
@@ -58,14 +59,10 @@ ActiveRecord::Schema.define(version: 20161213152907) do
   end
 
   create_table "booking_activities", force: :cascade do |t|
-    t.integer  "booking_id",    limit: 4
-    t.integer  "activity_id",   limit: 4
-    t.string   "status",        limit: 50
-    t.integer  "number_guests", limit: 2
-    t.date     "start_date"
-    t.date     "end_date"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.integer  "booking_id",  limit: 4
+    t.integer  "activity_id", limit: 4
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
   create_table "bookings", force: :cascade do |t|
