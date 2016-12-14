@@ -40,10 +40,14 @@
     <%= f.label :country %><br>
     <%= f.text_field :country %>
   </div>
+     <% if logged_in? %>
+     <% if current_user.is_admin %>
   <div class="field">
     <%= f.label :is_admin %><br>
     <%= f.check_box :is_admin %>
   </div>
+  <% end %>
+  <%end %>
   <div class="actions">
     <%= f.submit %>
   </div>

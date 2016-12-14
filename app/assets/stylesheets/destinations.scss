@@ -1350,6 +1350,11 @@ color:white;
 padding:15px;
 border:8px solid #420;
 }
+#formcontainer label
+{
+float:left;
+min-width:140px;
+}
 #formcontainer a:visited
 {
 color:white;
@@ -1373,6 +1378,15 @@ border:10px solid #420;
 padding:30px;
 font-size:18px;
 color:white;
+}
+#activity-container .new_booking_activity
+{
+  width:280px;
+  display:inline;
+}
+#showusers th
+{
+  padding-right:20px;
 }
 #landingwelcome a:visited, #formcontainer a:visited, #showusers a:visited
 {

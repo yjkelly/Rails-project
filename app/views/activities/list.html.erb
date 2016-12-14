@@ -18,11 +18,12 @@
     </ol>
   </div>
 </div>
+<%= render :partial => "bookings/greybox"%>
 <div id="activity-heading">
   <h2>We found <span id="activity-num"><%= @activities.size %></span> <span id="activity-type"><%= @category.name %></span> activities in <span id="location-activities"><%= @dest %></span> </h2>
 </div>
 <div id="activity-container">
-<%= render :partial => "bookings/greybox"%>
+
     <% @activities.each do |activity| %>
         <%= form_for @booking_activity, remote: true do |f| %>
           <div class="sub-activity-box">
