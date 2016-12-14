@@ -1,0 +1,50 @@
+<div id="slider">
+  <div id="container">
+    <div class="container-overlay">
+      <h2>Activities</h2>
+    </div>
+    <div class="slide-div" id="item-1">
+      <p>Experience something <span id="greentext">new</span></p>
+    </div>
+    <div class="slide-div green" id="item-2">
+      <p>“The core of mans' spirit comes from new <span id="orangetext">experiences</span>.”
+        <br>― Christopher McCandless </p>
+    </div>
+  </div>
+  <div id="slider-controls">
+    <ol>
+      <li id="slide-1" class="fa fa-dot-circle-o"></li>
+      <li id="slide-2" class="fa fa-circle-o"></li>
+    </ol>
+  </div>
+</div>
+<div id="activity-heading">
+  <h2>We found <span id="activity-num"><%= @activities.size %></span> <span id="activity-type"><%= @category.name %></span> activities in <span id="location-activities"><%= @dest %></span> </h2>
+</div>
+<div id="activity-container">
+<%= render :partial => "bookings/greybox"%>
+    <% @activities.each do |activity| %>
+        <%= form_for @booking_activity, remote: true do |f| %>
+          <div class="sub-activity-box">
+            <div class="sub-img-activity">
+            <%= image_tag(activity.picture, class:"sub-activity-img" ) %>
+          </div>
+            <div class="sub-activity-title">
+              <span class="activity-text" ><%= activity.name%></span>
+            </div>
+            <div class="sub-activity-description">
+              <p><%= activity.description%></p>
+            </div>
+            <div class="sub-activity-price-book">
+              <span class="fa fa-eur"><%= activity.price%></span>
+              <%= f.submit "Add to Cart", class: "book-activity" %>
+            </div>
+          </div>
+        <%= f.hidden_field :activity_id, value: activity.id %>
+
+
+    <% end %>
+    <% end %>
+
+</div>
+<%= render :partial => "bookings/receipt"%>

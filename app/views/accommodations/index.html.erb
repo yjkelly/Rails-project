@@ -1,35 +1,69 @@
-<p id="notice"><%= notice %></p>
+<% content_for :css do %>
+    <%= stylesheet_link_tag "/css/accommodation.css" %>
+<% end %>
 
-<h1>Listing Accommodations</h1>
+<div id="slider">
+  <div id="container">
+    <div class="container-overlay">
+      <h2>Accommodation</h2>
+    </div>
+    <div class="slide-div" id="item-1">
+      <p>Experience something <span id="greentext">new</span></p>
+    </div>
+    <div class="slide-div green" id="item-2">
+      <p>“The core of mans' spirit comes from new <span id="orangetext">experiences</span>.”
+        <br>― Christopher McCandless </p>
+    </div>
+  </div>
+  <div id="slider-controls">
+    <ol>
+      <li id="slide-1" class="fa fa-dot-circle-o"></li>
+      <li id="slide-2" class="fa fa-circle-o"></li>
+    </ol>
+  </div>
+</div>
+<%= render :partial => "bookings/greybox" -%>
+<!-- Render form -->
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Picture</th>
-      <th>Type</th>
-      <th>Price</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div id="activity-heading">
+  <h2>We found <span id="activity-num"><%=@accommodations.size %></span> accommodations in <span id="location-activities"><%= @destination %></span> </h2>
+</div>
+<div id="activity-refine">
+  <label for="sortby">Sort results</label>
+  <select name="sortby" id="sort" onchange="updateAccommodation()">
+    <option value="asc"> Price (ASC)</option>
+    <option value="desc">Price (DESC)</option>
+  </select>
+</div>
 
-  <tbody>
-    <% @accommodations.each do |accommodation| %>
-      <tr>
-        <td><%= accommodation.name %></td>
-        <td><%= accommodation.description %></td>
-        <td><%= accommodation.picture %></td>
-        <td><%= accommodation.type %></td>
-        <td><%= accommodation.price %></td>
-        <td><%= link_to 'Show', accommodation %></td>
-        <td><%= link_to 'Edit', edit_accommodation_path(accommodation) %></td>
-        <td><%= link_to 'Destroy', accommodation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div id="activity-container">
+  <% @accommodations.each do |accommodation| %>
 
-<br>
+      <%= form_for @booking, remote: true do |f| %>
+          <div class="sub-activity-box">
+            <div class="sub-img-activity">
+              <%= image_tag(accommodation.picture, class: "sub-activity-img")%>
+            </div>
+            <div class="sub-activity-title">
+              <span class="activity-text" ><%= accommodation.name %></span>
+            </div>
+            <div class="sub-activity-description">
+              <p><%= accommodation.description %></p>
+            </div>
+            <div class="sub-activity-price-book">
+              <span class="fa fa-eur"><%= accommodation.price%></span>
+            </div>
+            <%= f.hidden_field :accommodation_id, value: accommodation.id %>
+            <%= f.submit "Add to Cart", class: "book-activity" %>
+          </div>
+      <% end %>
 
-<%= link_to 'New Accommodation', new_accommodation_path %>
+
+  <% end %>
+
+</div>
+
+
+<% content_for :javascript do %>
+    <%= javascript_include_tag "/js/accommodation.js" %>
+<% end %>

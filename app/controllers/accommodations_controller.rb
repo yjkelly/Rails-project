@@ -4,7 +4,10 @@ class AccommodationsController < ApplicationController
   # GET /accommodations
   # GET /accommodations.json
   def index
+    @booking = current_booking
+    puts "Booking is: #{@booking}"
     @accommodations = Accommodation.all
+    @destination = current_dest
   end
 
   # GET /accommodations/1

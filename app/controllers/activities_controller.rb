@@ -4,7 +4,32 @@ class ActivitiesController < ApplicationController
   # GET /activities
   # GET /activities.json
   def index
-    @activities = Activity.all
+    if logged_in?
+      if @current_user.is_admin
+        @activities = Activity.all
+      else
+        flash[:danger] = "You do not have permission to access this page"
+        redirect_to root_path
+      end
+    else
+      flash[:danger] = "Please log in."
+      redirect_to root_path
+    end
+
+  end
+
+  #Shows all activities for a given activity
+  # GET /activities/list/1
+  def list
+    @category =   ActivityCategory.find(params[:id])
+    @activities = Activity.where(activity_category_id: params[:id])
+    @booking_activity = current_booking.booking_activities.new
+    @booking =current_booking
+    @booked = BookingActivity.where(:booking_id => @booking.id).map{ |ba|  ba.activity_id }
+    @act= Activity.find(@booked)
+    @dest = current_dest
+    @acc = Accommodation.find_by_id(@booking.accommodation_id)
+>>>>>>> 20bdc6bb3093687e6fb98acb2687b44f217c1a17
   end
 
   # GET /activities/1

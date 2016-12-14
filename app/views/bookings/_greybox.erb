@@ -1,0 +1,29 @@
+
+<%= form_for @booking, remote: true do |f| %>
+    <div id="grey-box-form">
+  <div id="form-box">
+    <form>
+      <div class="form-item">
+        <label for="destination-box">Destination</label>
+        <%= select_tag("destination-box", options_from_collection_for_select(Destination.all, :id, :name, :selected => @booking.destination_id))  %>
+      </div>
+      <div class="form-item">
+        <label for="booking_start_date">Arrival</label>
+
+        <%= f.text_field(:start_date, :class=>"date-box-size",:value=> @booking.start_date) %>
+      </div>
+      <div class="form-item">
+        <label for="departure-box">Departure</label>
+        <%= f.text_field(:end_date, :class=>"date-box-size",:value=> @booking.end_date) %>
+      </div>
+      <div class="form-item">
+        <label for="number-of-guests">Persons</label>
+        <%= f.number_field(:number_guests, :value=>@booking.number_guests, :min=>1)%>
+      </div>
+      <div id="form-button">
+          <%= f.submit "Search", id: "search-button" %>
+      </div>
+    </form>
+  </div>
+</div>
+<% end %>

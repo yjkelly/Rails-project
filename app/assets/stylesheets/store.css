@@ -338,3 +338,6 @@ width: auto;
 #products_table a{
 color: aqua;
 }
+.basket_total{
+float: right;
+}

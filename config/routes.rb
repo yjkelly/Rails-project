@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :destinations
   resources :accommodations
   resources :activities
-  resources :activity_categories
+  resources :activity_categories, only: [:list]
   resources :basket_items, only: [:create, :update, :destroy]
   resources :store, only: [:index]
   resources :products
@@ -26,6 +26,7 @@ Rails.application.routes.draw do
 
   root 'landing#index'
 
+  match 'activity_categories/list' => 'activity_categories/list', :via => :get
   # useful temp catch-all route that will process requests based on url structure /controller/action/id/format
   match ':controller(/:action(/:id(.:format)))', :via => :get
 

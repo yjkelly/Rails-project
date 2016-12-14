@@ -7,6 +7,3 @@ Known bugs;
 	- Update quantity on store right side div will only work once per reload
 
 
-	Products;
-
-	- Pages for create, show and edit a product cause a neverending loop because of a mysterious get request to /products/assets/...
