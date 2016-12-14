@@ -1,5 +1,6 @@
 == README
 
+<<<<<<< HEAD
 Known bugs;
 
 	Store;
@@ -10,3 +11,31 @@ Known bugs;
 	Products;
 
 	- Pages for create, show and edit a product cause a neverending loop because of a mysterious get request to /products/assets/...
+=======
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
+
+
+Please feel free to use a different markup language if you do not plan to run
+<tt>rake doc:app</tt>.
+>>>>>>> de48e612dbe30ac75148adea6e0ae9aa85f78c24
