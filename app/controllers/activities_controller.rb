@@ -29,7 +29,6 @@ class ActivitiesController < ApplicationController
     @act= Activity.find(@booked)
     @dest = current_dest
     @acc = Accommodation.find_by_id(@booking.accommodation_id)
->>>>>>> 20bdc6bb3093687e6fb98acb2687b44f217c1a17
   end
 
   # GET /activities/1

@@ -95,3 +95,12 @@ bower.json
 
 # Ignore Byebug command history file.
 .byebug_history
+
+# Ignore Gemfile.lock
+Gemfile.lock
+
+# Ignore db schema
+db/schema.rb
+
+#Ignore dev logs
+log/development.log

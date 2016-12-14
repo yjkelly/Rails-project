@@ -67,7 +67,7 @@ Activity.create(activity_category:biking, name: "Intermediate Biking", descripti
 Activity.create(activity_category:biking, name: "Extreme Biking", description:"Experience our off road biking tour with rough terrain and extreme conditions", picture:"/img/activities/extremebiking.jpg", price:1000)
 Activity.create(activity_category:offroading, name: "Guided Tour", description:"Take our guided tour in our 4x4 vehicles, no path is too treacherous", picture: "/img/activities/extremebiking.jpg", price:500)
 Activity.create(activity_category:offroading, name: "Mountain Offroad", description:"Experince our mountain offroad tour and climb the peaks and valleys", picture:"/img/activities/mountainoffroad.jpeg", price:800)
-Activity.create(activity_category:offroading, name: "River Offroad", description: "Follow the river to its source in our new offroad tour", price:1000, pitcure:"/img/activities/river-offroad.jpg")
+Activity.create(activity_category:offroading, name: "River Offroad", description: "Follow the river to its source in our new offroad tour", price:1000, picture:"/img/activities/river-offroad.jpg")
 
 # Accommodation name, description , picture, type , price
 Accommodation.delete_all

@@ -7,3 +7,8 @@ Known bugs;
 	- Update quantity on store right side div will only work once per reload
 
 
+For discussion;
+
+	Assets;
+
+	- some css and js assets have been placed inside the public folder. These should really exist in the assets folder to make use of the Rails assets pipeline.
