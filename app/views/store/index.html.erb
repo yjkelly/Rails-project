@@ -1,39 +1,70 @@
-<div id="mainarea">
-		<br><p id="notice"><%= notice %></p>
-	<div id="store">
-		<div id="storetop">
-			<%= form_tag(:action => :index) do %>
-			  <%= select_tag "product_category", options_for_select(@product_categories.collect{ |c| [c.name, c.id] }) %>
-			  <%= submit_tag "Filter" %>
-			<% end %>
-		</div>
-	    <% @products.each do |product| %>
-	      <%= render "product_row", product: product, basket_item: @basket_item %>
-	    <% end %>
-	</div>
+<div id="breadcrumb-container">
+	<ul id="breadcrumb-list">
+	  <li class="breadcrumb"><%= link_to "Home", landing_path, class: "breadcrumb-link" %><span>&gt;&gt;</span></li>
+	  <li class="breadcrumb"><%= link_to "Activities", activities_path, class: "breadcrumb-link" %><span>&gt;&gt;</span></li>
+	  <li class="breadcrumb"><%= link_to "Accommodation", accommodations_path, class: "breadcrumb-link" %><span>&gt;&gt;</span></li>
+	  <li class="breadcrumb"><%= link_to "Store", '/store', class: "breadcrumb-link-current" %></li>
+	</ul>
+</div>
 
-	<div id="rightside">
-	<br/><br/>
-		<div id="orderheading">Store Basket</div><br><br>
-			<br>
-			  <% if @basket_items.size == 0 %>
-				  <p class="text-center">
-				    There are no items in your basket.
-				  </p>
-				<% else %>
-					  <% @basket_items.each do |basket_item| %>
-					    <%= render 'basket_row', product: basket_item.product, basket_item: basket_item, show_total: true %>
-					  <% end %>
-					<div class="basket_box">
-						<div class="basket_row">
-							<div style="float:left">
-				  				<%= button_to "Empty Basket", {controller: "basket_items", action: "destroy_all", remote: true}, {id: 'emptycart'} %>
-				  			</div>
-				  			<div style="float:right">
-				  				<h4 class="text-right">Basket Total: <span style="color: green"><%= number_to_currency @order.subtotal %></span></h4>
-				  			</div>
+<div id="slider">
+  <div id="container">
+    <div class="container-overlay">
+    <h2>Store</h2>
+  </div>
+    <div class="slide-div" id="item-1">
+      <p>Experience something <span id="greentext">new</span></p>
+    </div>
+    <div class="slide-div green" id="item-2">
+      <p>&quot;The core of mans' spirit comes from new <span id="orangetext">experiences</span>.&quot;
+        <br><br><br>- Christopher McCandless </p>
+    </div>
+  </div>
+  <div id="slider-controls">
+    <ol>
+      <li id="slide-1" class="fa fa-dot-circle-o"></li>
+      <li id="slide-2" class="fa fa-circle-o"></li>
+    </ol>
+  </div>
+</div>
+
+<div id="mainarea">
+	<br><p id="notice"><%= notice %></p>
+
+<div id="store">
+	<div id="storetop">
+		<%= form_tag(:action => :index) do %>
+		  <%= select_tag "product_category", options_for_select(@product_categories.collect{ |c| [c.name, c.id] }) %>
+		  <%= submit_tag "Filter" %>
+		<% end %>
+	</div>
+    <% @products.each do |product| %>
+      <%= render "product_row", product: product, basket_item: @basket_item %>
+    <% end %>
+</div>
+
+<div id="rightside">
+<br/><br/>
+	<div id="orderheading">Store Basket</div><br><br>
+		<br>
+		  <% if @basket_items.size == 0 %>
+			  <p class="text-center">
+			    There are no items in your basket.
+			  </p>
+			<% else %>
+				  <% @basket_items.each do |basket_item| %>
+				    <%= render 'basket_row', product: basket_item.product, basket_item: basket_item, show_total: true %>
+				  <% end %>
+				<div class="basket_box">
+					<div class="basket_row">
+						<div style="float:left">
+			  				<%= button_to "Empty Basket", {controller: "basket_items", action: "destroy_all", remote: true}, {id: 'emptycart'} %>
+			  			</div>
+			  			<div style="float:right">
+			  				<h4 class="text-right">Basket Total: <span style="color: green"><%= number_to_currency @order.subtotal %></span></h4>
 			  			</div>
 		  			</div>
-				<% end %>
-		</div>
+	  			</div>
+			<% end %>
 	</div>
+</div>
