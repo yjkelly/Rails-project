@@ -87,6 +87,8 @@ holddata="Data for the map page;================================================
 window.onload = function() {
 	updateCookie("destination",null);
     var c=document.getElementById("myCanvas");
+	if (c!=null)
+	{
     var ctx=c.getContext("2d");
     var img=document.getElementById("mapmono");
     ctx.drawImage(img,0,0,c.width,c.height);
@@ -149,13 +151,17 @@ window.onload = function() {
 		descriptionData3(cdesc[closest_place]);
 		destination=cnames[closest_place];
 		updateCookie("destination",cnames[closest_place].toLowerCase());
+		if (document.getElementById("booking_destination_id")!=null)
 		document.getElementById("booking_destination_id").value=closest_place;
 		//alert(closest_place);
 		//updateOptions();
-		document.getElementById("plink").color = "white";
+		//document.getElementById("plink").color = "white";
 		}
+      
 	}, false);
-};
+}
+		
+	};
 
 	function descriptionData3(place)
 	{
@@ -482,6 +488,8 @@ document.getElementById("sliderpop").style.zIndex="-1000";
 
 //Yvette's cool code idea for the sun
 $(document).ready(function(){
+	if (document.getElementById("sun")!=null)
+	{
   setTimeout(function(){
     $('#sun').animate({
       top:'64px'
@@ -517,6 +525,7 @@ document.getElementById("cover").style.zIndex = "-1000";
   setTimeout(function(){
 	updateHtml("imagechange","<img src='/assets/downarrowsun2.png' height=40px'>");
 	},5000);
+	}
 });
 $(document).ready(function(){
   $('#main-heading').animate({opacity:1},'slow');
@@ -540,6 +549,8 @@ function scrollback(){
 
 $(window).on("load", function() {
        	slidercanvas = document.getElementById('mySlider');
+       	if (slidercanvas!=null)
+       	{
        	slidercontext = slidercanvas.getContext('2d');
 	slidercanvas.addEventListener('click', function() {
 //	alert(mousePos.x);
@@ -607,6 +618,7 @@ $(window).on("load", function() {
 	//writeMessage(slidercanvas, message);
 	
         });
+       	}
 });
 
 function slideover(){
