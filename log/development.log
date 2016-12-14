@@ -1,0 +1,226 @@
+
+
+Started GET "/store" for ::1 at 2016-12-14 10:59:05 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by StoreController#index as HTML
+  [1m[35mOrder Load (0.0ms)[0m  SELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mProductCategory Load (2.0ms)[0m  SELECT `product_categories`.* FROM `product_categories`
+  [1m[36mProduct Load (0.5ms)[0m  [1mSELECT `products`.* FROM `products` WHERE `products`.`active` = 1[0m
+  Rendered store/_product_row.html.erb (90.6ms)
+  Rendered store/_product_row.html.erb (1.0ms)
+  Rendered store/_product_row.html.erb (1.0ms)
+  Rendered store/_product_row.html.erb (1.0ms)
+  Rendered store/_product_row.html.erb (1.0ms)
+  Rendered store/_product_row.html.erb (1.0ms)
+  Rendered store/_product_row.html.erb (1.0ms)
+  Rendered store/_product_row.html.erb (1.0ms)
+  Rendered store/_product_row.html.erb (1.0ms)
+  Rendered store/_product_row.html.erb (1.0ms)
+  Rendered store/_product_row.html.erb (1.0ms)
+  Rendered store/_product_row.html.erb (1.0ms)
+  Rendered store/_product_row.html.erb (1.0ms)
+  Rendered store/_product_row.html.erb (1.0ms)
+  Rendered store/_product_row.html.erb (1.0ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM `basket_items` WHERE `basket_items`.`order_id` = 1
+  [1m[36mBasketItem Load (1.0ms)[0m  [1mSELECT `basket_items`.* FROM `basket_items` WHERE `basket_items`.`order_id` = 1[0m
+  [1m[35mProduct Load (1.0ms)[0m  SELECT  `products`.* FROM `products` WHERE `products`.`active` = 1 AND `products`.`id` = 3 LIMIT 1
+  Rendered store/_basket_row.html.erb (2.0ms)
+  Rendered store/index.html.erb within layouts/application (605.8ms)
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM `basket_items` WHERE `basket_items`.`order_id` = 1[0m  [["order_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `basket_items`.* FROM `basket_items` WHERE `basket_items`.`order_id` = 1[0m  [["order_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `products`.* FROM `products` WHERE `products`.`active` = 1 AND `products`.`id` = 3 LIMIT 1  [["active", true], ["id", 3]]
+  Rendered layouts/_cart_text.html.erb (6.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+Completed 200 OK in 3487ms (Views: 3271.7ms | ActiveRecord: 19.0ms)
+
+
+Started GET "/assets/store/coleman-2-person-tent.jpg" for ::1 at 2016-12-14 10:59:24 +0000
+
+
+Started GET "/assets/store/coleman-3-person-tent.jpg" for ::1 at 2016-12-14 10:59:24 +0000
+
+
+Started GET "/assets/store/coleman-4-person-tent.jpg" for ::1 at 2016-12-14 10:59:24 +0000
+
+
+Started GET "/assets/store/coleman-8-person-tent.jpg" for ::1 at 2016-12-14 10:59:24 +0000
+
+
+Started GET "/assets/store/yodo-2-person-tent.jpg" for ::1 at 2016-12-14 10:59:24 +0000
+
+
+Started GET "/assets/store/berghaus-boots.jpg" for ::1 at 2016-12-14 10:59:24 +0000
+
+
+Started GET "/assets/store/hi-tec-boots.jpg" for ::1 at 2016-12-14 10:59:24 +0000
+
+
+Started GET "/assets/store/karrimor-boots.jpg" for ::1 at 2016-12-14 10:59:24 +0000
+
+
+Started GET "/assets/store/regatta-boots.jpg" for ::1 at 2016-12-14 10:59:24 +0000
+
+
+Started GET "/assets/store/campteck-sticks.jpg" for ::1 at 2016-12-14 10:59:24 +0000
+
+
+Started GET "/assets/store/mountaintop-sticks.jpg" for ::1 at 2016-12-14 10:59:24 +0000
+
+
+Started GET "/assets/store/trekrite-sticks.jpg" for ::1 at 2016-12-14 10:59:24 +0000
+
+
+Started GET "/assets/store/egoz-bag.jpg" for ::1 at 2016-12-14 10:59:24 +0000
+
+
+Started GET "/assets/store/kingcamp-bag.jpg" for ::1 at 2016-12-14 10:59:24 +0000
+
+
+Started GET "/assets/store/milestone-bag.jpg" for ::1 at 2016-12-14 10:59:24 +0000
+
+
+Started POST "/basket_items" for ::1 at 2016-12-14 10:59:29 +0000
+Processing by BasketItemsController#create as JS
+  Parameters: {"utf8"=>"✓", "basket_item"=>{"quantity"=>"1", "product_id"=>"1"}, "commit"=>"Add to Cart"}
+  [1m[35mOrder Load (0.0ms)[0m  SELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 1 LIMIT 1
+  [1m[36mBasketItem Load (0.0ms)[0m  [1mSELECT  `basket_items`.* FROM `basket_items` WHERE `basket_items`.`order_id` = 1 AND `basket_items`.`product_id` = 1  ORDER BY `basket_items`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  `products`.* FROM `products` WHERE `products`.`active` = 1 AND `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mBasketItem Load (0.0ms)[0m  SELECT `basket_items`.* FROM `basket_items` WHERE `basket_items`.`order_id` = 1
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  `products`.* FROM `products` WHERE `products`.`active` = 1 AND `products`.`id` = 3 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE `orders` SET `subtotal` = 149.98, `updated_at` = '2016-12-14 10:59:29' WHERE `orders`.`id` = 1
+  [1m[36mSQL (3.0ms)[0m  [1mINSERT INTO `basket_items` (`quantity`, `product_id`, `order_id`, `unit_price`, `total_price`, `created_at`, `updated_at`) VALUES (1, 1, 1, 49.99, 49.99, '2016-12-14 10:59:29', '2016-12-14 10:59:29')[0m
+  [1m[35m (1.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/store
+Completed 200 OK in 24ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/store" for ::1 at 2016-12-14 10:59:29 +0000
+Processing by StoreController#index as HTML
+  [1m[36mOrder Load (0.0ms)[0m  [1mSELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mProductCategory Load (1.0ms)[0m  [1mSELECT `product_categories`.* FROM `product_categories`[0m
+  [1m[35mProduct Load (1.0ms)[0m  SELECT `products`.* FROM `products` WHERE `products`.`active` = 1
+  Rendered store/_product_row.html.erb (1.0ms)
+  Rendered store/_product_row.html.erb (1.0ms)
+  Rendered store/_product_row.html.erb (1.0ms)
+  Rendered store/_product_row.html.erb (1.0ms)
+  Rendered store/_product_row.html.erb (1.0ms)
+  Rendered store/_product_row.html.erb (1.0ms)
+  Rendered store/_product_row.html.erb (2.0ms)
+  Rendered store/_product_row.html.erb (1.0ms)
+  Rendered store/_product_row.html.erb (1.0ms)
+  Rendered store/_product_row.html.erb (1.0ms)
+  Rendered store/_product_row.html.erb (1.0ms)
+  Rendered store/_product_row.html.erb (1.0ms)
+  Rendered store/_product_row.html.erb (1.0ms)
+  Rendered store/_product_row.html.erb (1.0ms)
+  Rendered store/_product_row.html.erb (1.0ms)
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM `basket_items` WHERE `basket_items`.`order_id` = 1[0m
+  [1m[35mBasketItem Load (0.0ms)[0m  SELECT `basket_items`.* FROM `basket_items` WHERE `basket_items`.`order_id` = 1
+  [1m[36mProduct Load (1.0ms)[0m  [1mSELECT  `products`.* FROM `products` WHERE `products`.`active` = 1 AND `products`.`id` = 3 LIMIT 1[0m
+  Rendered store/_basket_row.html.erb (1.0ms)
+  [1m[35mProduct Load (0.0ms)[0m  SELECT  `products`.* FROM `products` WHERE `products`.`active` = 1 AND `products`.`id` = 1 LIMIT 1
+  Rendered store/_basket_row.html.erb (1.0ms)
+  Rendered store/index.html.erb within layouts/application (529.4ms)
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM `basket_items` WHERE `basket_items`.`order_id` = 1[0m  [["order_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `basket_items`.* FROM `basket_items` WHERE `basket_items`.`order_id` = 1[0m  [["order_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `products`.* FROM `products` WHERE `products`.`active` = 1 AND `products`.`id` = 3 LIMIT 1  [["active", true], ["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `products`.* FROM `products` WHERE `products`.`active` = 1 AND `products`.`id` = 1 LIMIT 1[0m  [["active", true], ["id", 1]]
+  Rendered layouts/_cart_text.html.erb (11.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+Completed 200 OK in 730ms (Views: 721.1ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/basket_items/destroy_all?remote=true" for ::1 at 2016-12-14 10:59:31 +0000
+Processing by BasketItemsController#destroy_all as HTML
+  Parameters: {"authenticity_token"=>"WNb3tjZE3KUuUHC4ibwUE0tCMBG77fHFM3iHu8rOH+Pi6LbZNj0CpJ7FISdaEWUrIgJdBHrNKJlkewbcbxmXHw==", "remote"=>"true"}
+  [1m[36mOrder Load (1.0ms)[0m  [1mSELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (2.0ms)[0m  UPDATE `basket_items` SET `basket_items`.`order_id` = NULL WHERE `basket_items`.`order_id` = 1
+Redirected to http://localhost:3000/store
+Completed 302 Found in 6ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/store" for ::1 at 2016-12-14 10:59:31 +0000
+Processing by StoreController#index as HTML
+  [1m[36mOrder Load (0.0ms)[0m  [1mSELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mProductCategory Load (1.0ms)[0m  [1mSELECT `product_categories`.* FROM `product_categories`[0m
+  [1m[35mProduct Load (0.0ms)[0m  SELECT `products`.* FROM `products` WHERE `products`.`active` = 1
+  Rendered store/_product_row.html.erb (1.0ms)
+  Rendered store/_product_row.html.erb (1.0ms)
+  Rendered store/_product_row.html.erb (2.0ms)
+  Rendered store/_product_row.html.erb (2.0ms)
+  Rendered store/_product_row.html.erb (1.0ms)
+  Rendered store/_product_row.html.erb (1.0ms)
+  Rendered store/_product_row.html.erb (1.0ms)
+  Rendered store/_product_row.html.erb (1.0ms)
+  Rendered store/_product_row.html.erb (1.0ms)
+  Rendered store/_product_row.html.erb (1.0ms)
+  Rendered store/_product_row.html.erb (1.0ms)
+  Rendered store/_product_row.html.erb (1.0ms)
+  Rendered store/_product_row.html.erb (1.0ms)
+  Rendered store/_product_row.html.erb (2.0ms)
+  Rendered store/_product_row.html.erb (1.0ms)
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM `basket_items` WHERE `basket_items`.`order_id` = 1[0m
+  Rendered store/index.html.erb within layouts/application (520.1ms)
+  [1m[35mUser Load (1.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `basket_items` WHERE `basket_items`.`order_id` = 1  [["order_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mBasketItem Load (1.0ms)[0m  SELECT `basket_items`.* FROM `basket_items` WHERE `basket_items`.`order_id` = 1
+  Rendered layouts/_cart_text.html.erb (4.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1[0m
+Completed 200 OK in 729ms (Views: 721.4ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/store/coleman-3-person-tent.jpg" for ::1 at 2016-12-14 10:59:32 +0000
+
+
+Started GET "/assets/store/yodo-2-person-tent.jpg" for ::1 at 2016-12-14 10:59:32 +0000
+
+
+Started GET "/assets/store/coleman-2-person-tent.jpg" for ::1 at 2016-12-14 10:59:32 +0000
+
+
+Started GET "/assets/store/coleman-8-person-tent.jpg" for ::1 at 2016-12-14 10:59:32 +0000
+
+
+Started GET "/assets/store/coleman-4-person-tent.jpg" for ::1 at 2016-12-14 10:59:32 +0000
+
+
+Started GET "/assets/store/berghaus-boots.jpg" for ::1 at 2016-12-14 10:59:32 +0000
+
+
+Started GET "/assets/store/hi-tec-boots.jpg" for ::1 at 2016-12-14 10:59:32 +0000
+
+
+Started GET "/assets/store/karrimor-boots.jpg" for ::1 at 2016-12-14 10:59:32 +0000
+
+
+Started GET "/assets/store/regatta-boots.jpg" for ::1 at 2016-12-14 10:59:32 +0000
+
+
+Started GET "/assets/store/campteck-sticks.jpg" for ::1 at 2016-12-14 10:59:32 +0000
+
+
+Started GET "/assets/store/mountaintop-sticks.jpg" for ::1 at 2016-12-14 10:59:32 +0000
+
+
+Started GET "/assets/store/trekrite-sticks.jpg" for ::1 at 2016-12-14 10:59:32 +0000
+
+
+Started GET "/assets/store/egoz-bag.jpg" for ::1 at 2016-12-14 10:59:32 +0000
+
+
+Started GET "/assets/store/kingcamp-bag.jpg" for ::1 at 2016-12-14 10:59:32 +0000
+
+
+Started GET "/assets/store/milestone-bag.jpg" for ::1 at 2016-12-14 10:59:32 +0000
