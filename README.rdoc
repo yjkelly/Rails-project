@@ -1,14 +1,34 @@
 == README
 
+
+General things to watch out for;
+
+	- All JS and CSS needs to be cleaned up. DRY - Don't repeat yourself. Delete anything that is not used.
+	- All CSS styling needs to be specific to an element, and non-generic. Generic CSS styles apply acroos the entire site, and will mess up an element somewhere else.
+	- Assets should be stored in the assets folder, not the public folder, to make use of the Rails asset pipeline when moving to production.
+	- All user input needs to be validated and sanitized always, for security reasons.
+	- Any element that is used more than once, needs to be in a partial. DRY.
+
+
+Specific things to do;
+
+	- Need a separate admin area where an admin can manage users, products, orders, destinations, etc, etc.
+	- Need very tight restrictions on the is_admin field in the user model.
+	- User Profile page - avatars, etc. See above, is_admin needs tight restrictions
+	- Checkout Page / Paypal integration / Thank you page
+
+
+
+Store - things to do;
+
+	- Products CRUD should be restricted to admin
+	- Should be a way to sort by category and price
+	- Fix bug listed below, update quantity not working correctly
+
+
+
 Known bugs;
 
 	Store;
 
 	- Update quantity on store right side div will only work once per reload
-
-
-For discussion;
-
-	Assets;
-
-	- some css and js assets have been placed inside the public folder. These should really exist in the assets folder to make use of the Rails assets pipeline.

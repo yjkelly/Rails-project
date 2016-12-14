@@ -74,3 +74,8 @@ Accommodation.delete_all
 Accommodation.create(name:"Local host family", description:"Stay with a local family and immerse yourself in the culture", picture:"/img/accommodation/localfamily.jpg", price:50)
 Accommodation.create(name:"Local host", description:"Experience life as one of the locals, gain an authentic experience",picture:"/img/accommodation/localhost.jpeg", price:70)
 Accommodation.create(name:"Camp site", description:"For those who like to sleep under the stars",picture:"/img/accommodation/campsite.jpg", price:20 )
+
+User.delete_all
+User.create! id:1, username:"admin", email:"admin@admin.com", password: "testing", password_digest:"$2a$10$9e.Utcfcfg/k2zZsVWYx5.Iceu2flNQzXxkExmOxHZGwLkVRXGPiO", is_admin: true
+User.create! id:2, username:"bob", email:"bob@bob.com", password: "testing", password_digest:"$2a$10$9e.Utcfcfg/k2zZsVWYx5.Iceu2flNQzXxkExmOxHZGwLkVRXGPiO", is_admin: false
+User.create! id:3, username:"alice", email:"alice@bob.com", password: "testing", password_digest:"$2a$10$9e.Utcfcfg/k2zZsVWYx5.Iceu2flNQzXxkExmOxHZGwLkVRXGPiO", is_admin: false

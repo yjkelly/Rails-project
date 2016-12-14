@@ -1,8 +1,8 @@
 <div id="breadcrumb-container">
-<ul id="breadcrumb-list">
-  <li class="breadcrumb"><a href="newlanding.html" class="breadcrumb-link">Home</a><span>&gt;&gt;</span></li>
-  <li class="breadcrumb"><a href="activities.html" class="breadcrumb-link current">Activities</a></li>
-</ul>
+  <ul id="breadcrumb-list">
+    <li class="breadcrumb"><%= link_to "Home", landing_path, class: "breadcrumb-link" %><span>&gt;&gt;</span></li>
+    <li class="breadcrumb"><%= link_to "Activities", activities_path, class: "breadcrumb-link-current" %><span>&gt;&gt;</span></li>
+  </ul>
 </div>
 
 <div id="slider">
