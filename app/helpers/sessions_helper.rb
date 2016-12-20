@@ -48,6 +48,4 @@ module SessionsHelper
         return true
       end
     end
-
-
 end
