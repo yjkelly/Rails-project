@@ -79,3 +79,6 @@ User.delete_all
 User.create! id:1, username:"admin", email:"admin@admin.com", password: "testing", password_digest:"$2a$10$9e.Utcfcfg/k2zZsVWYx5.Iceu2flNQzXxkExmOxHZGwLkVRXGPiO", is_admin: true
 User.create! id:2, username:"bob", email:"bob@bob.com", password: "testing", password_digest:"$2a$10$9e.Utcfcfg/k2zZsVWYx5.Iceu2flNQzXxkExmOxHZGwLkVRXGPiO", is_admin: false
 User.create! id:3, username:"alice", email:"alice@bob.com", password: "testing", password_digest:"$2a$10$9e.Utcfcfg/k2zZsVWYx5.Iceu2flNQzXxkExmOxHZGwLkVRXGPiO", is_admin: false
+
+
+

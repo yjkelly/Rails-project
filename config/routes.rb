@@ -2,7 +2,7 @@ Rails.application.routes.draw do
  
   # This route was necessary for empty basket to work
   post 'basket_items/destroy_all'
-
+  match 'bookings/receipt/' => 'bookings#receipt', :via => :get
   resource :cart, only: [:show]
   resources :booking_activities
   resources :bookings
@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   get '/welcome', to: 'welcome#index'
 
   root 'landing#index'
+
 
   match 'activity_categories/list' => 'activity_categories/list', :via => :get
   # useful temp catch-all route that will process requests based on url structure /controller/action/id/format

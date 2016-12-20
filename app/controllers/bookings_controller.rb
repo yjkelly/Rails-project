@@ -98,11 +98,15 @@ class BookingsController < ApplicationController
     end
   end
 
-
+  # GET /bookings/reciept
+  # Partial view handler
   def receipt
-    @booking = current_booking
-    @booked_activities = BookingActivity.where(:booking_id => @booking.id).map{ |ba|  ba.activity_id }
-    @activities = Activity.find(@booked_activities)
+    @booking =current_booking
+    @booked = BookingActivity.where(:booking_id => @booking.id).map{ |ba|  ba.activity_id }
+    @act= Activity.find(@booked)
+    @dest = current_dest
+    @acc = Accommodation.find_by_id(@booking.accommodation_id)
+    render :partial => "bookings/receipt"
   end
 
 

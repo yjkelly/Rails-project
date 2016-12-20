@@ -1,4 +1,4 @@
-<div id="reciept-border">
+
   <div id="receipt" class="jaggededges">
     <h2>Price Breakdown</h2>
     <table>
@@ -13,7 +13,15 @@
           <% else %>
               <tr>
           <%end%>
-          <th><%= b.name%> (x<%= @booking.number_guests%>)</th>
+          <th><%= b.name%> (x<%= @booking.number_guests%>)
+            <% # where query from: http://api.rubyonrails.org/classes/ActiveRecord/QueryMethods.html#method-i-where
+               @bookingact = BookingActivity.where({activity_id: b.id, booking_id: @booking.id}).first %>
+
+            <%=  # from http://stackoverflow.com/questions/19492488/how-to-post-to-destroy-action-with-form-for-in-rails-app
+                 form_for @bookingact, method: :delete, remote: true  do |f| %>
+                <%= f.submit "X", class:"fa fa-times" %>
+            <% end %>
+          </th>
           <td> <%= b.price * @booking.number_guests%></td>
         </tr>
       <% end %>
@@ -30,4 +38,3 @@
           <% end %>
     </table>
   </div>
-</div>
