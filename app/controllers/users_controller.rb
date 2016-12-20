@@ -28,15 +28,16 @@ class UsersController < ApplicationController
     if @user.firstname
       @user.firstname.capitalize!
     end
-    if @user.secondname
-      @user.country.capitalize!
+    if @user.surname
+      @user.surname.capitalize!
     end
-    if @user.secondname
+    if @user.country
       @user.country.capitalize!
     end
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.'+@success.to_s }
+        log_in @user
+        format.html { redirect_to @user, notice: 'User was successfully created.'}
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }

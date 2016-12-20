@@ -13,7 +13,6 @@
       <th>Firstname</th>
       <th>Surname</th>
       <th>Email</th>
-      <th>Password</th>
       <th>Avatar</th>
       <th>Country</th>
       <% if logged_in? && current_user.is_admin %>
@@ -26,23 +25,33 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= user.username %></td>
-        <td><%= user.firstname %></td>
-        <td><%= user.surname %></td>
-        <td><%= user.email %></td>
-        <td><%= user.password %></td>
-        <td><%= user.avatar %></td>
-        <td><%= user.country %></td>
-         <% if logged_in? && current_user.is_admin %>
-        <td><%= user.is_admin %></td>
+        <% if (logged_in? && current_user.is_admin) %>
+          <td><%= user.username %></td>
+          <td><%= user.firstname %></td>
+          <td><%= user.surname %></td>
+          <td><%= user.email %></td>
+          <td><%= image_tag user.avatar.url,size:"30" if user.avatar? %></td>
+          <td><%= user.country %></td>
+          <td><%= user.is_admin %></td>
+          <td><%= link_to 'Show', user %></td>
+          <td><%= link_to 'Edit', edit_user_path(user) %></td>
+          <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% elsif (logged_in? && current_user.username == user.username) %>
+          <td><%= user.username %></td>
+          <td><%= user.firstname %></td>
+          <td><%= user.surname %></td>
+          <td><%= user.email %></td>
+          <td><%= image_tag user.avatar.url,size:"30" if user.avatar? %></td>
+          <td><%= user.country %></td>
+          <td><%= link_to 'Show', user %></td>
+          <td><%= link_to 'Edit', edit_user_path(user) %></td>
+          <td><%= link_to 'Delete Account', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% else %>
+          <td><%= user.username %></td>
+          <td></td><td></td><td></td>
+          <td><%= image_tag user.avatar.url,size:"30" if user.avatar? %></td>
+          <td><%= user.country %></td>
         <% end %>
-        <td><%= link_to 'Show', user %></td>
-         <% if (logged_in? && current_user.is_admin) || (logged_in? && current_user.username == user.username) %>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <% end %>
-        <% if logged_in? && current_user.is_admin %>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      <% end %>
       </tr>
     <% end %>
   </tbody>

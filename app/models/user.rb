@@ -12,5 +12,17 @@ class User < ActiveRecord::Base
     validates :firstname, length: {maximum:50}
     validates :surname, length: {maximum:50}
     validates :country, length: {maximum:50}
+    mount_uploader :avatar, PictureUploader
+
+  validate  :avatar_size
+
+  private
+
+    # Validates the size of an uploaded picture.
+    def avatar_size
+      if avatar.size > 2.megabytes
+        errors.add(:avatar, "should be less than 2MB")
+      end
+    end
 
 end

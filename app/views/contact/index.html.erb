@@ -20,12 +20,12 @@
             <div id='overemail'></div>
             <div id='contactemail' onkeydown="contacthandle2(event)"><hr>
                 This is the email we have for you. <br>Specify another if you'd like!<br>
-                <input type='text' name="email" value="<%= current_user.email %>">
+                <input type='text' id="emailbox" name="email" value="<%= current_user.email %>">
             </div>
             <div id='underemail'></div><br>
             <div id='contactcontent'>
                 Type your thoughts below.
-                <textarea name='content' rows="4" cols="50"></textarea>
+                <textarea id="contactbox" name='content' rows="4" cols="50"></textarea>
                 <br><button onclick='checktext()'>Send Message</button>
             </div>
             <div id='undercontent'></div><br>

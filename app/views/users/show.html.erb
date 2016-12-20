@@ -4,10 +4,11 @@
 
     <% provide(:title, @user.username) %>
     <h1>
-    <%= gravatar_for @user %>
+ <%= image_tag @user.avatar.url,size:"50" if @user.avatar? %>
     <%= @user.username %>
     </h1>
 <hr>
+
 <p id="notice"><%= notice %></p>
 <div class='indented'>
 <p>
@@ -24,11 +25,6 @@
 <p>
   <strong>Email:</strong>
   <%= @user.email %>
-</p>
-
-<p>
-  <strong>Avatar:</strong>
-  <%= @user.avatar %>
 </p>
 
 <p>
