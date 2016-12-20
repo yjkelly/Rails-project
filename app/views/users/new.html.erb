@@ -35,7 +35,13 @@
           <div class='field'>
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation %>
-</div><br><br>
+        </div>
+   <div class='field'>
+      <%= f.label :country %>
+      <%= f.text_field :country %>
+  </div>
+
+<br><br>
 <div class='gocenter'>
       <%= f.submit "Create my account", class: "btn btn-primary" %>
     </div>
