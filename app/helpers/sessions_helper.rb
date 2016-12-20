@@ -7,11 +7,10 @@ module SessionsHelper
 
   # Logs out the current user.
   def log_out
-  	session[:return_to] ||= request.referer
     session.delete(:user_id)
     session.delete(:destination)
     @current_user = nil
-    @current_dest = :nil
+    @current_dest = nil
   end
   
   # Returns the current logged-in user (if any).

@@ -3,7 +3,7 @@ class CreateActivityCategories < ActiveRecord::Migration
     create_table :activity_categories do |t|
       t.string :name, :limit => 25, :null => false
       t.text :description
-
+      t.string :picture, :limit=>250
       t.timestamps null: false
     end
 

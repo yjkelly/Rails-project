@@ -1,7 +1,9 @@
+<div id='first'>
+  <br>
+  <div id='showusers'>
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Username:</strong>
+<p>  <strong>Username:</strong>
   <%= @user.username %>
 </p>
 
@@ -39,6 +41,9 @@
   <strong>Is admin:</strong>
   <%= @user.is_admin %>
 </p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
+ <% if (logged_in? && current_user.is_admin) || (logged_in? && current_user.username == @user.username) %>
+<%= link_to 'Edit', edit_user_path(@user) %> 
+<% end %>
 <%= link_to 'Back', users_path %>
+</div>
+</div>

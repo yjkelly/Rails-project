@@ -1,0 +1,26 @@
+<div id='first'>
+    <br><br><br>
+    <div id='landingwelcome'>
+            <% if logged_in? %>
+		         Welcome back <%= current_user.username %>!<br><br>
+		         Here's a summary of your recent activity
+		             
+		             <% @orders.each do |anorder| %>
+		             <div class='welcomeorder'>
+		                  <%= puts anorder %>
+		                  </div>
+		                  <hr>
+		              <% end %>
+		    <% else %>
+		        Feeling lost? Sign up for our site and get one step closer to your ideal holiday experience!<br><br>
+		        It's quick and easy. <%= link_to "Click here to Register", signup_path %> or <%= link_to "Login with an existing account", login_path %>
+		  <% end %>
+		  <br><br>
+	
+
+		   
+		  <div class='gocenter'>
+		      <div class='welcomelink' onclick='location.href="/"'>Continue to Main Site</div>
+        </div>
+    </div>
+</div>

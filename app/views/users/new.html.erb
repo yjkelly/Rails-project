@@ -1,10 +1,15 @@
 <% provide(:title, 'Sign up') %>
+<div id='first'>
 <br><br><br>
 <div id='formcontainer'>
 <h1>Sign up</h1>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
+      <% if logged_in? %>
+      You're already logged in as <%= current_user.username %><Br>
+      Please log out if you wish to sign up as a new account.<br><br><br>
+        <% else %>
      <%= form_for(@user, url: signup_path) do |f| %>
     <%= render 'shared/error_messages' %>
    <div class='field'>
@@ -34,7 +39,9 @@
 <div class='gocenter'>
       <%= f.submit "Create my account", class: "btn btn-primary" %>
     </div>
+<% end %>
     <% end %>
   </div>
+</div>
 </div>
 </div>

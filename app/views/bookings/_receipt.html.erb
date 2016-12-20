@@ -1,0 +1,33 @@
+<div id="reciept-border">
+  <div id="receipt" class="jaggededges">
+    <h2>Price Breakdown</h2>
+    <table>
+      <tr>
+        <th>Activities (Total)</th>
+
+        <td id="activities-price"><%= @act.collect{|a| a.price}.sum%></td>
+      </tr>
+      <% @act.each_with_index do |b, index| %>
+          <% if index%2==0 %>
+        <tr class="table-colour2">
+          <% else %>
+              <tr>
+          <%end%>
+          <th><%= b.name%> (x<%= @booking.number_guests%>)</th>
+          <td> <%= b.price * @booking.number_guests%></td>
+        </tr>
+      <% end %>
+      <% if ! @acc.nil? %>
+     <% if (@act.size() +1 )%2==1 %>
+          <tr class="table-colour2">
+      <% else %>
+          <tr>
+      <% end %>
+
+          <th>Accommodation: <%= @acc.name %> (x <%=(@booking.end_date - @booking.start_date).to_i%> nights) </th>
+          <td> <%= @acc.price*(@booking.end_date - @booking.start_date).to_i %> </td>
+        </tr>
+          <% end %>
+    </table>
+  </div>
+</div>

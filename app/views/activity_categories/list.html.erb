@@ -1,0 +1,60 @@
+<div id="breadcrumb-container">
+  <ul id="breadcrumb-list">
+    <li class="breadcrumb"><%= link_to "Home", landing_path, class: "breadcrumb-link" %><span>&gt;&gt;</span></li>
+    <li class="breadcrumb"><%= link_to "Activities", activities_path, class: "breadcrumb-link-current" %><span>&gt;&gt;</span></li>
+  </ul>
+</div>
+
+<div id="slider">
+  <div id="container">
+    <div class="container-overlay">
+      <h2>Activities</h2>
+    </div>
+    <div class="slide-div" id="item-1">
+      <p>Experience something <span id="greentext">new</span></p>
+
+    </div>
+    <div class="slide-div green" id="item-2">
+      <p>“The core of mans' spirit comes from new <span id="orangetext">experiences</span>.”
+        <br>― Christopher McCandless </p>
+    </div>
+  </div>
+  <div id="slider-controls">
+    <ol>
+      <li id="slide-1" class="fa fa-dot-circle-o"></li>
+      <li id="slide-2" class="fa fa-circle-o"></li>
+    </ol>
+  </div>
+</div>
+<%= render :partial => "bookings/greybox" -%>
+<div id="activity-heading">
+  <h2>What kind of activity would you like to do?</h2>
+</div>
+<div id="activity-container">
+  <% @activity_categories.each do |category| %>
+      <div class="activity-individual-box" id="<%=category.name %>">
+        <%= image_tag(category.picture, class:"activity-thumbnail" ) %>
+        <div class="activity-title-bar" id="<%= category.name %>-title">
+            <span class="activity-text" >
+              <%= category.name %>
+            </span>
+        </div>
+      </div>
+  <% end %>
+</div>
+
+<% content_for :javascript do%>
+<script>
+  $(document).ready(function(){
+  <% @activity_categories.each do |category| %>
+    $('#<%= category.name%>').click(function(){
+        window.location = "/activities/list/<%= category.id%>"
+    });
+  <% end %>
+
+  });
+
+
+</script>
+
+<% end %>

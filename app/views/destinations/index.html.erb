@@ -1,3 +1,5 @@
+<div id='first'><br><br><br>
+<div id='showusers'>
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Destinations</h1>
@@ -16,7 +18,7 @@
     <% @destinations.each do |destination| %>
       <tr>
         <td><%= destination.name %></td>
-        <td><%= destination.description %></td>
+        <td><%= destination.description[0..200]%>...</td>
         <td><%= destination.picture %></td>
         <td><%= link_to 'Show', destination %></td>
         <td><%= link_to 'Edit', edit_destination_path(destination) %></td>
@@ -29,3 +31,4 @@
 <br>
 
 <%= link_to 'New Destination', new_destination_path %>
+</div></div>

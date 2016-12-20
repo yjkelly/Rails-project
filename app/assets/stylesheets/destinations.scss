@@ -106,6 +106,8 @@ margin-left:-340px;
 margin-top:-340px;
 color:black;
 font-size:20px;
+font-family:Arial;
+  
 }
 .abouthead
 {
@@ -799,6 +801,7 @@ color:white;
 {
 width:100%;
 height:1000px;
+background-color:black;
 background-image:url('/assets/newbackground.jpg');
 background-repeat:no-repeat;
 //background-attachment:fixed;
@@ -1297,6 +1300,7 @@ margin-left:-490px;
 margin-top:-390px;
 color:black;
 font-size:20px;
+font-family: Arial;
 text-align:left;
 }
 .logoleft{
@@ -1346,14 +1350,64 @@ color:white;
 padding:15px;
 border:8px solid #420;
 }
+#formcontainer label
+{
+float:left;
+min-width:140px;
+}
 #formcontainer a:visited
 {
 color:white;
+}
+#formcontainer input[type=submit]
+{
+background-color:#999;
 }
 
 .gocenter
 {
 text-align:center;
+}
+
+#landingwelcome, #showusers
+{
+  background-color:#555;
+width:1200px;
+margin:0 auto;
+border:10px solid #420;
+padding:30px;
+font-size:18px;
+color:white;
+}
+#activity-container .new_booking_activity, #activity-container .edit_booking
+{
+  width:280px;
+  display:inline;
+}
+#showusers th
+{
+  padding-right:20px;
+}
+#landingwelcome a:visited, #formcontainer a:visited, #showusers a:visited
+{
+  color:white;
+}
+.welcomelink
+{
+  cursor:pointer;
+  margin:0 auto;
+  border-radius:15px;
+  width:300px;
+  background-color:#888;
+}
+#showusers td
+{
+padding-right:10px;
+}
+
+.welcomelink:hover
+{
+  background-color:#30ac97;
 }
 
 @media (max-width: 800px) {
