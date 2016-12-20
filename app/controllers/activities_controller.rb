@@ -18,6 +18,15 @@ class ActivitiesController < ApplicationController
 
   end
 
+
+  def activity_boxes
+    @sort = params[:sortby]
+    puts "sorted by: #{@sort}"
+    @activities = Activity.where(activity_category_id: params[:cat_id])
+    @booking_activity = current_booking.booking_activities.new
+    render :partial => "activities/activity_boxes"
+  end
+
   #Shows all activities for a given activity
   # GET /activities/list/1
   def list
@@ -27,6 +36,7 @@ class ActivitiesController < ApplicationController
     @booking =current_booking
     @booked = BookingActivity.where(:booking_id => @booking.id).map{ |ba|  ba.activity_id }
     @act= Activity.find(@booked)
+    @sort = 'asc'
     @dest = current_dest
     @acc = Accommodation.find_by_id(@booking.accommodation_id)
   end

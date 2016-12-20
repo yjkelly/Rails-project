@@ -4,10 +4,17 @@ class AccommodationsController < ApplicationController
   # GET /accommodations
   # GET /accommodations.json
   def index
-    @booking = current_booking
-    puts "Booking is: #{@booking}"
     @accommodations = Accommodation.all
-    @destination = current_dest
+  end
+
+  def list
+    @accommodations = Accommodation.all
+    @booking = current_booking
+    @destination = Destination.where({:name=>current_dest}).first
+    @booked = BookingActivity.where(:booking_id => @booking.id).map{ |ba|  ba.activity_id }
+    @act= Activity.find(@booked)
+    @acc = Accommodation.find_by_id(@booking.accommodation_id)
+    @sort = "asc"
   end
 
   # GET /accommodations/1
@@ -22,6 +29,13 @@ class AccommodationsController < ApplicationController
 
   # GET /accommodations/1/edit
   def edit
+  end
+
+  def accommodation_boxes
+    @sort = params[:sort]
+    @accommodations = Accommodation.all()
+    @booking = Booking.find(params[:booking])
+    render :partial => "accommodations/accommodation_boxes"
   end
 
   # POST /accommodations

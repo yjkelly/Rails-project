@@ -2,7 +2,13 @@ Rails.application.routes.draw do
  
   # This route was necessary for empty basket to work
   post 'basket_items/destroy_all'
+  get 'accommodations/list', to: 'accommodations#list'
   match 'bookings/receipt/' => 'bookings#receipt', :via => :get
+  match 'bookings/update_details/' => 'bookings#update_details', :via => :patch
+  match 'bookings/add_accommodation' => 'bookings#add_accommodation', :via=> :patch
+  match 'bookings/remove_accommodation' => 'bookings#remove_accommodation', :via => :patch
+  match 'activities/activity_boxes' => 'activities#activity_boxes', :via => :get
+  match 'accommodations/accommodation_boxes' => 'accommodations#accommodation_boxes', :via => :get
   resource :cart, only: [:show]
   resources :booking_activities
   resources :bookings

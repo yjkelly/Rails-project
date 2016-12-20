@@ -1,0 +1,31 @@
+<%
+  if @sort=="asc"
+    @accommodations = @accommodations.sort_by{|a| a.price}
+  else
+    @accommodations = @accommodations.sort_by{|a| a.price}.reverse!
+  end
+
+
+  @accommodations.each do |accommodation| %>
+    <!--
+Custom action for form listed here
+http://stackoverflow.com/questions/5320414/form-for-but-to-post-to-a-different-action -->
+    <%= form_for @booking,url: url_for(:controller => 'bookings', :action => 'add_accommodation'), remote: true do |f| %>
+        <div class="sub-activity-box">
+          <div class="sub-img-activity">
+            <%= image_tag(accommodation.picture, class: "sub-activity-img")%>
+          </div>
+          <div class="sub-activity-title">
+            <span class="activity-text" ><%= accommodation.name %></span>
+          </div>
+          <div class="sub-activity-description">
+            <p><%= accommodation.description %></p>
+          </div>
+          <div class="sub-activity-price-book">
+            <span class="fa fa-eur"><%= accommodation.price%></span>
+          </div>
+          <%= f.hidden_field :accommodation_id, value: accommodation.id %>
+          <%= f.submit "Book", class: "book-activity" %>
+        </div>
+    <% end %>
+<% end %>

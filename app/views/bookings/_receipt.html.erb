@@ -32,9 +32,24 @@
           <tr>
       <% end %>
 
-          <th>Accommodation: <%= @acc.name %> (x <%=(@booking.end_date - @booking.start_date).to_i%> nights) </th>
+          <th>Accommodation: <%= @acc.name %> (x <%=(@booking.end_date - @booking.start_date).to_i%> nights)
+
+            <%= form_for @booking, url:url_for(:controller => 'bookings', :action => 'remove_accommodation'), remote:true do |f| %>
+                <%= f.hidden_field :accommodation_id, value: @acc.id %>
+                <%= f.submit "X", class:"fa fa-times" %>
+            <% end %>
+
+          </th>
           <td> <%= @acc.price*(@booking.end_date - @booking.start_date).to_i %> </td>
         </tr>
           <% end %>
+      <% if (@act.size()+2)%2==1 %>
+          <tr class="table-colour2">
+      <% else %>
+          <tr>
+      <% end %>
+          <th>Total Price</th>
+          <td><%= total_price.to_f %></td>
+        </tr>
     </table>
   </div>

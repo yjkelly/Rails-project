@@ -64,8 +64,12 @@ class ActivityCategoriesController < ApplicationController
 
   # GET /activity_categories/list/
   def list
-    @booking = current_booking
     @activity_categories = ActivityCategory.all
+    @booking =current_booking
+    @booked = BookingActivity.where(:booking_id => @booking.id).map{ |ba|  ba.activity_id }
+    @act= Activity.find(@booked)
+    @dest = current_dest
+    @acc = Accommodation.find_by_id(@booking.accommodation_id)
   end
 
   private
