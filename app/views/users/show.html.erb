@@ -1,10 +1,10 @@
 <div id='first'>
   <br>
   <div id='showusers'>
-
+<% if (logged_in? && current_user.username == @user.username) || (logged_in? && current_user.is_admin) %>
     <% provide(:title, @user.username) %>
     <h1>
- <%= image_tag @user.avatar.url,size:"50" if @user.avatar? %>
+ <%= image_tag @user.avatar.url,size:"70" if @user.avatar? %>
     <%= @user.username %>
     </h1>
 <hr>
@@ -40,8 +40,14 @@
 </div>
 <hr>
  <% if (logged_in? && current_user.is_admin) || (logged_in? && current_user.username == @user.username) %>
-<%= link_to 'Edit', edit_user_path(@user) %> 
+<%= link_to 'Edit this profile', edit_user_path(@user) %>  | 
 <% end %>
-<%= link_to 'Back', users_path %>
+<%= link_to 'Member List', users_path %>
+<% else %>
+You are not authorized to view this profile. 
+  <% if (!logged_in?) %>
+    Please <%= link_to 'login', login_path %>
+  <% end %>
+<% end %>
 </div>
 </div>

@@ -26,4 +26,25 @@ module SessionsHelper
   def logged_in?
     !current_user.nil?
   end
+  
+      def require_login
+      unless logged_in?
+        flash[:error] = "You must be logged in to access this section"
+        redirect_to "/login"
+        return false # halts the before_action
+      else
+        return true
+      end
+    end
+
+    def require_admin
+      unless current_user.is_admin == true
+        flash[:error] = "You must be an admin to access this section"
+        redirect_to "/login" 
+        return false # halts the before_action
+      else
+        return true
+      end
+    end
+  
 end
