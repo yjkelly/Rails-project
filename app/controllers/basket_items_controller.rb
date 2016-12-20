@@ -21,6 +21,7 @@ class BasketItemsController < ApplicationController
     @order = current_order
     @basket_item = @order.basket_items.find(params[:id])
     @basket_item.update_attributes(basket_item_params)
+    @order.save
     @basket_items = @order.basket_items
     redirect_to "/store"
   end

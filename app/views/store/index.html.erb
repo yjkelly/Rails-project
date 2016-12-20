@@ -33,10 +33,7 @@
 
 <div id="store">
 	<div id="storetop">
-		<%= form_tag(:action => :index) do %>
-		  <%= select_tag "product_category", options_for_select(@product_categories.collect{ |c| [c.name, c.id] }) %>
-		  <%= submit_tag "Filter" %>
-		<% end %>
+
 	</div>
     <% @products.each do |product| %>
       <%= render "product_row", product: product, basket_item: @basket_item %>

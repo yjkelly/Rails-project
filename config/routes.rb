@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :activities
   resources :activity_categories, only: [:list]
   resources :basket_items, only: [:create, :update, :destroy]
-  resources :store, only: [:index]
+  resources :store, only: [:index, :filter]
   resources :products
   resources :product_categories
   resources :orders
