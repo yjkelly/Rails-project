@@ -1,6 +1,5 @@
 == README
 
-
 General things to watch out for;
 
 	- All JS and CSS needs to be cleaned up. DRY - Don't repeat yourself. Delete anything that is not used.
@@ -32,3 +31,4 @@ Known bugs;
 	Store;
 
 	- Update quantity on store right side div will only work once per reload
+
