@@ -29,6 +29,14 @@ module SessionsHelper
       !current_user.nil?
     end
 
+    def is_admin?
+      if current_user.is_admin == true
+        return true
+      else
+        return false
+      end
+    end
+
     def require_login
       unless logged_in?
         flash[:error] = "You must be logged in to access this section"
@@ -48,6 +56,5 @@ module SessionsHelper
         return true
       end
     end
-
 
 end
