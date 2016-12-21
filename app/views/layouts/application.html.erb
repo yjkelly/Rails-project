@@ -34,7 +34,7 @@
           			<% if is_admin? %>
           				<%= link_to "/admin" do %><div class='link1'>Admin</div><% end %>
           			<% else %>
-            				<div class='link1' onclick='location.href="<%= user_path(current_user) %>"'>Profile</div>
+            				<%= link_to user_path(current_user) do %><div class='link1'>Profile</div><% end %>
           			<% end %>
           			<%= link_to logout_path, method: "delete" do%><div class='link1'>Logout</div><% end %>
         		<% else %>
