@@ -36,7 +36,7 @@ New Horizons
 <% if logged_in? %>
 <%= render 'form', booking: @booking %>
 <% else %>
-<div id='messagelogin'>Only Logged In Users Can Use This</div>
+<div id='messagelogin'>Only Logged In Users Can Use The Map<br>And Progress Further<br><%= link_to 'Click here to login', login_path %></div>
 <!--                <div id='plink'><div id='my-background'>Next</div></div> -->
 <% end %>
         </div>
