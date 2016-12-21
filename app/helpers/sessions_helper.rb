@@ -22,6 +22,7 @@ module SessionsHelper
     @current_dest = session[:destination] 
   end
 
+<<<<<<< HEAD
 private
   # Returns true if the user is logged in, false otherwise.
   def logged_in?
@@ -29,6 +30,16 @@ private
   end
   
       def require_login
+=======
+
+  private
+    # Returns true if the user is logged in, false otherwise.
+    def logged_in?
+      !current_user.nil?
+    end
+
+    def require_login
+>>>>>>> d5ed144a32f426847af3366fd30d66050183d20c
       unless logged_in?
         flash[:error] = "You must be logged in to access this section"
         redirect_to "/login"
@@ -47,5 +58,5 @@ private
         return true
       end
     end
-  
+
 end
