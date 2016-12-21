@@ -4,8 +4,8 @@
     <div class="basket_title">
       <h4><%= product.name %></h4>
     </div>
+    <%= form_for basket_item, remote: true do |f| %>
     <div class="basket_unit_price">
-      <%= form_for basket_item, remote: true do |f| %>
       <h4>Unit Price: <span style="color: green"><%= number_to_currency basket_item.unit_price %></span></h4>
     </div>
     <div class="basket_main">
@@ -18,8 +18,7 @@
         <div class="basket_total">
           <h4 class="text-right">Total Price: <span style="color: green"><%= number_to_currency basket_item.total_price %></span></h4>
         </div>
-      <% end %>
     </div>
-    
+    <% end %>
   </div>
 </div>
