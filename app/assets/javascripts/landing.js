@@ -465,16 +465,8 @@ $(document).ready(function(){
       $('#faded2').fadeIn('slow');
     },2500); //2.5 seconds
 });
-function showabout()
-{
-slowappear('#about');
-slowappear('#aboutdarken');
-}
-function hideabout()
-{
-slowdisappear('#about');
-slowdisappear('#aboutdarken');
-}
+
+
 function hideslider()
 {
 slowdisappear('#sliderpop');

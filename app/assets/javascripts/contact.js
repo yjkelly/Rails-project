@@ -50,6 +50,7 @@ function updateHtml(id,newdata){
 			useemail=1;
 			updateHtml("underemail","We'll use this to contact you");
 			slowappear(contactcontent);
+			document.getElementById("contactbox").focus();
 			trigger=1;
 			}
 		}
@@ -93,6 +94,7 @@ function yesemail()
 {
 updateHtml("overemail","Ok great!");
 slowappear(contactemail);
+document.getElementById("emailbox").focus();
 }
 function noemail()
 {
@@ -100,4 +102,5 @@ updateHtml("overemail","That's no problem at all.");
 slowdisappear(contactemail);
 trigger=1;
 slowappear(contactcontent);
+document.getElementById("contactbox").focus();
 }

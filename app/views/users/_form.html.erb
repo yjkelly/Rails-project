@@ -1,5 +1,5 @@
 
-<%= form_for(@user) do |f| %>
+<%= form_for(@user, html: { multipart: true }) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -32,14 +32,16 @@
     <%= f.label :password %><br>
     <%= f.text_field :password %>
   </div>
-  <div class="field">
-    <%= f.label :avatar %><br>
-    <%= f.text_field :avatar %>
-  </div>--
+
   <div class="field">
     <%= f.label :country %><br>
     <%= f.text_field :country %>
   </div>
+  <div class='field'>
+    <%= f.label:avatar %><%= f.file_field :avatar, accept: 'image/jpeg,image/gif,image/png' %><br>
+    Current Avatar:<br>
+    <%= image_tag @user.avatar.url,size:"50" if @user.avatar? %>
+    </div>
      <% if logged_in? %>
      <% if current_user.is_admin %>
   <div class="field">
@@ -52,3 +54,12 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+<script type="text/javascript">
+  $('#user_avatar').bind('change', function() {
+    var size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 2) {
+      alert('Maximum file size is 2MB. Please choose a smaller file.');
+    }
+  });
+</script>
