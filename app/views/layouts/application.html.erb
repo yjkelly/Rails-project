@@ -5,7 +5,7 @@
   
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= stylesheet_link_tag "http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" %>
+  <%= stylesheet_link_tag "https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" %>
   <%= stylesheet_link_tag "/css/font-awesome.min.css" %>
   <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Droid+Sans|Pacifico" %>
 
@@ -23,24 +23,24 @@
 		     <% if logged_in? %>
 		     Logged in as <%= current_user.username %>!
 		     <% end %>
-         <%= render 'layouts/cart_text' %>
+         	<%= render 'layouts/cart_text' %>
 		</div>
 		<div class='linksbar'>
-			<div class='link1' onclick='location.href="/"'>Home</div>
+		  	<%= link_to root_path do %><div class='link1'>Home</div><% end %>
 			<div class='link1' onclick='showabout()'>About</div>
-			<div class='link1' onclick='location.href="/contact"'>Contact</div>
-			<div class='link1' onclick='location.href="/store"'>Store</div>
+			<%= link_to "/contact" do %><div class='link1'>Contact</div><% end %>
+			<%= link_to "/store" do %><div class='link1'>Store</div><% end %>
 			  <% if logged_in? %>
-          <% if is_admin? %>
-            <div class='link1' onclick='location.href="/admin"'>Admin</div>
-          <% else %>
-            <div class='link1' onclick='location.href="<%= user_path(current_user) %>"'>Profile</div>
-          <% end %>
-          <div class='link1 link2'><%= link_to "Log out", logout_path, method: "delete" %></div>
-        <% else %>
-          <div class='link1' onclick='location.href="<%= signup_path %>"'>Register</div>
-          <div class='link1' onclick='location.href="<%= login_path %>"'>Login</div>
-        <% end %>
+          			<% if is_admin? %>
+          				<%= link_to "/admin" do %><div class='link1'>Admin</div><% end %>
+          			<% else %>
+            				<div class='link1' onclick='location.href="<%= user_path(current_user) %>"'>Profile</div>
+          			<% end %>
+          			<%= link_to logout_path, method: "delete" do%><div class='link1'>Logout</div><% end %>
+        		<% else %>
+          			<%= link_to signup_path do %><div class='link1'>Register</div><% end %>
+          			<%= link_to login_path do %><div class='link1'>Login</div><% end %>
+        		<% end %>
 		</div>
 	</div>
 	  <% flash.each do |message_type, message| %>
@@ -52,8 +52,11 @@
     <%= javascript_include_tag "https://code.jquery.com/ui/1.12.1/jquery-ui.js" %>
     <%= javascript_include_tag "/js/index.js" %>
     <%= yield :javascript %>
-    <%= yield :javascript %>
 <div id='aboutdarken' onclick='hideabout()'></div>
 <div id='about' onclick='hideabout()'></div>
+<footer id="footer">
+        © New horizons 2016
+    </footer>
   </body>
 </html>
+
