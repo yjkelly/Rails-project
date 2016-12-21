@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
  
+  get 'admin/index'
+
   # This route was necessary for empty basket to work
   post 'basket_items/destroy_all'
 

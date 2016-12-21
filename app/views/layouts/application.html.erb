@@ -30,13 +30,17 @@
 			<div class='link1' onclick='showabout()'>About</div>
 			<div class='link1' onclick='location.href="/contact"'>Contact</div>
 			<div class='link1' onclick='location.href="/store"'>Store</div>
-			   <% if logged_in? %>
-			   <div class='link1' onclick='location.href="<%= user_path(current_user) %>"'>Profile</div>
-                <div class='link1 link2'><%= link_to "Log out", logout_path, method: "delete" %></div>
-                <% else %>
-                <div class='link1' onclick='location.href="<%= signup_path %>"'>Register</div>
-                <div class='link1' onclick='location.href="<%= login_path %>"'>Login</div>
-                <% end %>
+			  <% if logged_in? %>
+          <% if is_admin? %>
+            <div class='link1' onclick='location.href="/admin"'>Admin</div>
+          <% else %>
+            <div class='link1' onclick='location.href="<%= user_path(current_user) %>"'>Profile</div>
+          <% end %>
+          <div class='link1 link2'><%= link_to "Log out", logout_path, method: "delete" %></div>
+        <% else %>
+          <div class='link1' onclick='location.href="<%= signup_path %>"'>Register</div>
+          <div class='link1' onclick='location.href="<%= login_path %>"'>Login</div>
+        <% end %>
 		</div>
 	</div>
 	  <% flash.each do |message_type, message| %>
