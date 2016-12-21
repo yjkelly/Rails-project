@@ -1,8 +1,13 @@
 <div id='first'><br><br><br>
 <div id='formcontainer'><h1>Editing User</h1>
 <%= @current_username %>
-<%= render 'form' %>
+<% if logged_in? && current_user.username == @user.username || current_user.is_admin %>
+    <%= render 'form' %>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+    <%= link_to 'Show this profile', @user %> |
+    <%= link_to 'Member List', users_path %>
+    <% else %>
+    You are not authorized to edit this profile
+    <% end %>
+
 </div></div>

@@ -23,10 +23,17 @@ module SessionsHelper
   end
 
   private
-
     # Returns true if the user is logged in, false otherwise.
     def logged_in?
       !current_user.nil?
+    end
+
+    def is_admin?
+      if current_user.is_admin == true
+        return true
+      else
+        return false
+      end
     end
 
     def require_login
@@ -48,6 +55,4 @@ module SessionsHelper
         return true
       end
     end
-
-
 end

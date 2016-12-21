@@ -1,13 +1,18 @@
 <div id='first'>
   <br>
   <div id='showusers'>
+<% if (logged_in? && current_user.username == @user.username) || (logged_in? && current_user.is_admin) %>
+    <% provide(:title, @user.username) %>
+    <h1>
+ <%= image_tag @user.avatar.url,size:"70" if @user.avatar? %>
+    <%= @user.username %>
+    </h1>
+<hr>
+
 <p id="notice"><%= notice %></p>
-
-<p>  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
-
+<div class='indented'>
 <p>
+
   <strong>Firstname:</strong>
   <%= @user.firstname %>
 </p>
@@ -23,27 +28,26 @@
 </p>
 
 <p>
-  <strong>Hashed password:</strong>
-  <%= @user.password %>
-</p>
-
-<p>
-  <strong>Avatar:</strong>
-  <%= @user.avatar %>
-</p>
-
-<p>
   <strong>Country:</strong>
   <%= @user.country %>
 </p>
-
+<% if (logged_in? && current_user.is_admin) %>
 <p>
   <strong>Is admin:</strong>
   <%= @user.is_admin %>
 </p>
- <% if (logged_in? && current_user.is_admin) || (logged_in? && current_user.username == @user.username) %>
-<%= link_to 'Edit', edit_user_path(@user) %> 
 <% end %>
-<%= link_to 'Back', users_path %>
+</div>
+<hr>
+ <% if (logged_in? && current_user.is_admin) || (logged_in? && current_user.username == @user.username) %>
+<%= link_to 'Edit this profile', edit_user_path(@user) %>  | 
+<% end %>
+<%= link_to 'Member List', users_path %>
+<% else %>
+You are not authorized to view this profile. 
+  <% if (!logged_in?) %>
+    Please <%= link_to 'login', login_path %>
+  <% end %>
+<% end %>
 </div>
 </div>

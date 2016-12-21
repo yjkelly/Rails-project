@@ -807,6 +807,7 @@ background-repeat:no-repeat;
 //background-attachment:fixed;
 //background-size:100%;
 background-size: cover;
+clear:both;
 }
 .breakblue
 {
@@ -1378,6 +1379,7 @@ border:10px solid #420;
 padding:30px;
 font-size:18px;
 color:white;
+overflow:auto;
 }
 #activity-container .new_booking_activity, #activity-container .edit_booking
 {
@@ -1392,6 +1394,23 @@ color:white;
 {
   color:white;
 }
+.indented
+{
+  margin-left:30px;
+}
+#first #notice
+{
+  color:white;
+}
+#first .field_with_errors
+{
+  background:#900;
+}
+#first a:visited, #first a
+{
+  color:white;
+}
+
 .welcomelink
 {
   cursor:pointer;
@@ -1402,7 +1421,7 @@ color:white;
 }
 #showusers td
 {
-padding-right:10px;
+padding-left:10px;
 }
 
 .welcomelink:hover
@@ -1411,7 +1430,7 @@ padding-right:10px;
 }
 
 @media (max-width: 800px) {
-.link1, .topbar, .linksbar
+.link1, .topbar
 {
 width:100%;
 height:30px;
@@ -1428,7 +1447,9 @@ padding-bottom:20px;
 }
 .linksbar
 {
+  width:100%;
 position:static;
+  
 }
 .topbar
 {
