@@ -11,9 +11,6 @@ class AccommodationsController < ApplicationController
     @accommodations = Accommodation.all
     @booking = current_booking
     @destination = Destination.where({:name=>current_dest}).first
-    @booked = BookingActivity.where(:booking_id => @booking.id).map{ |ba|  ba.activity_id }
-    @act= Activity.find(@booked)
-    @acc = Accommodation.find_by_id(@booking.accommodation_id)
     @sort = "asc"
   end
 

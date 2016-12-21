@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -7,8 +7,11 @@ gem 'rails', '4.2.7.1'
 gem 'bcrypt', '~> 3.1.3'
 # carrierwave handles avatar uploads
 gem 'carrierwave',             '0.11.2'
+
+# Use postgresql because heroku wont run on anything but postgresql
+gem 'pg'
 # Use mysql as the database for Active Record
-gem 'mysql2', '>= 0.3.13', '< 0.5'
+# gem 'mysql2', '>= 0.3.13', '< 0.5'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '3.3.6'

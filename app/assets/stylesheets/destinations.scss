@@ -537,9 +537,12 @@ footer{
     border-image-outset: 0.5;
 }
 #receipt{
-  height: 300px;
-  width:280px;
+
   background-color:white;
+}
+
+th form{
+  display:inline;
 }
 
 #reciept-border{

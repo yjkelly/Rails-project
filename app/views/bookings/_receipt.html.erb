@@ -1,4 +1,9 @@
+<%
+  @booked = BookingActivity.where(:booking_id => @booking.id).map{ |ba|  ba.activity_id }
+  @act= Activity.find(@booked)
+  @acc = Accommodation.find_by_id(@booking.accommodation_id)
 
+%>
   <div id="receipt" class="jaggededges">
     <h2>Price Breakdown</h2>
     <table>
@@ -13,7 +18,7 @@
           <% else %>
               <tr>
           <%end%>
-          <th><%= b.name%> (x<%= @booking.number_guests%>)
+          <th><%= b.name%> (x<%= @booking.number_guests%>) Persons
             <% # where query from: http://api.rubyonrails.org/classes/ActiveRecord/QueryMethods.html#method-i-where
                @bookingact = BookingActivity.where({activity_id: b.id, booking_id: @booking.id}).first %>
 
