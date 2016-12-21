@@ -45,6 +45,12 @@
 <%= render :partial => "bookings/receipt"%>
 </div>
 
+<div id="skip-button">
+  <!-- http://api.rubyonrails.org/classes/ActionView/Helpers/UrlHelper.html#method-i-link_to -->
+  <%= link_to("Next", controller: "accommodations", action:"list", class:"next-button") %>
+</div>
+
+
 <% content_for :javascript do %>
 
     <!-- rendering partial with parameters from; https://coderwall.com/p/kqb3xq/rails-4-how-to-partials-ajax-dead-easy -->

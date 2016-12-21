@@ -51,6 +51,11 @@
   <%= render :partial => "bookings/receipt"%>
 </div>
 
+<div id="skip-button">
+  <!-- http://api.rubyonrails.org/classes/ActionView/Helpers/UrlHelper.html#method-i-link_to -->
+  <%= link_to("Next", controller: "store", action:"index", class:"next-button") %>
+</div>
+
 <% content_for :javascript do %>
     <script>
       function updateAccommodation(){
