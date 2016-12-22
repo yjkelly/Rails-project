@@ -81,6 +81,7 @@ User.create! id:1, username:"admin", email:"admin@admin.com", password: "testing
 User.create! id:2, username:"bob", email:"bob@bob.com", password: "testing", password_digest:"$2a$10$9e.Utcfcfg/k2zZsVWYx5.Iceu2flNQzXxkExmOxHZGwLkVRXGPiO", is_admin: false
 User.create! id:3, username:"alice", email:"alice@bob.com", password: "testing", password_digest:"$2a$10$9e.Utcfcfg/k2zZsVWYx5.Iceu2flNQzXxkExmOxHZGwLkVRXGPiO", is_admin: false
 
+
 Order.delete_all
 Order.create! id: 1, order_status_id: 5, user_id: 1, subtotal: 119.97
 Order.create! id: 2, order_status_id: 1, user_id: 2, subtotal: 1753.95

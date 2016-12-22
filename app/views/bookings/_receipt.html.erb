@@ -1,4 +1,9 @@
-<div id="reciept-border">
+<%
+  @booked = BookingActivity.where(:booking_id => @booking.id).map{ |ba|  ba.activity_id }
+  @act= Activity.find(@booked)
+  @acc = Accommodation.find_by_id(@booking.accommodation_id)
+
+%>
   <div id="receipt" class="jaggededges">
     <h2>Price Breakdown</h2>
     <table>
@@ -13,7 +18,15 @@
           <% else %>
               <tr>
           <%end%>
-          <th><%= b.name%> (x<%= @booking.number_guests%>)</th>
+          <th><%= b.name%> (x<%= @booking.number_guests%>) Persons
+            <% # where query from: http://api.rubyonrails.org/classes/ActiveRecord/QueryMethods.html#method-i-where
+               @bookingact = BookingActivity.where({activity_id: b.id, booking_id: @booking.id}).first %>
+
+            <%=  # from http://stackoverflow.com/questions/19492488/how-to-post-to-destroy-action-with-form-for-in-rails-app
+                 form_for @bookingact, method: :delete, remote: true  do |f| %>
+                <%= f.submit "X", class:"fa fa-times" %>
+            <% end %>
+          </th>
           <td> <%= b.price * @booking.number_guests%></td>
         </tr>
       <% end %>
@@ -24,10 +37,24 @@
           <tr>
       <% end %>
 
-          <th>Accommodation: <%= @acc.name %> (x <%=(@booking.end_date - @booking.start_date).to_i%> nights) </th>
+          <th>Accommodation: <%= @acc.name %> (x <%=(@booking.end_date - @booking.start_date).to_i%> nights)
+
+            <%= form_for @booking, url:url_for(:controller => 'bookings', :action => 'remove_accommodation'), remote:true do |f| %>
+                <%= f.hidden_field :accommodation_id, value: @acc.id %>
+                <%= f.submit "X", class:"fa fa-times" %>
+            <% end %>
+
+          </th>
           <td> <%= @acc.price*(@booking.end_date - @booking.start_date).to_i %> </td>
         </tr>
           <% end %>
+      <% if (@act.size()+2)%2==1 %>
+          <tr class="table-colour2">
+      <% else %>
+          <tr>
+      <% end %>
+          <th>Total Price</th>
+          <td><%= total_price.to_f %></td>
+        </tr>
     </table>
   </div>
-</div>

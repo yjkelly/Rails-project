@@ -1,5 +1,8 @@
+<!--
 
-<%= form_for @booking, remote: true do |f| %>
+Custom action for form listed here
+http://stackoverflow.com/questions/5320414/form-for-but-to-post-to-a-different-action -->
+<%= form_for @booking, :url=> url_for(:controller=>'bookings', :action=>'update_details') ,remote: true do |f| %>
     <div id="grey-box-form">
   <div id="form-box">
     <form>
@@ -21,7 +24,7 @@
         <%= f.number_field(:number_guests, :value=>@booking.number_guests, :min=>1)%>
       </div>
       <div id="form-button">
-          <%= f.submit "Search", id: "search-button" %>
+          <%= f.submit "Update", id: "search-button" %>
       </div>
     </form>
   </div>

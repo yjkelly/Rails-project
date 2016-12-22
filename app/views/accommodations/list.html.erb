@@ -6,10 +6,14 @@
   </ul>
 </div>
 
+<% content_for :css do %>
+    <%= stylesheet_link_tag "/css/accommodation.css" %>
+<% end %>
+
 <div id="slider">
   <div id="container">
     <div class="container-overlay">
-      <h2>Activities</h2>
+      <h2>Accommodation</h2>
     </div>
     <div class="slide-div" id="item-1">
       <p>Experience something <span id="greentext">new</span></p>
@@ -26,47 +30,44 @@
     </ol>
   </div>
 </div>
-<%= render :partial => "bookings/greybox"%>
+<%= render :partial => "bookings/greybox" -%>
+<!-- Render form -->
+
 <div id="activity-heading">
-  <h2>We found <span id="activity-num"><%= @activities.size %></span> <span id="activity-type"><%= @category.name %></span> activities in <span id="location-activities"><%= @dest %></span> </h2>
+  <h2>We found <span id="activity-num"><%=@accommodations.size %></span> accommodations in <span id="location-activities"><%= @destination.name %></span> </h2>
 </div>
 <div id="activity-refine">
   <label for="sortby">Sort results</label>
-  <select name="sortby" id="sort" onchange="updateActivities()">
+  <select name="sortby" id="sort" onchange="updateAccommodation()">
     <option value="asc"> Price (ASC)</option>
     <option value="desc">Price (DESC)</option>
   </select>
 </div>
+
 <div id="activity-container">
-  <!-- http://stackoverflow.com/questions/9827663/rails-3-render-partial-with-params -->
-  <%= render  :partial => "activities/activity_boxes", :locals => { :sort => @sort } %>
+  <%= render  :partial => "accommodation_boxes", :locals => { :sort => @sort } %>
 </div>
 <div id="reciept-border">
-<%= render :partial => "bookings/receipt"%>
+  <%= render :partial => "bookings/receipt"%>
 </div>
 
 <div id="skip-button">
   <!-- http://api.rubyonrails.org/classes/ActionView/Helpers/UrlHelper.html#method-i-link_to -->
-  <%= link_to("Next", controller: "accommodations", action:"list", class:"next-button") %>
+  <%= link_to("Next", controller: "store", action:"index", class:"next-button") %>
 </div>
 
-
 <% content_for :javascript do %>
-
-    <!-- rendering partial with parameters from; https://coderwall.com/p/kqb3xq/rails-4-how-to-partials-ajax-dead-easy -->
     <script>
-      function updateActivities(){
+      function updateAccommodation(){
           var selected = $('#sort option:selected').val();
-          $("#activity-container").html('');
-          if(selected =="asc"){
-              $("#activity-container").load('/activities/activity_boxes?sortby=asc&cat_id=<%= @category.id %>');
+          $('#activity-container').html('');
+          if(selected=="asc")
+          {
+              $('#activity-container').load('/accommodations/accommodation_boxes?sort=asc&dest=<%=@destination.id %>&booking=<%= @booking.id%>');
           }
           else{
-              $("#activity-container").load('/activities/activity_boxes?sortby=desc&cat_id=<%=@category.id %>');
+              $('#activity-container').load('/accommodations/accommodation_boxes?sort=desc&dest=<%=@destination.id %>&booking=<%= @booking.id%>');
           }
-
       }
     </script>
-
 <% end %>
-

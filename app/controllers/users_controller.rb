@@ -6,11 +6,19 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+ 
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+       @basketitem = BasketItem.all
+       @product = Product.all
+       @booking = Booking.all
+       @bookingactivity = BookingActivity.all
+       @activity = Activity.all
+       @accommodation = Accommodation.all
+       @destination = Destination.all
   end
 
   # GET /users/new

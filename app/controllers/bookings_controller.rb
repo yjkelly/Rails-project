@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+  include BookingsHelper
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
 
   # GET /bookings
@@ -41,9 +42,7 @@ class BookingsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /bookings/1
-  # PATCH/PUT /bookings/1.json
-  def update
+  def update_details
     @booking = current_booking
     @booking.update(booking_params)
     #check for other parameters from form
@@ -67,15 +66,34 @@ class BookingsController < ApplicationController
                      :price => @booking.price
                     })
     session[:booking_id] = @booking.id
-    #respond_to do |format|
-    #  if @booking.update(booking_params)
-    #    format.html { redirect_to @booking, notice: 'Booking was successfully updated.' }
-    #    format.json { render :show, status: :ok, location: @booking }
-    #  else
-    #    format.html { render :edit }
-     #   format.json { render json: @booking.errors, status: :unprocessable_entity }
-    #  end
-    #end
+  end
+
+  # PATCH / PUT
+  def add_accommodation
+    @booking = current_booking
+    @booking.update({:accommodation_id=> params[:booking][:accommodation_id]})
+  end
+
+  # PATCH / PUT
+  # Method triggered if the accommodaiton is removed from the basket
+  # Will remove whatever accommodation is aded to the booking
+  def remove_accommodation
+    @booking = current_booking
+    @booking.update({:accommodation_id=>nil})
+  end
+
+  # PATCH/PUT /bookings/1
+  # PATCH/PUT /bookings/1.json
+  def update
+    respond_to do |format|
+      if @booking.update(booking_params)
+        format.html { redirect_to @booking, notice: 'Booking was successfully updated.' }
+        format.json { render :show, status: :ok, location: @booking }
+      else
+        format.html { render :edit }
+       format.json { render json: @booking.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # DELETE /bookings/1
@@ -98,11 +116,15 @@ class BookingsController < ApplicationController
     end
   end
 
-
+  # GET /bookings/reciept
+  # Partial view handler
   def receipt
-    @booking = current_booking
-    @booked_activities = BookingActivity.where(:booking_id => @booking.id).map{ |ba|  ba.activity_id }
-    @activities = Activity.find(@booked_activities)
+    @booking =current_booking
+    @booked = BookingActivity.where(:booking_id => @booking.id).map{ |ba|  ba.activity_id }
+    @act= Activity.find(@booked)
+    @dest = current_dest
+    @acc = Accommodation.find_by_id(@booking.accommodation_id)
+    render :partial => "bookings/receipt"
   end
 
 

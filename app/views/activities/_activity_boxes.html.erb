@@ -1,0 +1,30 @@
+<%
+  #first sort the array
+  # sorting from http://stackoverflow.com/questions/2642182/sorting-an-array-in-descending-order-in-ruby
+  if @sort=='asc'
+    @activities = @activities.sort_by{|a| a.price}
+  else
+    @activities = @activities.sort_by{|a| a.price}.reverse!
+  end
+
+
+  @activities.each do |activity| %>
+    <%= form_for @booking_activity, remote: true do |f| %>
+        <div class="sub-activity-box">
+          <div class="sub-img-activity">
+            <%= image_tag(activity.picture, class:"sub-activity-img" ) %>
+          </div>
+          <div class="sub-activity-title">
+            <span class="activity-text" ><%= activity.name%></span>
+          </div>
+          <div class="sub-activity-description">
+            <p><%= activity.description%></p>
+          </div>
+          <div class="sub-activity-price-book">
+            <span class="fa fa-eur"><%= activity.price%></span>
+            <%= f.submit "Add to Cart", class: "book-activity" %>
+          </div>
+        </div>
+        <%= f.hidden_field :activity_id, value: activity.id %>
+    <% end %>
+<% end %>

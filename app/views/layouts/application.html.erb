@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>New Horizons</title>
-  
+
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag "https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" %>
@@ -34,7 +34,9 @@
           			<% if is_admin? %>
           				<%= link_to "/admin" do %><div class='link1'>Admin</div><% end %>
           			<% else %>
-            				<%= link_to user_path(current_user) do %><div class='link1'>Profile</div><% end %>
+
+          			  <%= link_to user_path(current_user) do %><div class='link1'>Profile</div><% end %>
+
           			<% end %>
           			<%= link_to logout_path, method: "delete" do%><div class='link1'>Logout</div><% end %>
         		<% else %>
@@ -52,11 +54,10 @@
     <%= javascript_include_tag "https://code.jquery.com/ui/1.12.1/jquery-ui.js" %>
     <%= javascript_include_tag "/js/index.js" %>
     <%= yield :javascript %>
-<div id='aboutdarken' onclick='hideabout()'></div>
-<div id='about' onclick='hideabout()'></div>
-<footer id="footer">
-        © New horizons 2016
+    <div id='aboutdarken' onclick='hideabout()'></div>
+    <div id='about' onclick='hideabout()'></div>
+    <footer id="footer">
+            © New horizons 2016
     </footer>
   </body>
 </html>
-

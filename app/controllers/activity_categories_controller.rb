@@ -64,8 +64,9 @@ class ActivityCategoriesController < ApplicationController
 
   # GET /activity_categories/list/
   def list
-    @booking = current_booking
     @activity_categories = ActivityCategory.all
+    @booking =current_booking
+    @dest = current_dest
   end
 
   private

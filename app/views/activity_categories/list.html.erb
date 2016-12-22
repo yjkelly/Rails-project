@@ -43,6 +43,11 @@
   <% end %>
 </div>
 
+<div id="reciept-border">
+  <%= render :partial => "bookings/receipt"%>
+</div>
+
+
 <% content_for :javascript do%>
 <script>
   $(document).ready(function(){
@@ -53,8 +58,6 @@
   <% end %>
 
   });
-
-
 </script>
 
 <% end %>
