@@ -13,7 +13,7 @@ class BasketItemsController < ApplicationController
     end
     @order.save
     session[:order_id] = @order.id
-    redirect_to "/store"
+    redirect_to(:back)
   end
 
 
@@ -23,7 +23,7 @@ class BasketItemsController < ApplicationController
     @basket_item.update_attributes(basket_item_params)
     @order.save
     @basket_items = @order.basket_items
-    redirect_to "/store"
+    redirect_to(:back)
   end
 
 
@@ -32,7 +32,7 @@ class BasketItemsController < ApplicationController
     @basket_item = @order.basket_items.find(params[:id])
     @basket_item.destroy
     @basket_items = @order.basket_items
-    redirect_to "/store"
+    redirect_to(:back)
   end
 
 
@@ -41,7 +41,7 @@ class BasketItemsController < ApplicationController
     @order = current_order
     @basket_items = @order.basket_items
     @basket_items.clear
-    redirect_to "/store"
+    redirect_to(:back)
   end
 
   private

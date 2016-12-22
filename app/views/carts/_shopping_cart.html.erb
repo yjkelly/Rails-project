@@ -12,7 +12,14 @@
     There are no items in your shopping cart.  Please <%= link_to "go back", controller: "store" %> and add some items to your cart.
   </p>
 <% else %>
+  <h1> Your Shopping Basket </h1><br>
   <% @basket_items.each do |basket_item| %>
     <%= render 'carts/cart_row', product: basket_item.product, basket_item: basket_item, show_total: true %>
   <% end %>
+  <div id="cartbottom">
+    <br><br>
+    <p><h2> Total Basket Price: <%= number_to_currency @order.subtotal %> </h2></p>
+    <br>
+    <%= button_to "Empty Basket", {controller: "basket_items", action: "destroy_all", remote: true}, {id: 'emptycart'} %>
+  </div>
 <% end %>

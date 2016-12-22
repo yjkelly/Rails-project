@@ -321,6 +321,8 @@ float: right;
 #listproductsbox
 {
 width:1000px;
+height: auto;
+overflow: auto;
 margin:0 auto;
 background-color:#555;
 color:white;
@@ -329,6 +331,18 @@ border:8px solid #420;
 }
 #listproductsbox a{
 color: aqua;
+}
+#shoppingcartbox
+{
+width:1000px;
+height: auto;
+overflow: auto;
+margin:0 auto;
+background-color:#555;
+color:white;
+padding:15px;
+border:8px solid #420;
+text-align: center;
 }
 .itemphotolist
 {
@@ -341,4 +355,8 @@ color: aqua;
 .basket_total{
 float: right;
 }
-
+#cartbottom{
+width: 400px;
+display: inline-block;
+vertical-align: bottom;
+}
