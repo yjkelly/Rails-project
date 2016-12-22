@@ -7,6 +7,7 @@ var mousePos;
 	var cnames3=['iceland','France','Nepal','new zealand','Mexico','Aussie','Turkey'];
 	var cimages=['iceland1.jpg','france1.jpg','nepal1.jpg','newzealand1.jpg','mexico1.jpg','australia1.jpg','turkey1.jpg'];
 	var cdesc=['Iceland','France','Nepal','New_Zealand','Mexico','Australia','Turkey'];
+	var sync=[1,2,4,7,3,6,5];
 	var radius = 3;
 	var closest_place=0;
 	var closest_distance = 100000;
@@ -69,7 +70,7 @@ $(document).ready(function() {
 
 	var bd=document.getElementById("booking_destination_id");
 	if (bd!=null)
-	document.getElementById("booking_destination_id").value="0";
+	document.getElementById("booking_destination_id").value="1";
     var ctx=c.getContext("2d");
     var img=document.getElementById("mapmono");
 setTimeout(function(){
@@ -136,7 +137,7 @@ setTimeout(function(){
 		destination=cnames[closest_place];
 		updateCookie("destination",cnames[closest_place].toLowerCase());
 		if (document.getElementById("booking_destination_id")!=null)
-		document.getElementById("booking_destination_id").value=closest_place;
+		document.getElementById("booking_destination_id").value=sync[closest_place];
 
 		}
       
@@ -581,7 +582,7 @@ $(document).ready( function() {
 	//writeMessage(slidercanvas, message);
 	
         });
-       	}},1200);
+       	}},1000);
 });
 
 function slideover(){
