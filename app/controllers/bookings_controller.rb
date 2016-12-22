@@ -29,7 +29,7 @@ class BookingsController < ApplicationController
 
     respond_to do |format|
       @destinations=Destination.all
-      session[:destination] = @destinations[@booking.destination_id].name
+      session[:destination] = @destinations[@booking.destination_id-1].name
       if @booking.save
         session[:booking_id] = @booking.id
         format.html { redirect_to url_for(:controller => 'activity_categories', :action => :list) }
