@@ -3,12 +3,17 @@
 <div id='first'>
   <br>
 	<div id="shoppingcartbox">
+		<h1>Your Holiday </h1>
+  		<div id="reciept-border" style="color:black">
+		    <%= render :partial => "bookings/receipt"%>
+		</div>
+		<br>
+		<br>
 
 		<%= render "shopping_cart" %>
 
 	</div>
-</div>
-  <div id="reciept-border">
-    <%= render :partial => "bookings/receipt"%>
+
 
 </div>
+
