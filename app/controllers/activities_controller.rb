@@ -1,6 +1,6 @@
 class ActivitiesController < ApplicationController
-  before_action :require_login, except: [:list]
-  before_action :require_admin, except: [:list]
+  before_action :require_login, except: [:list, :activity_boxes]
+  before_action :require_admin, except: [:list, :activity_boxes]
   before_action :set_activity, only: [:show, :edit, :update, :destroy]
 
   # GET /activities
