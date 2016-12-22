@@ -1,24 +1,31 @@
-<p id="notice"><%= notice %></p>
+<div id='first'>
+  <br>
+	<div id="listproductsbox">
 
-<p>
-  <strong>Name:</strong>
-  <%= @activity.name %>
-</p>
+		<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @activity.description %>
-</p>
+		<p>
+		  <strong>Name:</strong>
+		  <%= @activity.name %>
+		</p>
 
-<p>
-  <strong>Picture:</strong>
-  <%= @activity.picture %>
-</p>
+		<p>
+		  <strong>Description:</strong>
+		  <%= @activity.description %>
+		</p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @activity.price %>
-</p>
+		<p>
+		  <strong>Picture:</strong>
+		  <%= @activity.picture %>
+		</p>
 
-<%= link_to 'Edit', edit_activity_path(@activity) %> |
-<%= link_to 'Back', activities_path %>
+		<p>
+		  <strong>Price:</strong>
+		  <%= @activity.price %>
+		</p>
+
+		<%= link_to 'Edit', edit_activity_path(@activity) %> |
+		<%= link_to 'Back', activities_path %>
+
+	</div>
+</div>
