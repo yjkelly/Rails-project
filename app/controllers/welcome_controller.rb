@@ -1,6 +1,11 @@
 class WelcomeController < ApplicationController
     def index
-         @bookings = Booking.all
-         @orders = Order.all
+       @basketitem = BasketItem.all
+       @product = Product.all
+       @booking = Booking.all
+       @bookingactivity = BookingActivity.all
+       @activity = Activity.all
+       @accommodation = Accommodation.all
+       @destination = Destination.all
     end
 end
