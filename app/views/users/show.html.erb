@@ -48,6 +48,63 @@ You are not authorized to view this profile.
   <% if (!logged_in?) %>
     Please <%= link_to 'login', login_path %>
   <% end %>
+
+<% end %>
+<br>
+<hr>
+Previous Orders<br>
+
+<% current_user.orders.each do |anorder| %>
+
+<br>
+
+<% total=0 %>
+<div class='showorder'>
+<%= anorder.updated_at %><br>
+  <% @basketitem.each do |basket| %>
+    <% if basket.order_id == anorder.id %><br>
+     <%= image_tag "/"+@product[basket.product_id-1].picture,size:"50" %>
+       <%= @product[basket.product_id-1].name %> which cost <%= basket.unit_price %>
+      <% if basket.quantity>1 %>
+      * <%= basket.quantity %>
+      <% end %>
+      <br>
+    <% end %>
+  <% end %>
+  <% if anorder.subtotal>0 %>
+   <br>Total Store Cost: <%= anorder.subtotal %><br><hr>
+   <% end %>
+  
+
+   <% @booking.each do |booking| %>
+     <% if booking.order_id == anorder.id %><br>
+        <% if booking.accommodation_id %>
+          You booked '<%= @accommodation[booking.accommodation_id-1].name %>' accommodation in <%= @destination[booking.destination_id-1].name %>
+           for <%= booking.number_guests %>
+            <% if booking.number_guests>1 %>
+              people
+            <% else %>
+              person
+            <% end %>
+             from <%= booking.start_date %> to <%= booking.end_date %>
+        <% end %>
+         <% @bookingactivity.each do |bookingactivity| %>
+           <% if bookingactivity.booking_id == booking.id %>
+              <br>You chose '<%= @activity[bookingactivity.activity_id-1].name %>' as an activity
+           <% end %>
+         <% end %>
+          <% if anorder.subtotal>0 %>
+              <br><br>Total for Accommodation/Activities: <%= booking.price %>
+          <% end %>
+          <% total=total+booking.price %>
+      <% end %>
+      
+    <% end %>
+    <% total=total+anorder.subtotal %>
+    <br><br>Total Cost: <%= total %>
+  </div> 
+   
+   
 <% end %>
 </div>
 </div>

@@ -89,6 +89,7 @@ window.onload = function() {
     var c=document.getElementById("myCanvas");
 	if (c!=null)
 	{
+	document.getElementById("booking_destination_id").value="0";
     var ctx=c.getContext("2d");
     var img=document.getElementById("mapmono");
     ctx.drawImage(img,0,0,c.width,c.height);
