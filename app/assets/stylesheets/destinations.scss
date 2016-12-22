@@ -208,7 +208,7 @@ body{
 
   height:500px;
   overflow:hidden;
-  background-image:url(activities/mounteverest.jpg);
+  background-image: asset-data-url("activities/mounteverest.jpg");
   background-size:cover;
 }
 
@@ -805,7 +805,7 @@ color:white;
 width:100%;
 height:1000px;
 background-color:black;
-background-image:url('newbackground.jpg');
+background-image: asset-data-url("newbackground.jpg");
 background-repeat:no-repeat;
 //background-attachment:fixed;
 //background-size:100%;
@@ -875,7 +875,7 @@ padding:0px;
 width:100%;
 height:1000px;
 background:#ccc;
-background-image:url('tiled.jpg');
+background-image: asset-data-url("tiled.jpg");
 }
 #third
 {
