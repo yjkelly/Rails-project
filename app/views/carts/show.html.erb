@@ -1,4 +1,11 @@
-
+<div id="breadcrumb-container">
+	<ul id="breadcrumb-list">
+	  <li class="breadcrumb"><%= link_to "Home", landing_path, class: "breadcrumb-link" %><span>&gt;&gt;</span></li>
+    <li class="breadcrumb"><%= link_to "Activities",{ :controller => :activity_categories, :action => :list }, {class: "breadcrumb-link"} %><span>&gt;&gt;</span></li>
+    <li class="breadcrumb"><%= link_to "Accommodation",{ :controller => :accommodations, :action => :list },{class: "breadcrumb-link"} %><span>&gt;&gt;</span></li>
+	  <li class="breadcrumb"><%= link_to "Store", '/store', class: "breadcrumb-link-current" %></li>
+	</ul>
+</div>
 
 <div id='first'>
   <br>
