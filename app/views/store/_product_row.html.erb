@@ -1,5 +1,5 @@
 <div class="storeitem">
-  <img class="itemphoto" src="<%= product.picture %>" alt="<%= product.name %>"/>
+  <%= image_tag(product.picture, class: "itemphoto", alt: product.name) %>
   <h3> <%= product.name %> </h3>
   <h4> <%= number_to_currency product.price %> </h4>
 
