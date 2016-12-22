@@ -1,4 +1,6 @@
 class ActivityCategoriesController < ApplicationController
+  before_action :require_login, except: [:list]
+  before_action :require_admin, except: [:list]
   before_action :set_activity_category, only: [:show, :edit, :update, :destroy]
 
   # GET /activity_categories

@@ -8,8 +8,10 @@ gem 'bcrypt', '~> 3.1.3'
 # carrierwave handles avatar uploads
 gem 'carrierwave',             '0.11.2'
 
+# Use mysql as the database for Active Record
+gem 'mysql2', '>= 0.3.13', '< 0.5'
 # Use postgresql because heroku wont run on anything but postgresql
-gem 'pg'
+#gem 'pg'
 # Use mysql as the database for Active Record
  gem 'mysql2', '>= 0.3.13', '< 0.5'
 # Use SCSS for stylesheets
@@ -22,7 +24,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # Added this to overcome a windows based error - https://stackoverflow.com/questions/28241981/rails-4-execjsprogramerror-in-pageswelcome#28306996
 gem 'coffee-script-source', '1.8.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

@@ -1,0 +1,2269 @@
+
+body
+{
+margin:0;
+color:white;
+background:#dde0e7;
+font-family:Arial;
+}
+a
+{
+color:white;
+}
+#store
+{
+background:#A8DBF0;
+max-width:1000px;
+float:left;
+padding-bottom: 50px;
+margin-bottom: 50px;
+margin-left: 50px;
+margin-right: 50px;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+}
+#rightside
+{
+background-color:#5e97ab;
+text-align:center;
+width:400px;
+height:100%;
+float: left;
+padding-bottom: 50px;
+margin-right: 50px;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+}
+#mainarea
+{
+max-width:1700px;
+height:100%;
+margin: 0 auto;
+padding: 50px;
+/*background:#68c0e6;*/
+background:#dde0e7;
+overflow: auto;
+}
+#main-container
+{
+width:100%;
+height:100%;
+margin: 0 auto;
+background:#dde0e7;
+overflow: auto;
+}
+#storetop
+{
+text-align: center;
+margin: 0 auto;
+margin-top: 50px;
+width:100%;
+}
+#categoryarea
+{
+width:500px;
+margin: 0 auto;
+margin-right: 100px;
+text-align:left;
+overflow:hidden;
+color:black;
+}
+#catselect {
+padding:8px 15px;
+background:#A8DBF0;
+border:0px solid #dbdbdb;
+}
+#orderheading
+{
+color:white;
+font-size:24px;
+}
+#orderbox
+{
+margin: 0 auto;
+width:350px;
+color:white;
+height:auto;
+}
+#checkoutbutton
+{
+background-color:#378;
+opacity:1.0;
+border-radius:10px;
+width:170px;
+height:20px;
+margin:0 auto;
+color:white;
+padding:20px;
+}
+.storeitem
+{
+width: 250px;
+height: 350px;
+margin-left: 60px;
+margin-top: 50px;
+background-color: #fff;
+color:#5E97AB;
+text-align:center;
+float: left;
+-webkit-box-shadow: 0px 0px 9px 1px rgba(67,79,77,1);
+-moz-box-shadow: 0px 0px 9px 1px rgba(67,79,77,1);
+box-shadow: 0px 0px 9px 1px rgba(67,79,77,1);
+}
+.itemphoto
+{
+width: 175px;
+height: 175px;
+margin-left: 20px;
+}
+form.add-to-cart div,
+form.add-to-cart p {
+text-align: center;
+}
+
+form input.qty {
+width: 40px;
+border: 1px solid #eee;
+background: #f9f9f9;
+color: #000;
+border-radius: 3px;
+margin-left: 0.4em;
+}
+
+.btn, a.btn {
+display: inline-block;
+background: #386311;
+color: #fff;
+padding: 0.3em 1em;
+text-align: center;
+border-radius: 4px;
+border: 0px solid #a00;
+}
+#emptycart {
+display: inline-block;
+background:#B60003;
+color: #fff;
+padding: 0.3em 1em;
+text-align: center;
+border-radius: 4px;
+border: 0px solid #a00;
+cursor: pointer;
+}
+#shopping-cart {
+margin: 1.5em 0;
+}
+
+.shopping-cart {
+border: 1px solid #ddd;
+border-collapse: collapse;
+border-spacing: 0;
+width: 100%;
+table-layout: fixed;
+}
+
+.shopping-cart th {
+font-size: 1.3em;
+padding: 0.3em;
+width: 33.3%;
+border: 1px solid #ddd;
+text-transform: uppercase;
+}
+
+.shopping-cart td {
+padding: 0.3em;
+width: 33.3%;
+border: 1px solid #ddd;
+}
+
+.shopping-cart tr:nth-child(even) {
+background: #fafafa;
+}
+
+.shopping-cart td.pdelete {
+text-align: center;
+}
+#orderedProductsTbl {
+width: 350px;
+border: 0px solid transparent;
+border-collapse:collapse;
+}
+.product {
+font-family     : Arial;
+text-align      : center;
+width           : 100px;
+height          : 15px;
+background      : #ccc;
+border          : 1px solid #000;
+box-shadow      : 1px 1px 5px -1px #000;
+padding         : 10px;
+margin-bottom   : 10px;
+cursor          : pointer;
+}
+
+.product:hover {
+text-decoration : underline;   
+}
+#deleteproduct {
+color: red;
+cursor: pointer;
+}
+.jaggedyedges {
+border: 20px solid transparent;
+padding: 10px;
+-webkit-border-image: url(../img/activities/jagged.png) 30 round; /* Safari 3.1-5 */
+-o-border-image: url(../img/activities/jagged.png) 30 round; /* Opera 11-12.1 */
+border-image: url(../img/activities/jagged.png) 30 round;
+border-left:none;
+border-right:none;
+border-image-outset: 0.5;
+}
+#breakdown{
+height: 300px;
+width:280px;
+background-color:white;
+color: black;
+}
+#breakdown-border{
+padding:18px;
+display: inline-block;
+position: relative;
+vertical-align:top;
+margin-top:20px;
+margin-right: 75px;
+right:-60px;
+background-color:#e0e3ec;
+font-family: "Lucida Sans Typewriter", "Lucida Console", monaco, "Bitstream Vera Sans Mono", monospace; /* refernce font:http://www.cssfontstack.com/Lucida-Sans-Typewriter*/
+float: right;
+}
+/*reciept header*/
+#breakdown h2,h3{
+margin:0;
+text-align:center;
+border-bottom:3px dotted;
+}
+#breakdown table{
+line-height: 30px;
+text-align: left;
+margin-top: 30px;
+width:100%;
+border-collapse:collapse;
+}
+.breadcrumb span {
+color: black;
+}
+
+/* basket products on store index page */
+.basket_box{
+min-height:20px;
+padding:10px;
+margin-left: 5px;
+margin-right: 5px;
+margin-bottom:20px;
+background-color:#f5f5f5;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+}
+.basket_box blockquote{
+border-color:#ddd;
+border-color:rgba(0,0,0,.15)
+}
+.basket_row{
+overflow: auto;
+height: auto;
+}
+.basket_title{
+float: left;
+}
+.basket_unit_price{
+float: right;
+}
+.basket_amend{
+float: left;
+}
+.basket_qty_field{
+width: 40px;
+border: 1px solid #eee;
+background: #fff;
+color: #000;
+border-radius: 3px;
+margin-left: 0.4em;
+text-align: center;
+}
+.basket_btn_update{
+display: inline-block;
+background: #386311;
+color: #fff;
+padding: 0.3em 0.5em;
+text-align: center;
+border-radius: 4px;
+border: 0px solid #a00;
+cursor: pointer;
+}
+.basket_btn_delete{
+display: inline-block;
+background:#B60003;
+color: #fff;
+padding: 0.3em 0.5em;
+text-align: center;
+border-radius: 4px;
+border: 0px solid #a00;
+cursor: pointer;
+}
+.basket_total{
+float: right;
+}
+
+/* Products CRUD */
+
+#listproductsbox
+{
+width:1000px;
+height: auto;
+overflow: auto;
+margin:0 auto;
+background-color:#555;
+color:white;
+padding:15px;
+border:8px solid #420;
+}
+#listproductsbox a{
+color: aqua;
+}
+#shoppingcartbox
+{
+width:1000px;
+height: auto;
+overflow: auto;
+margin:0 auto;
+background-color:#555;
+color:white;
+padding:15px;
+border:8px solid #420;
+text-align: center;
+}
+.itemphotolist
+{
+height: 100px;
+width: auto;
+}
+#products_table a{
+color: aqua;
+}
+.basket_total{
+float: right;
+}
+#cartbottom{
+width: 400px;
+display: inline-block;
+vertical-align: bottom;
+}
+/* Lots of funky contact form css */
+/* line 7, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/contact.scss */
+#contactcontainer {
+  color: white;
+  background-color: #774400;
+  background-image: url("/assets/pencil.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 800px;
+  width: 100%;
+}
+
+/* line 16, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/contact.scss */
+#contactform {
+  opacity: 0.9;
+  color: white;
+  margin: 0 auto;
+  border-radius: 40px;
+  border: 5px solid black;
+  width: 700px;
+  background-color: #333333;
+  height: 600px;
+}
+
+/* line 26, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/contact.scss */
+.contacttitle {
+  margin: 0 auto;
+  width: 80%;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* line 33, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/contact.scss */
+.contactunder {
+  margin: 0 auto;
+  width: 400px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* line 40, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/contact.scss */
+.contactname,
+#contactemail {
+  margin: 0 auto;
+  width: 80%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* Informational divs with response text */
+/* line 49, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/contact.scss */
+#undername,
+#overemail,
+#underemail,
+#undercontent {
+  text-align: center;
+  font-size: 18px;
+}
+
+/* line 57, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/contact.scss */
+#contactemailchoice {
+  width: 80%;
+  font-size: 20px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* line 64, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/contact.scss */
+#contactemail {
+  display: none;
+}
+
+/* line 67, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/contact.scss */
+#contactcontent {
+  display: none;
+  margin: 0 auto;
+  width: 80%;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* line 75, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/contact.scss */
+#contactform input[type=text] {
+  width: 300px;
+  border-radius: 10px;
+  padding: 5px;
+  background-color: #eee;
+  font-size: 20px;
+}
+
+/* line 82, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/contact.scss */
+#contactform input[type=text]:focus {
+  border-radius: 10px;
+  padding: 5px;
+  background-color: #ffffff;
+}
+
+/* line 87, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/contact.scss */
+#contactform *:focus {
+  outline: none;
+}
+
+/* line 90, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/contact.scss */
+#contactform textarea {
+  padding: 10px;
+  font-size: 20px;
+  width: 70%;
+  height: 200px;
+}
+
+/* line 96, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/contact.scss */
+#contactform a {
+  color: cyan;
+}
+/* line 5, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+body {
+  margin: 0;
+}
+
+/* line 9, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+a {
+  text-decoration: none;
+}
+
+/*css for the top part of the page*/
+/* line 15, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.logoleft {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: Arial;
+  color: black;
+  float: left;
+  width: 20%;
+  background-color: white;
+  height: 40px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid black;
+}
+
+/* line 30, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#navbar {
+  width: 100%;
+}
+
+/* line 34, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.topbar {
+  float: left;
+  width: 80%;
+  height: 30px;
+  background-color: #000;
+  text-align: right;
+  color: white;
+  font-size: 16px;
+}
+
+/* line 44, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.linksbar {
+  float: left;
+  width: 80%;
+  background-color: white;
+  min-height: 60px;
+  border-bottom: 1px solid black;
+}
+
+/* line 52, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.link1 {
+  text-align: center;
+  padding: 20px;
+  font-size: 20px;
+  float: left;
+  width: 150px;
+  height: 20px;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  background-color: white;
+  color: black;
+  font-family: Arial;
+}
+
+/* line 66, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.link2 a, .link2 a:visited {
+  color: white;
+}
+
+/* line 71, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.link2 a:hover {
+  background-color: #30ac97;
+}
+
+/* line 76, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.link1:hover, .link2:hover, .link3:hover, .link4:hover {
+  cursor: pointer;
+  background-color: orange;
+  color: white;
+}
+
+/*css for the about pop-up :) */
+/* line 84, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#aboutdarken {
+  display: none;
+  opacity: 0.4;
+  background-color: black;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+}
+
+/* line 95, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#about {
+  display: none;
+  border: 10px solid #420;
+  background-color: white;
+  position: fixed;
+  width: 680px;
+  height: 680px;
+  top: 50%;
+  left: 50%;
+  margin-left: -340px;
+  margin-top: -340px;
+  color: black;
+  font-size: 20px;
+  font-family: Arial;
+}
+
+/* line 112, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.abouthead {
+  padding-top: 20px;
+  float: left;
+  width: 360px;
+  text-align: center;
+  font-size: 30px;
+}
+
+/* line 120, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.aboutleftpic, .aboutrightpic {
+  float: left;
+  width: 160px;
+}
+
+/* line 125, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.abouttext {
+  padding: 50px;
+}
+
+/* line 129, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.aboutsig {
+  float: left;
+  width: 200px;
+  height: 50px;
+}
+
+/* line 135, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.aboutgap {
+  float: left;
+  width: 100px;
+  height: 50px;
+}
+
+/* line 146, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#footer {
+  background-color: #111111;
+  height: 60px;
+  clear: both;
+  color: #999;
+  font-size: 14px;
+  text-align: right;
+}
+
+/* line 156, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#clear {
+  clear: both;
+}
+
+/*fixing nav bar to work with slider*/
+/* line 162, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.logoleft {
+  float: none;
+  display: inline-block;
+  background-color: #3e3b3b;
+}
+
+/* line 168, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.topbar {
+  float: right;
+  background-color: #717070;
+}
+
+/* line 173, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.linksbar {
+  float: right;
+  position: absolute;
+  top: 30px;
+  right: 0px;
+  background-color: #3e3b3b;
+}
+
+/* line 182, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.link1 {
+  background-color: #3e3b3b;
+  color: white;
+}
+
+/* line 186, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#navbar {
+  display: inline;
+}
+
+/* line 190, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.link1:hover {
+  background-color: #30ac97;
+}
+
+/* line 195, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+body {
+  margin: 0px;
+}
+
+/* ===== SLIDER ======*/
+/* line 200, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#slider {
+  height: 500px;
+  margin-top: 18px;
+}
+
+/* line 206, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#container {
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  background-image: url(../img/activities/mounteverest.jpg);
+  background-size: cover;
+}
+
+/* line 215, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.container-overlay {
+  padding-top: 90px;
+  width: 700px;
+  height: 500px;
+  background-color: rgba(247, 107, 106, 0.9);
+  position: relative;
+  top: -20px;
+}
+
+/* line 224, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.slider-img {
+  width: inherit;
+  height: inherit;
+}
+
+/* line 230, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.slide-div {
+  margin: 0 auto;
+  width: 1000px;
+  height: 300px;
+  text-align: left;
+  position: relative;
+  top: -400px;
+  color: white;
+}
+
+/* line 240, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.container-overlay h2 {
+  margin: 0;
+  margin-left: 90%;
+  font-size: 140px;
+  color: white;
+  text-align: center;
+  text-shadow: 0px 0px 5px #000;
+  font-family: 'Droid Sans', sans-serif;
+  opacity: 1;
+}
+
+/* line 251, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.slide-div p {
+  margin: 0;
+  margin-top: 40px;
+  margin-left: 50px;
+  font-size: 60px;
+  text-shadow: 0px 0px 5px #000;
+  font-family: 'Pacifico', cursive;
+}
+
+/* line 260, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#greentext {
+  color: #50c5b3;
+}
+
+/* line 263, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#orangetext {
+  color: #E34941;
+}
+
+/* line 268, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#item-1 p {
+  margin-left: 190px;
+}
+
+/* line 271, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#item-2 {
+  position: relative;
+  top: -700px;
+  left: 150%;
+}
+
+/* line 277, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#item-2 p {
+  font-size: 40px;
+  background-color: rgba(233, 233, 233, 0.4);
+  padding: 20px;
+  margin-left: 20px;
+}
+
+/* line 284, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.left-side {
+  float: left;
+}
+
+/* line 288, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#slider-controls ol {
+  list-style-type: none;
+  margin: 0;
+}
+
+/* line 293, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#slider-controls ol li {
+  cursor: pointer;
+  color: white;
+}
+
+/* line 298, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#slider-controls {
+  width: 80px;
+  margin: 0 auto;
+  position: relative;
+  top: -20px;
+}
+
+/* ============*/
+/* line 308, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#heading-content {
+  padding: 15px;
+}
+
+/* line 312, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#main-text {
+  padding-top: 35px;
+  color: #fff;
+  font-size: 85px;
+  font-weight: 600;
+}
+
+/* line 319, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#main-1 {
+  font-weight: 100;
+}
+
+/* line 323, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.icons {
+  float: right;
+  color: #fff;
+}
+
+/* line 328, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+nav {
+  background-color: #333;
+  margin: 0;
+  overflow: hidden;
+  padding-left: 20%;
+}
+
+/* line 335, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+nav ul {
+  margin: 0;
+}
+
+/* line 338, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.navitem {
+  display: inline-block;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: center;
+}
+
+/* line 346, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.navlink {
+  color: #aaa;
+  display: block;
+  line-height: 2em;
+  padding: 0.5em 0.5em;
+  text-decoration: none;
+}
+
+/* line 354, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.navlink:hover {
+  color: #fff;
+  background-color: #f8a53a;
+}
+
+/* line 359, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.navitem:hover {
+  background-color: #f8a53a;
+  color: #fff;
+  -webkit-box-shadow: 10px 13px 30px -5px #707070;
+  -moz-box-shadow: 10px 13px 30px -5px #707070;
+  box-shadow: 10px 13px 30px -5px #707070;
+}
+
+/* line 367, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+footer {
+  height: 30px;
+  background-color: #333;
+  bottom: 0;
+  color: #aaa;
+  padding: 10px;
+}
+
+/* line 376, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#main-body {
+  background-color: #fff;
+  box-shadow: 0px 1px 0px #dde0e7;
+}
+
+/* line 382, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#grey-box-form {
+  background-color: #f5f6f8;
+  padding: 90px;
+  box-shadow: 0px 1px 0px #dde0e7;
+}
+
+/* line 387, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#form-box {
+  margin: 0 auto;
+  /*center horizontally*/
+  width: 730px;
+  background-color: #50c5b3;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  -webkit-box-shadow: 0px 5px 3px -2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 5px 3px -2px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 5px 3px -2px rgba(0, 0, 0, 0.75);
+}
+
+/* line 398, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#form-button {
+  margin: 0 auto;
+  width: 200px;
+  /* Center aligning anything needs a set width, because its fullscreen by default and therefore cannot be centered */
+}
+
+/* line 405, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#search-button {
+  width: 180px;
+  border: 1px solid #fff;
+  background-color: #50c5b3;
+  padding: 10px;
+  margin: 10px;
+  margin-right: 20px;
+  color: white;
+  font-weight: bolder;
+  outline: 0;
+  cursor: pointer;
+}
+
+/* line 418, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.form-item {
+  padding-left: 5px;
+  display: inline-block;
+}
+
+/* line 424, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.form-item label {
+  display: block;
+}
+
+/* line 428, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.form-item select {
+  height: 20px;
+}
+
+/* line 432, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.form-item input {
+  height: 20px;
+}
+
+/* line 437, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.date-box-size {
+  width: 165px;
+}
+
+/* line 440, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#number-of-guests-box-size {
+  width: 50px;
+  height: 15px;
+}
+
+/* line 444, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.activity-individual-box {
+  vertical-align: top;
+  /* Stop divs from pushing each other when applying hover effect*/
+  width: 250px;
+  height: 250px;
+  display: inline-block;
+  /*put div side by side*/
+  margin-left: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  /*Make the mouse pointer into the hand icon, so this looks clickable */
+  cursor: pointer;
+}
+
+/* line 457, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.activity-thumbnail {
+  width: inherit;
+  height: inherit;
+  /* gets the width of the parent element .activity-category and inherits*/
+}
+
+/* line 462, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.activity-title-bar {
+  position: relative;
+  width: 100%;
+  top: -40px;
+  color: white;
+  text-align: center;
+  background-color: #3E6BB3;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  opacity: .95;
+}
+
+/* line 475, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.double-wide-individual-box {
+  width: 540px;
+}
+
+/* line 479, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#activity-heading {
+  padding-bottom: 15px;
+  text-align: center;
+  background-color: #FF9147;
+  padding-top: 15px;
+  box-shadow: 0px 1px 0px #dde0e7;
+}
+
+/* line 488, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#activity-heading h2 {
+  margin: 0;
+}
+
+/* line 492, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#activity-container {
+  padding: 20px;
+  width: 900px;
+  margin-left: 25px;
+  display: inline-block;
+  border: 3px solid #e0e3ec;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Title bar colours for categories */
+/* line 506, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#snowsports {
+  background-color: #FF7068;
+}
+
+/* line 510, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#hiking {
+  background-color: #50C5B1;
+}
+
+/* line 514, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#offroading {
+  background-color: #FFA568;
+}
+
+/* line 518, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#watersports {
+  background-color: #5F80CB;
+}
+
+/* line 521, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#biking {
+  background-color: #97EC60;
+}
+
+/* line 525, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.activity-text {
+  position: relative;
+}
+
+/*refernce jagged edge border: http://www.w3schools.com/cssref/css3_pr_border-image.asp*/
+/* line 529, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.jaggededges {
+  border: 20px solid transparent;
+  padding: 10px;
+  -webkit-border-image: url(../img/activities/jagged.png) 30 round;
+  /* Safari 3.1-5 */
+  -o-border-image: url(../img/activities/jagged.png) 30 round;
+  /* Opera 11-12.1 */
+  border-image: url(../img/activities/jagged.png) 30 round;
+  border-left: none;
+  border-right: none;
+  border-image-outset: 0.5;
+}
+
+/* line 539, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#receipt {
+  background-color: white;
+}
+
+/* line 544, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+th form {
+  display: inline;
+}
+
+/* line 548, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#reciept-border {
+  padding: 18px;
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  margin-top: 20px;
+  right: -60px;
+  background-color: #e0e3ec;
+  font-family: "Lucida Sans Typewriter", "Lucida Console", monaco, "Bitstream Vera Sans Mono", monospace;
+  /* refernce font:http://www.cssfontstack.com/Lucida-Sans-Typewriter*/
+}
+
+/*reciept header*/
+/* line 561, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#receipt h2, h3 {
+  margin: 0;
+  text-align: center;
+  border-bottom: 3px dotted;
+}
+
+/* line 568, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#receipt table {
+  line-height: 30px;
+  text-align: left;
+  margin-top: 30px;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* line 575, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+tr.table-colour2 {
+  background-color: #e0e3ec;
+}
+
+/* line 578, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#border-price {
+  border-top: 3px dotted;
+  margin-top: 15px;
+}
+
+/* line 584, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+input#checkout-button {
+  margin-top: 15px;
+  width: 100%;
+  padding: 15px;
+  border: 1px solid white;
+  cursor: pointer;
+  font-weight: bolder;
+  background-color: #50c5b3;
+  color: white;
+}
+
+/* line 595, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+input#checkout-button:hover {
+  background-color: #30ac97;
+}
+
+/* line 599, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#activity-refine {
+  margin-left: 792px;
+  margin-top: 10px;
+}
+
+/*second part of activity page*/
+/* line 605, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.sub-activity-box {
+  height: 400px;
+  width: 250px;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 35px;
+  -webkit-box-shadow: 0px 0px 9px 1px #434f4d;
+  -moz-box-shadow: 0px 0px 9px 1px #434f4d;
+  box-shadow: 0px 0px 9px 1px #434f4d;
+}
+
+/* line 616, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.sub-activity-img {
+  height: 200px;
+  width: 250px;
+}
+
+/* line 621, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.sub-activity-title {
+  height: 40px;
+  position: relative;
+  top: -4px;
+  text-align: center;
+  padding-top: 20px;
+  font-size: 20px;
+}
+
+/* line 630, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.activity-text {
+  position: relative;
+  color: white;
+}
+
+/* line 635, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.sub-activity-description {
+  padding-left: 5px;
+  height: 80px;
+}
+
+/* line 639, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.sub-activity-price-book {
+  margin-left: 20px;
+  font-size: 25px;
+  margin-bottom: 5px;
+}
+
+/* line 644, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.book-activity {
+  margin-left: 55px;
+  width: 100px;
+  height: 30px;
+  background-color: #00AEF3;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* line 655, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.hidden {
+  display: none;
+}
+
+/* line 660, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#receipt tr:hover {
+  background-color: #aaa;
+}
+
+/* ===== Breadcrumbs =========*/
+/* line 665, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#breadcrumb-list {
+  margin: 0;
+  list-style-type: none;
+  background-color: #f5f6f8;
+}
+
+/* line 672, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#breadcrumb-list .breadcrumb {
+  display: inline;
+  padding: 5px;
+  font-size: 25px;
+}
+
+/* line 677, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#breadcrumb-container {
+  height: 10px;
+}
+
+/* line 681, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.breadcrumb-link {
+  font-size: 25px;
+  color: black;
+}
+
+/* line 685, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.breadcrumb span {
+  padding-left: 5px;
+}
+
+/* line 688, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.current {
+  text-decoration: underline;
+}
+
+/*=========================*/
+/* responsive navbar*/
+/* line 693, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.res-list {
+  list-style-type: none;
+  margin: 0 auto;
+  width: 100%;
+  background-color: #3e3b3b;
+  padding: 0;
+}
+
+/* line 701, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+a.res-link {
+  color: white;
+  font-size: 30px;
+  padding-left: 50px;
+}
+
+/* line 707, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+li.res-item {
+  border: 1px solid white;
+}
+
+/* line 715, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#skip-button {
+  width: 300px;
+  margin: 0 auto;
+  position: relative;
+  left: 340px;
+  bottom: 10px;
+  margin-top: 20px;
+}
+
+/* line 724, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#skip-button input {
+  width: 100%;
+  padding: 15px;
+  border: 0;
+  cursor: pointer;
+  background-color: #FF9147;
+  color: white;
+  font-size: 15px;
+}
+
+/* line 735, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#back-button {
+  width: 300px;
+  position: relative;
+  bottom: 60px;
+  margin-left: 25px;
+}
+
+/* line 742, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#back-button input {
+  width: 100%;
+  padding: 15px;
+  border: 0;
+  cursor: pointer;
+  background-color: #30ac97;
+  color: white;
+  font-size: 15px;
+}
+
+/* Media queries */
+@media screen and (max-device-width: 768px) {
+  /* line 756, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+  #slider {
+    display: none;
+    /*Dont show the slider for small screens*/
+  }
+
+  /*Show icons on the reciepts */
+  /* line 761, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+  .hidden {
+    display: inline;
+    color: red;
+  }
+
+  /*reposition the skip button*/
+  /* line 767, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+  #skip-button {
+    display: inline-block;
+    left: 250px;
+    top: 100px;
+    margin: 0;
+  }
+
+  /* line 775, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+  #back-button {
+    display: inline-block;
+    margin-left: 0;
+    top: 150px;
+    left: -53px;
+  }
+}
+/* line 783, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+body {
+  margin: 0;
+  color: white;
+  background: black;
+  font-family: Arial;
+}
+
+/* line 790, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+a {
+  color: white;
+}
+
+/* line 795, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#header {
+  position: fixed;
+  background-color: #f11111;
+  text-align: center;
+  width: 100%;
+  height: 50px;
+}
+
+/* line 803, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#first {
+  width: 100%;
+  height: 1000px;
+  background-color: black;
+  background-image: url("/assets/newbackground.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  clear: both;
+}
+
+/* line 815, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.breakblue {
+  text-align: center;
+  width: 100%;
+  height: 200px;
+  background-color: #5e97ab;
+}
+
+/* line 822, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.breakorange {
+  text-align: center;
+  width: 100%;
+  height: 200px;
+  background-color: orange;
+}
+
+/* line 830, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.centered {
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  margin-top: -50px;
+  margin-left: -230px;
+}
+
+/* line 837, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.welcome {
+  cursor: pointer;
+  width: 600px;
+  text-align: center;
+  height: 100px;
+  font-size: 30px;
+  font-family: Tamoha;
+  color: #fff;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #bbb;
+}
+
+/* line 850, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#faded, #faded2 {
+  font-size: 26px;
+  display: none;
+}
+
+/* line 856, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+input[type=text], input[type=password], input[type=email] {
+  height: 25px;
+  width: 500px;
+}
+
+/* line 858, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#can {
+  background: #68c0e6;
+  width: 1000px;
+  float: left;
+  padding: 0px;
+}
+
+/* line 865, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#leftside {
+  background-color: #5e97ab;
+  text-align: center;
+  width: 350px;
+  height: 604px;
+  float: left;
+}
+
+/* line 873, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#second {
+  width: 100%;
+  height: 1000px;
+  background: #ccc;
+  background-image: url("/assets/tiled.jpg");
+}
+
+/* line 880, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#third {
+  text-align: center;
+  background-color: #fff;
+  width: 100%;
+  height: 600px;
+  color: black;
+}
+
+/* line 888, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#fourth {
+  width: 100%;
+  height: 1000px;
+  background: #000;
+}
+
+/* line 894, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#newcontainer {
+  margin: 0 auto;
+  width: 1400px;
+}
+
+/* line 899, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.slidercontainer {
+  margin: 0 auto;
+  width: 900px;
+  height: 300px;
+}
+
+/* line 905, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#pname {
+  color: white;
+  font-size: 24px;
+}
+
+/* line 910, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#pimage {
+  height: 150px;
+}
+
+/* line 912, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#pdesc {
+  margin: 0 auto;
+  width: 300px;
+  color: white;
+  height: 200px;
+}
+
+/* line 919, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#plink {
+  background-color: #378;
+  opacity: 1.0;
+  border-radius: 10px;
+  width: 170px;
+  height: 20px;
+  margin: 0 auto;
+  color: white;
+  padding: 20px;
+}
+
+/* line 930, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#flightcontainer {
+  padding: 20px;
+  border-radius: 30px;
+  width: 75%;
+  background: #222;
+  opacity: 0.9;
+  overflow: auto;
+  min-height: 600px;
+  margin: 0 auto;
+}
+
+/* line 941, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#flighthead {
+  color: white;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+  border-bottom: 10px solid #000;
+  padding-top: 20px;
+  font-size: 30px;
+  height: 50px;
+  text-align: center;
+}
+
+/* line 952, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#flightleft {
+  margin: 0 auto;
+  min-width: 500px;
+  padding-left: 2%;
+  width: 53%;
+  height: 500px;
+  float: left;
+  color: white;
+}
+
+/* line 962, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#flightright {
+  margin: 0 auto;
+  min-width: 500px;
+  border-bottom-right-radius: 30px;
+  width: 45%;
+  height: 500px;
+  float: left;
+}
+
+/* line 971, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.flyingtext {
+  float: left;
+  width: 100px;
+}
+
+/* line 976, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#ones, #outwardj, #returnj, #flightdatesoneway, #flightdatesreturn {
+  display: none;
+}
+
+/* line 980, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#flightrightcontent {
+  text-align: center;
+  font-size: 20px;
+  height: 450px;
+}
+
+/* line 986, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#flightrightskip {
+  text-align: right;
+  height: 50px;
+}
+
+/* line 991, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.skip {
+  background-color: #fff;
+  padding: 6px;
+  font-weight: bold;
+  border: 3px solid black;
+}
+
+/* line 998, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.skip:hover {
+  cursor: pointer;
+  background-color: #ff0;
+  padding: 6px;
+  font-weight: bold;
+  border: 3px solid black;
+}
+
+/* line 1006, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.spacing {
+  float: left;
+  margin-right: 15px;
+}
+
+/* line 1011, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#cheap {
+  background-color: #cfc;
+  padding: 6px;
+  font-weight: bold;
+  border: 3px solid black;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+/* line 1020, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#fancy {
+  background-color: #ffc;
+  padding: 6px;
+  font-weight: bold;
+  border: 3px solid black;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+/* line 1029, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#flightdetails, #flightdetails2, #flightdetails3, #flightdetails4 {
+  background-color: white;
+  height: 92px;
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+  margin: 2px;
+  margin-bottom: 5px;
+}
+
+/* line 1038, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.airline {
+  text-align: center;
+  position: relative;
+  top: 27px;
+  float: left;
+  color: #020;
+  width: 15%;
+}
+
+/* line 1047, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.airlinelogo {
+  position: relative;
+  top: 18px;
+  float: left;
+  color: #020;
+  width: 15%;
+}
+
+/* line 1055, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.routereturn {
+  font-weight: bold;
+  position: relative;
+  top: 7px;
+  float: left;
+  font-size: 14px;
+  color: #002;
+  text-align: center;
+  width: 40%;
+}
+
+/* line 1066, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.routeoneway {
+  font-weight: bold;
+  position: relative;
+  top: 32px;
+  float: left;
+  font-size: 14px;
+  color: #002;
+  text-align: center;
+  width: 40%;
+}
+
+/* line 1077, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.price {
+  position: relative;
+  top: 37px;
+  color: black;
+  float: left;
+  width: 20%;
+  font-weight: bold;
+}
+
+/* line 1086, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.rad {
+  position: relative;
+  top: 37px;
+  color: black;
+  float: left;
+  width: 10%;
+  font-weight: bold;
+}
+
+/* line 1095, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.searcher {
+  color: black;
+}
+
+/* line 1099, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#aboutdarken {
+  display: none;
+  opacity: 0.4;
+  background-color: black;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+}
+
+/* line 1110, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#about {
+  display: none;
+  border: 10px solid #420;
+  background-color: white;
+  position: fixed;
+  width: 680px;
+  height: 680px;
+  top: 50%;
+  left: 50%;
+  margin-left: -340px;
+  margin-top: -340px;
+  color: black;
+  font-size: 20px;
+}
+
+/* line 1125, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.abouthead {
+  padding-top: 20px;
+  float: left;
+  width: 360px;
+  text-align: center;
+  font-size: 30px;
+}
+
+/* line 1133, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.aboutleftpic, .aboutrightpic {
+  float: left;
+  width: 160px;
+}
+
+/* line 1138, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.abouttext {
+  padding: 50px;
+}
+
+/* line 1142, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.aboutsig {
+  float: left;
+  width: 200px;
+  height: 50px;
+}
+
+/* line 1148, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.aboutgap {
+  float: left;
+  width: 100px;
+  height: 50px;
+}
+
+/* line 1154, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.threethingscontain {
+  margin: 0 auto;
+  width: 70%;
+}
+
+/* line 1159, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.threethings {
+  background-color: #fff;
+  float: left;
+  border: 10px solid white;
+  width: 30%;
+  min-width: 300px;
+  margin: 5px;
+  height: 400px;
+}
+
+/* line 1169, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.threethings:hover {
+  border: 10px solid orange;
+  width: 30%;
+  min-width: 300px;
+  margin: 5px;
+  height: 400px;
+}
+
+/* line 1177, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#sun {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 1000px;
+  left: 280px;
+}
+
+/*.storeitem
+{
+margin-top:15%;
+width:70%;
+}
+.storeitem:hover
+{
+margin-top:10%;
+width:80%;
+
+}*/
+/* line 1195, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.threethingscontain {
+  font-size: 30px;
+  text-align: center;
+}
+
+/* line 1200, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#cover {
+  z-index: -1000;
+  opacity: 0.0;
+  position: absolute;
+  top: 0px;
+  background: white;
+  width: 100%;
+  height: 1000px;
+}
+
+/* line 1210, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.guidehead {
+  font-size: 40px;
+  font-family: Tamoha;
+}
+
+/* line 1215, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.line {
+  margin: 0 auto;
+  background-color: black;
+  height: 2px;
+  width: 60%;
+}
+
+/* line 1222, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#searchbar {
+  width: 500px;
+  margin: 0 auto;
+  text-align: left;
+  overflow: hidden;
+}
+
+/* line 1229, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#scon {
+  width: 500px;
+  margin: 0 auto;
+}
+
+/* line 1234, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#searchpop {
+  position: absolute;
+  z-index: 1000;
+  display: none;
+  width: 500px;
+  margin: 0 auto;
+  background-color: #fff;
+  text-align: left;
+  color: blue;
+}
+
+/* line 1245, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.highlight {
+  background-color: #ddd;
+  color: black;
+  width: 100%;
+}
+
+/* line 1251, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.normal {
+  background-color: #fff;
+  color: black;
+  width: 100%;
+}
+
+/* line 1258, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.leftarrow {
+  float: left;
+  width: 75px;
+  height: 300px;
+  line-height: 110px;
+}
+
+/* line 1265, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.rightarrow {
+  float: left;
+  width: 75px;
+  height: 300px;
+  line-height: 110px;
+}
+
+/* line 1272, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#mySlider {
+  float: left;
+}
+
+/* line 1276, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.clickable {
+  cursor: pointer;
+}
+
+/* line 1280, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#sliderdarken {
+  z-index: -999;
+  display: none;
+  opacity: 0.6;
+  background-color: black;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+}
+
+/* line 1292, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#sliderpop {
+  z-index: -998;
+  display: none;
+  border: 10px solid #420;
+  background-color: white;
+  position: fixed;
+  width: 980px;
+  height: 780px;
+  top: 50%;
+  left: 50%;
+  margin-left: -490px;
+  margin-top: -390px;
+  color: black;
+  font-size: 20px;
+  font-family: Arial;
+  text-align: left;
+}
+
+/* line 1310, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.logoleft {
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+
+/* line 1315, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.guidecontent {
+  padding: 20px;
+}
+
+/* line 1320, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#experiment {
+  #background-color: white;
+  #min-height: 300px;
+  #min-width: 400px;
+}
+
+/* line 1326, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.new_booking .field {
+  display: none;
+}
+
+/* line 1330, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#error_explanation {
+  color: black;
+}
+
+/*input[type=submit] 
+{
+background-color:#378;
+opacity:1.0;
+border-radius:10px;
+width:170px;
+height:20px;
+margin:0 auto;
+color:white;
+
+text-align:center;
+}*/
+/* line 1348, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#formcontainer {
+  width: 800px;
+  margin: 0 auto;
+  background-color: #555;
+  color: white;
+  padding: 15px;
+  border: 8px solid #420;
+}
+
+/* line 1357, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#formcontainer label {
+  float: left;
+  min-width: 140px;
+}
+
+/* line 1362, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#formcontainer a:visited {
+  color: white;
+}
+
+/* line 1366, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#formcontainer input[type=submit] {
+  background-color: #999;
+}
+
+/* line 1371, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.gocenter {
+  text-align: center;
+}
+
+/* line 1376, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#landingwelcome, #showusers {
+  background-color: #555;
+  width: 1200px;
+  margin: 0 auto;
+  border: 10px solid #420;
+  padding: 30px;
+  font-size: 18px;
+  color: white;
+  overflow: auto;
+}
+
+/* line 1387, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#activity-container .new_booking_activity, #activity-container .edit_booking {
+  width: 280px;
+  display: inline;
+}
+
+/* line 1392, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#showusers th {
+  padding-right: 20px;
+}
+
+/* line 1396, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#landingwelcome a:visited, #formcontainer a:visited, #showusers a:visited {
+  color: white;
+}
+
+/* line 1400, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.indented {
+  margin-left: 30px;
+}
+
+/* line 1404, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#first #notice {
+  color: white;
+}
+
+/* line 1408, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#first .field_with_errors {
+  background: #900;
+}
+
+/* line 1412, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#first a:visited, #first a {
+  color: white;
+}
+
+/* line 1416, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.showorder {
+  border: 5px solid #210;
+  background-color: #222;
+  width: 90%;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+/* line 1425, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.welcomelink {
+  cursor: pointer;
+  margin: 0 auto;
+  border-radius: 15px;
+  width: 300px;
+  background-color: #888;
+}
+
+/* line 1433, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#showusers td {
+  padding-left: 10px;
+}
+
+/* line 1437, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+#messagelogin {
+  background-color: white;
+  font-weight: bold;
+}
+
+/* line 1442, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+.welcomelink:hover {
+  background-color: #30ac97;
+}
+
+@media (max-width: 800px) {
+  /* line 1448, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+  .link1, .topbar {
+    width: 100%;
+    height: 30px;
+    padding: 4px;
+    font-size: 20px;
+    border-bottom: 1px solid black;
+  }
+
+  /* line 1456, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+  .logoleft {
+    height: 60px;
+    width: 100%;
+    float: left;
+    padding-bottom: 20px;
+  }
+
+  /* line 1463, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+  .linksbar {
+    width: 100%;
+    position: static;
+  }
+
+  /* line 1469, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+  .topbar {
+    display: none;
+  }
+
+  /* line 1473, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+  #can {
+    clear: both;
+  }
+
+  /* line 1477, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+  #second {
+    height: 100%;
+  }
+
+  /* line 1481, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+  .leftarrow, .rightarrow {
+    width: 30px;
+  }
+
+  /* line 1484, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/destinations.scss */
+  #sliderpop {
+    width: 650px;
+    height: 1200px;
+    top: 10px;
+    left: 10px;
+    margin-left: 0px;
+    margin-top: 0px;
+    font-size: 16px;
+  }
+}
+/* line 1, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/scaffolds.scss */
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  #line-height: 18px;
+}
+
+/* line 9, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/scaffolds.scss */
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 15, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/scaffolds.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 21, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/scaffolds.scss */
+a {
+  color: #000;
+}
+/* line 24, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/scaffolds.scss */
+a:visited {
+  color: #666;
+}
+/* line 28, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/scaffolds.scss */
+a:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+/* line 35, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/scaffolds.scss */
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/* line 40, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/scaffolds.scss */
+#notice {
+  color: green;
+}
+
+/* line 44, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/scaffolds.scss */
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 50, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/scaffolds.scss */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+/* line 58, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/scaffolds.scss */
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+/* line 69, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/scaffolds.scss */
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+/* line 4, E:/Projects/Web/Ruby/new_horizons/app/assets/stylesheets/users.scss */
+.new_user {
+  margin-left: 40px;
+}
+
+/*label
+<<<<<<< HEAD
+=======
+=======
+label
+>>>>>>> 20bdc6bb3093687e6fb98acb2687b44f217c1a17
+>>>>>>> bd51dbe41a01f901b61df6df04c66347b9138e92
+{
+//    background-color:red;
+    display:block;
+    width:200px;
+    float:left;
+<<<<<<< HEAD
+}*/
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+
+ */
+

@@ -1,14 +1,21 @@
-<p id="notice"><%= notice %></p>
+<div id='first'>
+  <br>
+    <div id="listproductsbox">
 
-<p>
-  <strong>Name:</strong>
-  <%= @activity_category.name %>
-</p>
+		<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @activity_category.description %>
-</p>
+		<p>
+		  <strong>Name:</strong>
+		  <%= @activity_category.name %>
+		</p>
 
-<%= link_to 'Edit', edit_activity_category_path(@activity_category) %> |
-<%= link_to 'Back', activity_categories_path %>
+		<p>
+		  <strong>Description:</strong>
+		  <%= @activity_category.description %>
+		</p>
+
+		<%= link_to 'Edit', edit_activity_category_path(@activity_category) %> |
+		<%= link_to 'Back', activity_categories_path %>
+
+	</div>
+</div>

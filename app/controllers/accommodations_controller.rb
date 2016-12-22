@@ -1,4 +1,6 @@
 class AccommodationsController < ApplicationController
+  before_action :require_login, except: [:list, :accommodation_boxes]
+  before_action :require_admin, except: [:list, :accommodation_boxes]
   before_action :set_accommodation, only: [:show, :edit, :update, :destroy]
 
   # GET /accommodations

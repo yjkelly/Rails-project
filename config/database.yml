@@ -51,4 +51,4 @@ production:
   <<: *default
   database: new_horizons_production
   username: new_horizons
-  password: <%= ENV['NEW_HORIZONS_DATABASE_PASSWORD'] %>
+  password: LYH5WRkYv3

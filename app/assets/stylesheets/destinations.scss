@@ -200,15 +200,13 @@ body{
 #slider{
   height:500px;
   margin-top:18px;
-
 }
 
 #container{
   width:100%;
-
   height:500px;
   overflow:hidden;
-  background-image:url(../img/activities/mounteverest.jpg);
+  background-image: asset-data-url("activities/mounteverest.jpg");
   background-size:cover;
 }
 
@@ -529,9 +527,9 @@ footer{
 .jaggededges {
     border: 20px solid transparent;
     padding: 10px;
-    -webkit-border-image: url(../img/activities/jagged.png) 30 round; /* Safari 3.1-5 */
-    -o-border-image: url(../img/activities/jagged.png) 30 round; /* Opera 11-12.1 */
-    border-image: url(../img/activities/jagged.png) 30 round;
+    -webkit-border-image: asset-data-url("activities/jagged.png") 30 round; /* Safari 3.1-5 */
+    -o-border-image: asset-data-url("activities/jagged.png") 30 round; /* Opera 11-12.1 */
+    border-image: asset-data-url("activities/jagged.png") 30 round; 
     border-left:none;
     border-right:none;
     border-image-outset: 0.5;
@@ -805,7 +803,7 @@ color:white;
 width:100%;
 height:1000px;
 background-color:black;
-background-image:url('/assets/newbackground.jpg');
+background-image: asset-data-url("newbackground.jpg");
 background-repeat:no-repeat;
 //background-attachment:fixed;
 //background-size:100%;
@@ -875,7 +873,7 @@ padding:0px;
 width:100%;
 height:1000px;
 background:#ccc;
-background-image:url('/assets/tiled.jpg');
+background-image: asset-data-url("tiled.jpg");
 }
 #third
 {

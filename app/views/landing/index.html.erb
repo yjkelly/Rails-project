@@ -6,8 +6,8 @@ New Horizons
 <div id='faded'>Live each day under a different sun<br>
 </div>
 <div id='faded2'>
-<span id="imagechange"><img src='/assets/downarrow.png' height="40px"></span>
-<img id="sun" src='/assets/sunny.png' height="40px">
+<span id="imagechange"><%= image_tag("downarrow.png", id: "imagechange", height: "40px") %></span>
+<%= image_tag("sunny.png", id: "sun", height: "40px") %>
 </div>
 </div>
 
@@ -17,7 +17,7 @@ New Horizons
 <div class='breakblue'>
 </div>
 <div id='newcontainer'><br>
-	<img id="mapmono" width="0" height="0" src="/assets/worldmap2.jpg" alt="World Map">
+    <%= image_tag("worldmap2.jpg", id: "mapmono", width: "0", height: "0", alt: "World Map") %>
         <div id='searchbar'>
                 <form class="searcher" name="maplocator" autocomplete="off">
                         Search a City or Country<br>
@@ -31,7 +31,7 @@ New Horizons
         <div id='leftside'>
                 <br/><br/>
                 <div id='pname'>Choose a city</div><br><br>
-                <div id='pimage'><img src='/assets/default0.jpg' width=75%></div><br><br>
+                <div id='pimage'><%= image_tag("default0.jpg", width: "75%") %></div><br><br>
                 <div id='pdesc'>Hover over any red dot on the map, or type the name of a city in the search bar. The world is your oyster. </div><br><br>
 <% if logged_in? %>
 <%= render 'form', booking: @booking %>
@@ -49,7 +49,7 @@ New Horizons
 
      </div>
 <br><center>
-<img class='clickable' onclick='scrollfurther()' src='/assets/downarrowdarker.png' height="40px">
+<%= image_tag("downarrowdarker.png", class: "clickable", height: "40px", onclick: "scrollfurther()") %>
 <br>
 </div>
 </div>
@@ -58,7 +58,7 @@ New Horizons
 <div id='third'>
 <br>
 <center>
-<img class='clickable' onclick='scrollback()' src='/assets/uparrowdarker.png' height="40px">
+<%= image_tag("uparrowdarker.png", class: "clickable", height: "40px", onclick: "scrollback()") %>
 </center>
 <br><br>
 <span class='guidehead'>Travel Guides</span>
@@ -66,14 +66,18 @@ New Horizons
 <div class='line'></div>
 
   <% @destinations.each do |destination| %>
-  <img id="<%= destination.name.downcase[0,3] %>" width="0" height="0" src="<%= destination.picture.split('|')[1] %>">
+  <%= image_tag(destination.picture.split('|')[1], id: destination.name.downcase[0,3], width: "0", height: "0") %>
   <% end %>
 
 <div class='slidercontainer'>
+<<<<<<< HEAD
 <div onclick='slideover()' class='leftarrow'><br><img class="clickable" src='/img/arrowleft.jpg' width="40px"></div>
+=======
+<div onclick='slideover()' class='leftarrow'><br><%= image_tag("arrowleft.jpg", class: "clickable", width: "40px") %></div>
+>>>>>>> 214414fb433be37fe7d7b810850fec90c132e0c0
 <canvas id="mySlider" width="750" height="300">
 </canvas>
-<div onclick='slideback()' class='rightarrow'><br><img class="clickable" src='/assets/arrowright.jpg' width="40px"></div>
+<div onclick='slideback()' class='rightarrow'><br><%= image_tag("arrowright.jpg", class: "clickable", width: "40px") %></div>
 </div>
 <br>
 <div class='line'></div>
