@@ -16,7 +16,7 @@ body{
 
   height:500px;
   overflow:hidden;
-  background-image:url(../img/activities/mounteverest.jpg);
+  background-image: asset-data-url("activities/mounteverest.jpg");
   background-size:cover;
 }
 
