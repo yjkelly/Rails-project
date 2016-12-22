@@ -1,8 +1,7 @@
 <div id="breadcrumb-container">
   <ul id="breadcrumb-list">
     <li class="breadcrumb"><%= link_to "Home", landing_path, class: "breadcrumb-link" %><span>&gt;&gt;</span></li>
-    <li class="breadcrumb"><%= link_to "Activities", activities_path, class: "breadcrumb-link" %><span>&gt;&gt;</span></li>
-    <li class="breadcrumb"><%= link_to "Accommodation", accommodations_path, class: "breadcrumb-link-current" %><span>&gt;&gt;</span></li>
+    <li class="breadcrumb"><%= link_to "Activities",{ :controller => :activity_categories, :action => :list }, {class: "breadcrumb-link-current"} %><span>&gt;&gt;</span></li>
   </ul>
 </div>
 
