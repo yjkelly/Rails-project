@@ -1,5 +1,5 @@
 <div class="storeitem">
-  <img class="itemphoto" src="<%= product.picture %>" alt="<%= product.name %>"/>
+  <%= image_tag(product.picture, class: "itemphoto", alt: product.name) %>
       <h4><%= product.name %></h4>
       
       <%= form_for basket_item, remote: true do |f| %>

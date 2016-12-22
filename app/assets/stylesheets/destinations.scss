@@ -527,9 +527,9 @@ footer{
 .jaggededges {
     border: 20px solid transparent;
     padding: 10px;
-    -webkit-border-image: url(../img/activities/jagged.png) 30 round; /* Safari 3.1-5 */
-    -o-border-image: url(../img/activities/jagged.png) 30 round; /* Opera 11-12.1 */
-    border-image: url(../img/activities/jagged.png) 30 round;
+    -webkit-border-image: asset-data-url("activities/jagged.png") 30 round; /* Safari 3.1-5 */
+    -o-border-image: asset-data-url("activities/jagged.png") 30 round; /* Opera 11-12.1 */
+    border-image: asset-data-url("activities/jagged.png") 30 round; 
     border-left:none;
     border-right:none;
     border-image-outset: 0.5;
