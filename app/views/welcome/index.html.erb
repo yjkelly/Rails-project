@@ -12,7 +12,7 @@
 			<%= anorder.updated_at %><br>
   			<% @basketitem.each do |basket| %>
     			<% if basket.order_id == anorder.id %><br>
-    			 	<%= image_tag "/"+@product[basket.product_id-1].picture,size:"50" %>
+    			 	<%= image_tag(@product[basket.product_id-1].picture,size:"50") %>
        				<%= @product[basket.product_id-1].name %> which cost <%= basket.unit_price %>
       				<% if basket.quantity>1 %>
       					* <%= basket.quantity %>

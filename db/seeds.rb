@@ -47,34 +47,34 @@ Destination.create! id: 7, name: "New Zealand", description: "Staggering landsca
 
 
 ActivityCategory.delete_all
-snow = ActivityCategory.create(id: 1, name: "Snowsports", description:"Snowsports", picture:'/img/activities/skiing.jpg')
-hiking = ActivityCategory.create(id: 2, name: "Hiking", description:"Hiking", picture:'/img/activities/travelling-alone.jpg')
-offroading = ActivityCategory.create(id: 3, name: "Offroading", description:"Offroading", picture:'/img/activities/offroading.jpg')
-water = ActivityCategory.create(id: 4, name: "Watersports", description:"Watersports", picture: '/img/activities/scubadiving.jpg')
-biking = ActivityCategory.create(id: 5, name: "Biking", description:"Biking", picture:'/img/activities/biking.jpg')
+snow = ActivityCategory.create(id: 1, name: "Snowsports", description:"Snowsports", picture:'activities/skiing.jpg')
+hiking = ActivityCategory.create(id: 2, name: "Hiking", description:"Hiking", picture:'activities/travelling-alone.jpg')
+offroading = ActivityCategory.create(id: 3, name: "Offroading", description:"Offroading", picture:'activities/offroading.jpg')
+water = ActivityCategory.create(id: 4, name: "Watersports", description:"Watersports", picture: 'activities/scubadiving.jpg')
+biking = ActivityCategory.create(id: 5, name: "Biking", description:"Biking", picture:'activities/biking.jpg')
 
 Activity.delete_all
-Activity.create(activity_category:snow, id: 1, name:"Skiing", description:"Ski across the snow-caped peaks and experience everything the mountains have to offer", picture:"/img/activities/skiing2.jpg", price:500)
-Activity.create(activity_category:snow, id: 2, name:"Snowboarding", description: "Enjoy our specialised snowboarding tours and experience something new", picture:"/img/activities/snowboarding.jpg", price:800)
-Activity.create(activity_category:snow, id: 3, name:"Snowmobiling", description: "Race across the snowy mountains and enjoy beautiful landscapes", picture:"/img/activities/snowmobiling.jpg", price:1000)
-Activity.create(activity_category:hiking, id: 4, name: "Day Hike", description: "Take our challanging day hike across this rocky terrain", picture:"/img/activities/dayhike.jpg", price:200)
-Activity.create(activity_category:hiking, id: 5, name: "Night Hike", description:"Take our night hike and explore the mountains in a whole new light", picture:"/img/activities/nighthike.jpg", price:400)
-Activity.create(activity_category:hiking, id: 6, name: "Extreme Hike", description:"For experienced hikers explore challanging terrain and a new adventure", picture:"/img/activities/extremehike.jpg", price:800)
-Activity.create(activity_category:water, id: 7, name: "Scuba Diving", description:"Explore new and exciting dive sites with our experienced divers", picture:"/img/activities/scubadiving2.jpg", price:1000)
-Activity.create(activity_category:water, id: 8, name: "Snorkeling", description:"Take this snorkeling tour and see what lies beneath the surface.", picture:"/img/activities/snorkeling.jpg",price:500)
-Activity.create(activity_category:water, id: 9, name: "White Water Rafting", description:"Experience this exhillarating ride throught the fast rapid rivers", picture:"/img/activities/whitewaterrafting.jpg", price:400)
-Activity.create(activity_category:biking, id: 10, name: "Beginner Biking", description:"Experience our beginner biking tour to set you on the right path", picture:"/img/activities/beginnerbiking.jpg", price:500)
-Activity.create(activity_category:biking, id: 11, name: "Intermediate Biking", description:"For those with more experience take our challanging tour with new routes", picture:"/img/activities/intermediatebiking.jpg", price:800)
-Activity.create(activity_category:biking, id: 12, name: "Extreme Biking", description:"Experience our off road biking tour with rough terrain and extreme conditions", picture:"/img/activities/extremebiking.jpg", price:1000)
-Activity.create(activity_category:offroading, id: 13, name: "Guided Tour", description:"Take our guided tour in our 4x4 vehicles, no path is too treacherous", picture: "/img/activities/extremebiking.jpg", price:500)
-Activity.create(activity_category:offroading, id: 14, name: "Mountain Offroad", description:"Experince our mountain offroad tour and climb the peaks and valleys", picture:"/img/activities/mountainoffroad.jpeg", price:800)
-Activity.create(activity_category:offroading, id: 15, name: "River Offroad", description: "Follow the river to its source in our new offroad tour", price:1000, picture:"/img/activities/river-offroad.jpg")
+Activity.create(activity_category:snow, id: 1, name:"Skiing", description:"Ski across the snow-caped peaks and experience everything the mountains have to offer", picture:"activities/skiing2.jpg", price:500)
+Activity.create(activity_category:snow, id: 2, name:"Snowboarding", description: "Enjoy our specialised snowboarding tours and experience something new", picture:"activities/snowboarding.jpg", price:800)
+Activity.create(activity_category:snow, id: 3, name:"Snowmobiling", description: "Race across the snowy mountains and enjoy beautiful landscapes", picture:"activities/snowmobiling.jpg", price:1000)
+Activity.create(activity_category:hiking, id: 4, name: "Day Hike", description: "Take our challanging day hike across this rocky terrain", picture:"activities/dayhike.jpg", price:200)
+Activity.create(activity_category:hiking, id: 5, name: "Night Hike", description:"Take our night hike and explore the mountains in a whole new light", picture:"activities/nighthike.jpg", price:400)
+Activity.create(activity_category:hiking, id: 6, name: "Extreme Hike", description:"For experienced hikers explore challanging terrain and a new adventure", picture:"activities/extremehike.jpg", price:800)
+Activity.create(activity_category:water, id: 7, name: "Scuba Diving", description:"Explore new and exciting dive sites with our experienced divers", picture:"activities/scubadiving2.jpg", price:1000)
+Activity.create(activity_category:water, id: 8, name: "Snorkeling", description:"Take this snorkeling tour and see what lies beneath the surface.", picture:"activities/snorkeling.jpg",price:500)
+Activity.create(activity_category:water, id: 9, name: "White Water Rafting", description:"Experience this exhillarating ride throught the fast rapid rivers", picture:"activities/whitewaterrafting.jpg", price:400)
+Activity.create(activity_category:biking, id: 10, name: "Beginner Biking", description:"Experience our beginner biking tour to set you on the right path", picture:"activities/beginnerbiking.jpg", price:500)
+Activity.create(activity_category:biking, id: 11, name: "Intermediate Biking", description:"For those with more experience take our challanging tour with new routes", picture:"activities/intermediatebiking.jpg", price:800)
+Activity.create(activity_category:biking, id: 12, name: "Extreme Biking", description:"Experience our off road biking tour with rough terrain and extreme conditions", picture:"activities/extremebiking.jpg", price:1000)
+Activity.create(activity_category:offroading, id: 13, name: "Guided Tour", description:"Take our guided tour in our 4x4 vehicles, no path is too treacherous", picture: "activities/extremebiking.jpg", price:500)
+Activity.create(activity_category:offroading, id: 14, name: "Mountain Offroad", description:"Experince our mountain offroad tour and climb the peaks and valleys", picture:"activities/mountainoffroad.jpeg", price:800)
+Activity.create(activity_category:offroading, id: 15, name: "River Offroad", description: "Follow the river to its source in our new offroad tour", price:1000, picture:"activities/river-offroad.jpg")
 
 # Accommodation name, description , picture, type , price
 Accommodation.delete_all
-Accommodation.create(id: 1, name:"Local host family", description:"Stay with a local family and immerse yourself in the culture", picture:"/img/accommodation/localfamily.jpg", price:50)
-Accommodation.create(id: 2, name:"Local host", description:"Experience life as one of the locals, gain an authentic experience",picture:"/img/accommodation/localhost.jpeg", price:70)
-Accommodation.create(id: 3, name:"Camp site", description:"For those who like to sleep under the stars",picture:"/img/accommodation/campsite.jpg", price:20 )
+Accommodation.create(id: 1, name:"Local host family", description:"Stay with a local family and immerse yourself in the culture", picture:"accommodation/localfamily.jpg", price:50)
+Accommodation.create(id: 2, name:"Local host", description:"Experience life as one of the locals, gain an authentic experience",picture:"accommodation/localhost.jpeg", price:70)
+Accommodation.create(id: 3, name:"Camp site", description:"For those who like to sleep under the stars",picture:"accommodation/campsite.jpg", price:20 )
 
 User.delete_all
 User.create! id:1, username:"admin", email:"admin@admin.com", password: "testing", password_digest:"$2a$10$9e.Utcfcfg/k2zZsVWYx5.Iceu2flNQzXxkExmOxHZGwLkVRXGPiO", is_admin: true
