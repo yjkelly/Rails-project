@@ -10,7 +10,7 @@
 #   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
 #
 default: &default
-  adapter: postgresql
+  adapter: mysql2
   encoding: utf8
   pool: 5
   username: new_horizons
@@ -51,4 +51,4 @@ production:
   <<: *default
   database: new_horizons_production
   username: new_horizons
-  password: <%= ENV['NEW_HORIZONS_DATABASE_PASSWORD'] %>
+  password: LYH5WRkYv3
