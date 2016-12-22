@@ -581,7 +581,7 @@ $(document).ready( function() {
 	//writeMessage(slidercanvas, message);
 	
         });
-       	}},600);
+       	}},1200);
 });
 
 function slideover(){
