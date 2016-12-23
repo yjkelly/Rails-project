@@ -304,7 +304,8 @@ function updateinput(place){
 	destination=cnames[place];
 	//alert(destination);
 	updateCookie("destination",cnames[place].toLowerCase());
-			document.getElementById("booking_destination").value=destination;
+	if (document.getElementById("booking_destination_id")!=null)
+		document.getElementById("booking_destination_id").value=sync[place];
 	//updateOptions();
 	//document.getElementById("plink").color = "white";
 	tempString= cnames[place].toLowerCase();
