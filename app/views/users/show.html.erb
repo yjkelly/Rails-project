@@ -104,6 +104,8 @@ Previous Orders<br>
     <% end %>
     <% total=total+anorder.subtotal %>
     <br><br>Total Cost: <%= total %>
+    <% order_status = OrderStatus.find_by_id(anorder.order_status_id) %>
+    <br><br>Order Status: <%= order_status.name %>
   </div> 
    
    
