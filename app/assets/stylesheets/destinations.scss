@@ -1470,11 +1470,11 @@ font-size:16px;
 .back-button{
   width: 150px;
   text-align: center;
-  background-color: green;
+  background-color: rgb(48,172,151);
   display: block;
   color: #fff;
   position: relative;
-  top: 30px;
+  top: 20px;
   padding:10px;
 }
 
@@ -1482,22 +1482,18 @@ font-size:16px;
   color:#fff;
 }
 
-.back-button:hover{
-background-color:#0f4b0f;
-}
+
 
 
 .next-button{
   display:block;
   padding:10px;
-  color:#fff;
+  color:#ff9147;
   background-color:orange;
   text-align:center;
 }
 
-.next-button:hover{
-  background-color:#e99905;
-}
+
 
 .next-button:visited{
   color:#fff;
@@ -1521,3 +1517,15 @@ background-color:#0f4b0f;
     color:#666;
   }
 
+.date-box-size{
+  width:165px;
+}
+
+.date-box-size, #booking_number_guests{
+  height:20px;
+}
+
+
+#item-2 p{
+  line-height:60px;
+}

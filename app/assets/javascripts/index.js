@@ -361,51 +361,7 @@ $(document).ready(function(){
       }
       });
 
-    /*======================*/
 
-    /*===== Form box =======*/
-
-    //on load, populate the form from cookies
-
-
-     /* $('select[name=destination-box]').change(function(){
-        var newVal = $('select[name=destination-box] option:selected').val();
-        setCookie('destination',newVal);
-      });*/
-
-      /*$('#booking_start_date').change(function(){
-        var newVal = $('input[name=arrival-box]').val();
-        var asDate = new Date(newVal);
-        if(asDate< new Date()){
-          alert("You cannot select a date in the past");
-          $('input[name=arrival-box]').val('');
-        }
-        else{
-          setCookie('arrival',newVal);
-        }
-      });*/
-
-     /* $('input[name=booking[end_date]]').change(function(){
-        var newVal = $('input[name=departure-box]').val();
-        var asDate = new Date(newVal);
-        //check the date isnt in the past
-        if(asDate<new Date()){
-          alert("You canot select a date in the past");
-          $('input[name=departure-box]').val('');
-        }
-        else{
-          //get the arrival date and check it
-          var arrivalDate = $('input[name=arrival-box]').val();
-          var arrivalAsDate = new Date(arrivalDate);
-          if(asDate<arrivalAsDate){
-            alert("Departure date cannot be before arrival date");
-            $('input[name=departure-box]').val('');
-          }
-          else{
-            setCookie('depart',newVal);
-          }
-        }
-      });*/
 
       //category
       $('select[name=category]').change(function(){
@@ -416,72 +372,7 @@ $(document).ready(function(){
         }
       });
 
-      /*$('#number-of-guests-box-size').change(function(){
-        var numGuests = $('#number-of-guests-box-size').val();
-        setCookie('guests',numGuests);
-      });*/
-    /*======================*/
 
-    /* form validation */
-    /*$('#search-button').click(function(){
-      //validate the form
-      if(validateForm()){
-        window.location="./activities-list.html";
-      }
-      //redirect if it works
-    });*/
-
-    /*$('#snow-box').click(function(){
-      $('select[name=category]').val('snowsports');
-      if(validateForm()){
-
-        setCookie('category','snowsports');
-        window.location="./activities-list.html";
-      }
-    });
-    $('#Hiking').click(function(){
-      $('select[name=category]').val('hiking');
-      if(validateForm()){
-        setCookie('category','hiking');
-        window.location="./activities-list.html";
-      }
-    });
-    $('#Offroading').click(function(){
-      $('select[name=category]').val('offroading');
-      if(validateForm()){
-        setCookie('category','offroading');
-        window.location="./activities-list.html";
-      }
-    });
-    $('#Watersports').click(function(){
-      $('select[name=category]').val('watersports');
-      if(validateForm()){
-        setCookie('category','watersports');
-        window.location="./activities-list.html";
-      }
-    });
-    $('#Biking').click(function(){
-      $('select[name=category]').val('biking');
-      if(validateForm()){
-        setCookie('category','biking');
-        window.location="./activities-list.html";
-      }
-    });*/
-
-    /*============Responsive javascript ===============*/
-    // hook from: http://www.coalmarch.com/blog/how-to-execute-javascript-based-on-screen-size-using-jquery
-    if($(window).width()<=980){
-        //change the navigation bar first
-        //collapse it into a list
-        $('#navbar').html('');
-        $('#navbar').html('<img class="res-logo" src="img/new_horizons_logo.png" width="240" height="50" alt=""/>' +
-            '<ul class="res-list">' +
-            '<li class="res-item"><a class="res-link" href="newlanding.html">Home</a></li>' +
-            '<li class="res-item"><a class="res-link" href="#" onclick="showabout()">About</a></li>' +
-            '<li class="res-item"><a class="res-link" href="contact.html">Contact</a></li>' +
-            '<li class="res-item"><a class="res-link" href="store.html">Shop</a></li>' +
-            '</ul>');
-    }
 
 
 });
