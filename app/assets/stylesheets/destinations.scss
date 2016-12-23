@@ -1482,14 +1482,17 @@ font-size:16px;
   color:#fff;
 }
 
+.back-button:hover{
+  background-color: rgb(48,172,151);
+}
 
 
 
 .next-button{
   display:block;
   padding:10px;
-  color:#ff9147;
-  background-color:orange;
+  color:#fff;
+  background-color:#ff9147;
   text-align:center;
 }
 
@@ -1499,6 +1502,9 @@ font-size:16px;
   color:#fff;
 }
 
+.next-button:hover{
+  background-color:#ff9147;
+}
 
   h2#thanks {
     margin-left: 20px;
@@ -1518,11 +1524,11 @@ font-size:16px;
   }
 
 .date-box-size{
-  width:165px;
+  width:165px !important;
 }
 
 .date-box-size, #booking_number_guests{
-  height:20px;
+  height:20px!important;
 }
 
 
