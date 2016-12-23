@@ -499,30 +499,7 @@ footer{
 }
 
 
-/* Title bar colours for categories */
 
-#snowsports{
-  background-color:#FF7068;
-
-}
-#hiking{
-  background-color: #50C5B1;
-
-}
-#offroading{
-  background-color: #FFA568;
-
-}
-#watersports{
-  background-color: #5F80CB;
-}
-#biking{
-  background-color:#97EC60;
-}
-
-.activity-text{
-    position: relative;
-}
 /*refernce jagged edge border: http://www.w3schools.com/cssref/css3_pr_border-image.asp*/
 .jaggededges {
     border: 20px solid transparent;
@@ -625,11 +602,7 @@ padding-top:20px;
 font-size:20px;
 
 }
-.activity-text{
-  position:relative;
-  color:white;
 
-}
 .sub-activity-description{
   padding-left:5px;
   height: 80px;
