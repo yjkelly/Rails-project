@@ -6,8 +6,14 @@ class CartsController < ApplicationController
   protect_from_forgery except: [:hook]
   def show
     @booking = current_booking
+    @booking.order_id=current_order.id
+    @booking.save
   	@basket_items = current_order.basket_items
-  	@order = current_order
+  	@order=current_order
+  	@order.user_id=current_user.id
+  	@order.save
+ 
+  	@activities=BookingActivity.all
   end
 
   # Will redirect a user to paypal
@@ -18,6 +24,8 @@ class CartsController < ApplicationController
     @booking = current_booking
     @basket_items = current_order.basket_items
     @order = current_order
+    
+     
 
     # Wrapper to convert all purchaseable items into paypal format
     items = []
