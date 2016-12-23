@@ -39,6 +39,7 @@ class BookingActivitiesController < ApplicationController
     @booking_item = @booking.booking_activities.find(params[:id])
     @booking_item.update_attributes(booking_activity_params)
     @booking_activities = @booking.booking_activities
+    @booking.update(:price=>total_price)
   end
 
   # DELETE /booking_activities/1
@@ -48,6 +49,7 @@ class BookingActivitiesController < ApplicationController
     @booking_item=@booking.booking_activities.find(params[:id])
     @booking_item.destroy
     @booking_items=@booking.booking_activities
+    @booking.update(:price=>total_price)
   end
 
   private

@@ -6,7 +6,7 @@ class CreateBookings < ActiveRecord::Migration
       t.references :order
       t.string :status, :limit => 50
       t.decimal :price
-      t.integer :number_guests, :limit => 2
+      t.integer :number_guests, :limit => 2, :default=>1
       t.date :start_date
       t.date :end_date
 

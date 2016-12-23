@@ -6,9 +6,16 @@
 
 		<%= render "shopping_cart" %>
 
+
+
+    <div id="reciept-border">
+      <%= render :partial => "bookings/receipt"%>
+
+    </div>
+
+    <div id="checkout">
+      <%= link_to("Checkout", controller: "carts", action:"checkout", class:"chekout-button") %>
+    </div>
 	</div>
 </div>
-  <div id="reciept-border">
-    <%= render :partial => "bookings/receipt"%>
 
-</div>

@@ -12,7 +12,12 @@ class ApplicationController < ActionController::Base
 
   def current_order
     if !session[:order_id].nil?
-      Order.find(session[:order_id])
+      order = Order.find_by_id(session[:order_id])
+      if order.nil?
+        Order.new
+      else
+        order
+      end
     else
       Order.new
     end
@@ -20,7 +25,12 @@ class ApplicationController < ActionController::Base
 
   def current_booking
     if !session[:booking_id].nil?
-      Booking.find(session[:booking_id])
+      booking = Booking.find_by_id(session[:booking_id])
+      if booking.nil?
+        Booking.new
+      else
+        booking
+      end
     else
       Booking.new
     end

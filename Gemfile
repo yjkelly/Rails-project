@@ -9,9 +9,7 @@ gem 'bcrypt', '~> 3.1.3'
 gem 'carrierwave',             '0.11.2'
 
 # Use mysql as the database for Active Record
-gem 'mysql2', '>= 0.3.13', '< 0.5'
-# Use postgresql because heroku wont run on anything but postgresql
-#gem 'pg'
+gem 'mysql2', '~> 0.3.13'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

@@ -1,0 +1,24 @@
+/* Title bar colours for categories */
+
+#Snowsports-title{
+    background-color:#FF7068;
+
+}
+#Hiking-title{
+    background-color: #50C5B1;
+
+}
+#Offroading-title{
+    background-color: #FFA568;
+
+}
+#Watersports-title{
+    background-color: #5F80CB;
+}
+#Biking-title{
+    background-color:#97EC60;
+}
+
+.activity-text{
+    position: relative;
+}

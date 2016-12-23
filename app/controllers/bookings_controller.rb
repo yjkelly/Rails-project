@@ -72,6 +72,7 @@ class BookingsController < ApplicationController
   def add_accommodation
     @booking = current_booking
     @booking.update({:accommodation_id=> params[:booking][:accommodation_id]})
+    @booking.update(:price=>total_price)
   end
 
   # PATCH / PUT
@@ -80,6 +81,7 @@ class BookingsController < ApplicationController
   def remove_accommodation
     @booking = current_booking
     @booking.update({:accommodation_id=>nil})
+    @booking.update(:price=>total_price)
   end
 
   # PATCH/PUT /bookings/1

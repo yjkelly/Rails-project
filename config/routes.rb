@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   match 'bookings/remove_accommodation' => 'bookings#remove_accommodation', :via => :patch
   match 'activities/activity_boxes' => 'activities#activity_boxes', :via => :get
   match 'accommodations/accommodation_boxes' => 'accommodations#accommodation_boxes', :via => :get
+  match '/thankyou' => 'carts#thankyou', :via => :get
   resource :cart, only: [:show]
   resources :booking_activities
   resources :bookings
