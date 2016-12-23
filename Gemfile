@@ -9,7 +9,7 @@ gem 'bcrypt', '~> 3.1.3'
 gem 'carrierwave',             '0.11.2'
 
 # Use mysql as the database for Active Record
-gem 'mysql2', '~> 0.3.13'
+gem 'mysql2', '~> 0.3.18'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

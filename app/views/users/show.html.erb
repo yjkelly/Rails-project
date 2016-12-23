@@ -96,7 +96,9 @@ Previous Orders<br>
           <% if anorder.subtotal>0 %>
               <br><br>Total for Accommodation/Activities: <%= booking.price %>
           <% end %>
+          <% if booking.price %>
           <% total=total+booking.price %>
+          <% end %>
       <% end %>
       
     <% end %>

@@ -25,8 +25,12 @@ class BookingsController < ApplicationController
   # POST /bookings
   # POST /bookings.json
   def create
+    @order = Order.new
+    session[:order_id] = @order.id
     @booking = Booking.new(booking_params)
-
+    session[:booking_id] = @booking.id
+    @booking.order_id=@order.id
+    @order.user_id=current_user.id
     respond_to do |format|
       @destinations=Destination.all
       session[:destination] = @destinations[@booking.destination_id-1].name
