@@ -21,7 +21,12 @@ http://stackoverflow.com/questions/5320414/form-for-but-to-post-to-a-different-a
       </div>
       <div class="form-item">
         <label for="number-of-guests">Persons</label>
-        <%= f.number_field(:number_guests, :value=>@booking.number_guests, :min=>1)%>
+        <% num_guests_default = 1
+        if(@booking.number_guests!=1)
+          num_guests_default = @booking.number_guests
+        end
+        %>
+        <%= f.number_field(:number_guests, :value=>num_guests_default, :min=>1)%>
       </div>
       <div id="form-button">
           <%= f.submit "Update", id: "search-button" %>
