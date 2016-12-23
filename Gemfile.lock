@@ -179,11 +179,7 @@ DEPENDENCIES
   coffee-script-source (= 1.8.0)
   jbuilder (~> 2.0)
   jquery-rails
-<<<<<<< HEAD
-  mysql2 (~> 0.3.13)
-=======
   mysql2 (>= 0.3.13, < 0.5)
->>>>>>> 909cfb993c251d175ecd5b7c79627ec5d2fdbac0
   rails (= 4.2.7.1)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
