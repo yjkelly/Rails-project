@@ -54,7 +54,14 @@
       
     		<% end %>
     	<% total=total+anorder.subtotal %>
-    	<br><br>Total Cost: <%= total %>
+    	<br>Total Cost: <%= total %>
+      <p>
+      <%= form_for(anorder) do |f| %>
+        <%= f.label(:order_status_id, "Order Status: ") %>
+        <%= f.select(:order_status_id, @order_statuses.map {|o| [o.name, o.id]}) %>
+        <%= f.submit %>
+      <% end %>
+      </p>
   	</div> 
    <% end %>
    <% end %>

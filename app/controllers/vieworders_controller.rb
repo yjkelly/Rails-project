@@ -11,5 +11,6 @@ class ViewordersController < ApplicationController
        @destination = Destination.all
        @orders= Order.all
        @users = User.all
+       @order_statuses = OrderStatus.all
     end
 end

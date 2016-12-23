@@ -1,6 +1,7 @@
 class CartsController < ApplicationController
   include BookingsHelper, CartsHelper
   #http://stackoverflow.com/questions/20724470/cors-issue-getting-error-no-access-control-allow-origin-header-is-present-w
+  before_action :require_login, :only => [:checkout]
   skip_before_filter :verify_authenticity_token, :only => [:checkout]
   protect_from_forgery except: [:hook]
   def show

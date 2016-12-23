@@ -62,6 +62,13 @@
 			  			</div>
 		  			</div>
 	  			</div>
+	  			<div class="basket_box">
+	  				<% if logged_in? %>
+			    		<h1><%= link_to(">> Checkout <<", controller: "carts", action:"checkout", :class=>"chekout-button") %></h1>
+					<% else %>
+						You must be logged in to checkout. Please <%= link_to "login", '/login'%> or <%= link_to "sign up", '/signup'%>.
+					<% end %>
+			  	</div>
 			<% end %>
 	</div>
 </div>
