@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'accommodations/list', to: 'accommodations#list'
   match 'bookings/receipt/' => 'bookings#receipt', :via => :get
   match 'bookings/update_details/' => 'bookings#update_details', :via => :patch
+  match 'bookings/update_details/' => 'bookings#update_details', :via => :post
   match 'bookings/add_accommodation' => 'bookings#add_accommodation', :via=> :patch
   match 'bookings/remove_accommodation' => 'bookings#remove_accommodation', :via => :patch
   match 'activities/activity_boxes' => 'activities#activity_boxes', :via => :get

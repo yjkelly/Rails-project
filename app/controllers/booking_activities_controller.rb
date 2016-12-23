@@ -2,6 +2,7 @@ class BookingActivitiesController < ApplicationController
 
   before_action :set_booking_activity, only: [ :show, :edit, :update, :destroy]
   protect_from_forgery
+  include BookingsHelper
 
   # GET /booking_activities
   # GET /booking_activities.json
