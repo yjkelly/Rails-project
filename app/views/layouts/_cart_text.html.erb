@@ -4,7 +4,5 @@
    if(!booking.accommodation_id.nil?)
      basket_size+=1
    end
-
-
 %>
-<%= link_to "You have #{ basket_size} items in your Cart ( #{number_to_currency (current_order.subtotal+total_price.to_f)} )", cart_path, class: "btn btn-link" %>
+<%= link_to "You have #{ basket_size} items in your Cart ( #{number_to_currency (current_order.subtotal+total_price.to_f)} )", cart_path, id: "cart-text" %>

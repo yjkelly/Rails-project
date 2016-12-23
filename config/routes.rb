@@ -35,6 +35,7 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
   get '/welcome', to: 'welcome#index'
+  get '/vieworders', to: 'vieworders#index'
   get '/contact', to: 'contact#index'
 
   root 'landing#index'

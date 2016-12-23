@@ -1,4 +1,6 @@
-class WelcomeController < ApplicationController
+class ViewordersController < ApplicationController
+    before_action :require_login
+    before_action :require_admin
     def index
        @basketitem = BasketItem.all
        @product = Product.all
@@ -8,5 +10,6 @@ class WelcomeController < ApplicationController
        @accommodation = Accommodation.all
        @destination = Destination.all
        @orders= Order.all
+       @users = User.all
     end
 end
