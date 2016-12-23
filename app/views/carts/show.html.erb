@@ -26,7 +26,7 @@
 	    <div id="checkout">
 	    	<h2> Total Cost - Holiday + Basket Items: <%= number_to_currency (@order.subtotal + total_price) %> </h2>
 	    	<% if logged_in? %>
-	    		<h1><%= link_to(">> Checkout <<", controller: "carts", action:"checkout", :class=>"chekout-button") %></h1>
+	    		<h1><%= link_to(">> Checkout <<", {controller: "carts", action:"checkout"}, :class=>"chekout-button") %></h1>
 			<% else %>
 				You must be logged in to checkout. Please <%= link_to "login", '/login'%> or <%= link_to "sign up", '/signup'%>.
 			<% end %>
