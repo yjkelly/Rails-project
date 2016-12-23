@@ -11,6 +11,7 @@ class CartsController < ApplicationController
   end
 
   # Will redirect a user to paypal
+  # From : https://launchschool.com/blog/basic-paypal-checkout-processing-in-rails
   def checkout
 
 
@@ -66,15 +67,13 @@ class CartsController < ApplicationController
         :return=> "#{Rails.application.secrets.app_host}/thankyou",
         :invoice=> @booking.id,
         :currency_code=>'USD',
-        :invoice => @booking.id,
         :amount=> "#{@booking.price+@order.subtotal}",
         :item_name=> "booking",
         :item_number=> @booking.id,
-        :quantity=> '1',
-        notify_url: "#{Rails.application.secrets.app_host}/hook"
+        :quantity=> '1'
     }
 
-    redirect_to "#{Rails.application.secrets.paypal_host}/cgi-bin/webscr?" + values.to_query#+ "&" + createPayPalQueryString(items)
+    redirect_to "#{Rails.application.secrets.paypal_host}/cgi-bin/webscr?" + values.to_query
 
   end
 

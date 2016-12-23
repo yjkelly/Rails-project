@@ -4,8 +4,6 @@ Rails.application.routes.draw do
 
   # This route was necessary for empty basket to work
   post 'basket_items/destroy_all'
-  post "/hook" => "carts#hook"
-  post "/bookings/:id" => "bookings#show"
   get 'accommodations/list', to: 'accommodations#list'
   match 'bookings/receipt/' => 'bookings#receipt', :via => :get
   match 'bookings/update_details/' => 'bookings#update_details', :via => :patch
