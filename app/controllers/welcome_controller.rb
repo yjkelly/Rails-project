@@ -8,5 +8,6 @@ class WelcomeController < ApplicationController
        @accommodation = Accommodation.all
        @destination = Destination.all
        @orders= Order.all
+       @order_statuses = OrderStatus.all
     end
 end

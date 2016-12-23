@@ -14,17 +14,16 @@ Rails.application.routes.draw do
   match 'accommodations/accommodation_boxes' => 'accommodations#accommodation_boxes', :via => :get
   match '/thankyou' => 'carts#thankyou', :via => :get
   resource :cart, only: [:show]
-  resources :booking_activities
-  resources :bookings
+  resources :booking_activities, only: [:create, :update, :destroy]
+  resources :bookings, only: [:create, :update, :destroy]
   resources :destinations
   resources :accommodations
   resources :activities
   resources :activity_categories, only: [:list]
   resources :basket_items, only: [:create, :update, :destroy]
   resources :store, only: [:index, :filter]
-  resources :products
   resources :product_categories
-  resources :orders
+  resources :orders, only: [:create, :update, :destroy]
   resources :users
   resources :products
   get "landing", to: "landing#index"

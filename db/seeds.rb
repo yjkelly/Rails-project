@@ -73,7 +73,7 @@ Activity.create(activity_category:offroading, id: 15, name: "River Offroad", des
 # Accommodation name, description , picture, type , price
 Accommodation.delete_all
 Accommodation.create(id: 1, name:"Local host family", description:"Stay with a local family and immerse yourself in the culture", picture:"accommodation/localfamily.jpg", price:50)
-Accommodation.create(id: 2, name:"Local host", description:"Experience life as one of the locals, gain an authentic experience",picture:"accommodation/localhost.jpeg", price:70)
+Accommodation.create(id: 2, name:"Local host", description:"Experience life as one of the locals, gain an authentic experience",picture:"accommodation/localhost.jpg", price:70)
 Accommodation.create(id: 3, name:"Camp site", description:"For those who like to sleep under the stars",picture:"accommodation/campsite.jpg", price:20 )
 
 User.delete_all
