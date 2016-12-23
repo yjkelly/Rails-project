@@ -1,17 +1,5 @@
 == README
 
-General things to watch out for;
+New Horizons;
 
-	- All JS and CSS needs to be cleaned up. DRY - Don't repeat yourself. Delete anything that is not used.
-	- Assets should be stored in the assets folder, not the public folder, to make use of the Rails asset pipeline when moving to production.
-	- All user input needs to be validated and sanitized always, for security reasons.
-	- Any element that is used more than once, needs to be in a partial. DRY.
-
-
-Specific things to do;
-
-	- Need a separate admin area where an admin can manage users, products, orders, destinations, etc, etc.
-	- Need very tight restrictions on the is_admin field in the user model.
-	- User Profile page - avatars, etc. See above, is_admin needs tight restrictions
-	- Checkout Page / Paypal integration / Thank you page
-	- Do we need a field called 'password' in the database?
+- Awesome adventure travel
