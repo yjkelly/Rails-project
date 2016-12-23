@@ -1,1 +1,17 @@
-<h1>Thank you</h1>
+<div id="slider">
+  <div id="container">
+    <div class="container-overlay" >
+      <h2 id="thanks">Thank you</h2>
+    </div>
+    <div class="slide-div booking-text" id="item-1"   >
+      <% if !@booking.destination_id.nil? && !@booking.start_date.nil? && !@booking.end_date.nil?%>
+          <p>We hope you enjoy your <%=(@booking.end_date - @booking.start_date).to_i%> days in <%=current_dest%></p>
+      <% end %>
+      <p id="signoff">Click <%= link_to("here" ,Rails.application.secrets.app_host, id:"home")%> to return to the homepage</p>
+    </div>
+
+
+
+</div>
+
+</div>

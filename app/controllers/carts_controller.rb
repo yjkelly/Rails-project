@@ -77,19 +77,9 @@ class CartsController < ApplicationController
 
   end
 
-
-
-  def hook
-    params.permit! # Permit all Paypal input params
-    status = params[:payment_status]
-    if status == "Completed"
-      puts "payment went through"
-    end
-    render nothing: true
-  end
-
   def thankyou
     @booking = current_booking
+    @order = current_order
     @booking.update(:price => total_price, :paid=> true)
   end
 

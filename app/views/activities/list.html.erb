@@ -46,7 +46,10 @@
 
 <div id="skip-button">
   <!-- http://api.rubyonrails.org/classes/ActionView/Helpers/UrlHelper.html#method-i-link_to -->
-  <%= link_to("Next", controller: "accommodations", action:"list", class:"next-button") %>
+  <%= link_to("Next",{controller: "accommodations", action:"list"}, class:"next-button") %>
+</div>
+<div id="back-button">
+  <%= link_to("Back", {controller:"activity_categories", action: "list"}, class:"back-button") %>
 </div>
 
 
